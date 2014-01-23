@@ -46,7 +46,7 @@ public class TestMore {
             String user = "BeijingAir";
 //            if (args.length == 1) {
 //                user = args[0];
-                statuses = twitter.getUserTimeline(user);
+//                statuses = twitter.getUserTimeline(user);
 //            } else {
 //                user = twitter.verifyCredentials().getScreenName();
 //                statuses = twitter.getUserTimeline();
@@ -58,15 +58,15 @@ public class TestMore {
         } catch (TwitterException te) {
             te.printStackTrace();
             System.out.println("Failed to get timeline: " + te.getMessage());
-//            System.exit(-1);
+            System.exit(-1);
         }
 	}
 	
 	
 	public static void main(String[] args) throws Exception{
 //		gettingTimeline();
-//		searchTweets();
-		getUserTimeLine();
+		searchTweets();
+		
 		System.out.println("@end");
 		
 	}

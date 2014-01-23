@@ -25,7 +25,7 @@ public class TestMore {
 	}
 	
 	/**
-	 * search tweets from a user by it's name
+	 * fetch tweets from a user by it's name
 	 * fetch approximately 10+ tweets once
 	 * the user name as the argument to construct Query object
 	 * */
@@ -39,34 +39,11 @@ public class TestMore {
 	    }
 	}
 	
-	public static void getUserTimeLine(){
-		Twitter twitter = new TwitterFactory().getInstance();
-        try {
-            List<Status> statuses;
-            String user = "BeijingAir";
-//            if (args.length == 1) {
-//                user = args[0];
-                statuses = twitter.getUserTimeline(user);
-//            } else {
-//                user = twitter.verifyCredentials().getScreenName();
-//                statuses = twitter.getUserTimeline();
-//            }
-            System.out.println("Showing @" + user + "'s user timeline.");
-            for (Status status : statuses) {
-                System.out.println("@" + status.getUser().getScreenName() + " - " + status.getText());
-            }
-        } catch (TwitterException te) {
-            te.printStackTrace();
-            System.out.println("Failed to get timeline: " + te.getMessage());
-//            System.exit(-1);
-        }
-	}
-	
 	
 	public static void main(String[] args) throws Exception{
 //		gettingTimeline();
-//		searchTweets();
-		getUserTimeLine();
+		searchTweets();
+		
 		System.out.println("@end");
 		
 	}
