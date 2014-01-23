@@ -1,0 +1,13 @@
+package test;
+
+import net.unto.twitter.Api;
+import net.unto.twitter.TwitterProtos.Status;
+
+public class JT {
+	public static void main(String[] args) {
+		Api api = Api.builder().build();
+		  for (Status status : api.publicTimeline().build().get()) {
+		    System.out.println(String.format("%s wrote '%s'", status.getUser().getName(), status.getText()));
+		  }
+	}
+}
