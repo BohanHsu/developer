@@ -1,0 +1,14 @@
+package test;
+
+import twitter4j.GeoQuery;
+import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
+
+public class TestGeo {
+
+	public static void SearchPaces(){
+		Twitter twitter = new TwitterFactory().getInstance();
+		GeoQuery query = null;
+		
+	}
+}
