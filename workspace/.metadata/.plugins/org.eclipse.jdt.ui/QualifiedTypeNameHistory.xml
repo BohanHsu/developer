@@ -3,12 +3,16 @@
 <fullyQualifiedTypeName name="javax.net.ssl.SSLEngineResult.Status"/>
 <fullyQualifiedTypeName name="net.unto.twitter.Api"/>
 <fullyQualifiedTypeName name="net.unto.twitter.TwitterProtos.Status"/>
-<fullyQualifiedTypeName name="twitter4j.Twitter"/>
-<fullyQualifiedTypeName name="twitter4j.TwitterFactory"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="twitter4j.Status"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="twitter4j.Query"/>
 <fullyQualifiedTypeName name="twitter4j.QueryResult"/>
+<fullyQualifiedTypeName name="twitter4j.Twitter"/>
+<fullyQualifiedTypeName name="twitter4j.TwitterFactory"/>
+<fullyQualifiedTypeName name="twitter4j.GeoQuery"/>
+<fullyQualifiedTypeName name="twitter4j.GeoLocation"/>
+<fullyQualifiedTypeName name="twitter4j.ResponseList"/>
+<fullyQualifiedTypeName name="twitter4j.Place"/>
 </qualifiedTypeNameHistroy>
