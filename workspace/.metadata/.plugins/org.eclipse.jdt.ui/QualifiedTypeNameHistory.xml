@@ -15,4 +15,6 @@
 <fullyQualifiedTypeName name="twitter4j.GeoLocation"/>
 <fullyQualifiedTypeName name="twitter4j.ResponseList"/>
 <fullyQualifiedTypeName name="twitter4j.Place"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
