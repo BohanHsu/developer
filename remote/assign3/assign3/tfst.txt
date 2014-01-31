@@ -1,0 +1,7 @@
+0 1 1 one
+0 1 2 two
+1 2 <epsilon> hundred
+0 2 <epsilon> <epsilon>
+2 3 1 one
+2 3 2 two
+3
