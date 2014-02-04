@@ -1,0 +1,11 @@
+y
+ies
+\b(\w+)y\b.*\b\1ies\b|\b(\w+)ies\b.*\b\2y\b
+\b(\w+)y\b.*\b\1y\b.*\b\1ies\b|\b(\w+)ies\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1ies\b.*\b\1y\b
+world occur at least once
+\b(\w+)y\b.*\b\1ies\b|\b(\w+)ies\b.*\b\2y\b
+[('family', 10), ('city', 8), ('enemy', 3), ('lady', 3), ('party', 3), ('baby', 2), ('berry', 2), ('body', 2), ('century', 2), ('vanity', 2), ('butterfly', 1), ('company', 1), ('country', 1), ('diary', 1), ('fifty', 1), ('holy', 1), ('iniquity', 1), ('mercy', 1), ('mummy', 1), ('personality', 1), ('recouery', 1), ('royalty', 1)]
+22
+\b(\w+)y\b.*\b\1y\b.*\b\1ies\b|\b(\w+)ies\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1ies\b.*\b\1y\b
+[('vanity', 1)]
+1

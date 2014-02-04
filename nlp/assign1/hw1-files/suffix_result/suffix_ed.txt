@@ -1,0 +1,11 @@
+
+ed
+\b(\w+)\b.*\b\1ed\b|\b(\w+)ed\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ed\b|\b(\w+)ed\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ed\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ed\b|\b(\w+)ed\b.*\b\2\b
+[('reign', 17), ('he', 12), ('dream', 9), ('vow', 9), ('turn', 7), ('call', 6), ('pass', 6), ('walk', 5), ('look', 4), ('shout', 4), ('spoil', 4), ('trespass', 4), ('ask', 3), ('bless', 3), ('comfort', 3), ('deliver', 3), ('follow', 3), ('pooh', 3), ('rain', 3), ('return', 3), ('us', 3), ('answer', 2), ('command', 2), ('exist', 2), ('expect', 2), ('gather', 2), ('help', 2), ('kick', 2), ('kill', 2), ('labour', 2), ('number', 2), ('open', 2), ('pray', 2), ('suffer', 2), ('tempt', 2), ('thank', 2), ('to', 2), ('wash', 2), ('water', 2), ('wrong', 2), ('abound', 1), ('act', 1), ('affect', 1), ('afflict', 1), ('alarm', 1), ('appoint', 1), ('arrest', 1), ('back', 1), ('bleat', 1), ('blind', 1), ('blood', 1), ('breath', 1), ('build', 1), ('burn', 1), ('chant', 1), ('clasp', 1), ('crown', 1), ('dart', 1), ('defeat', 1), ('delay', 1), ('depart', 1), ('destroy', 1), ('devour', 1), ('fear', 1), ('fetch', 1), ('fill', 1), ('fish', 1), ('float', 1), ('fold', 1), ('govern', 1), ('graff', 1), ('guess', 1), ('happen', 1), ('hasten', 1), ('heal', 1), ('heed', 1), ('hint', 1), ('interview', 1), ('join', 1), ('joy', 1), ('kiss', 1), ('know', 1), ('land', 1), ('last', 1), ('laugh', 1), ('leaven', 1), ('light', 1), ('listen', 1), ('long', 1), ('lust', 1), ('melt', 1), ('minister', 1), ('murmur', 1), ('need', 1), ('not', 1), ('obey', 1), ('offer', 1), ('plant', 1), ('poison', 1), ('possess', 1), ('press', 1), ('pull', 1), ('question', 1), ('reject', 1), ('remember', 1), ('render', 1), ('reproach', 1), ('revolt', 1), ('reward', 1), ('ring', 1), ('roll', 1), ('sail', 1), ('salt', 1), ('scold', 1), ('screech', 1), ('screw', 1), ('seem', 1), ('select', 1), ('shew', 1), ('smell', 1), ('sound', 1), ('sow', 1), ('stretch', 1), ('suspect', 1), ('talk', 1), ('thatch', 1), ('toast', 1), ('toil', 1), ('torment', 1), ('visit', 1), ('waif', 1), ('wait', 1), ('wander', 1), ('want', 1), ('watch', 1), ('whisper', 1), ('wield', 1), ('wish', 1), ('wood', 1), ('work', 1), ('wound', 1), ('yell', 1)]
+142
+\b(\w+)\b.*\b\1\b.*\b\1ed\b|\b(\w+)ed\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ed\b.*\b\1\b
+[('remember', 1), ('sail', 1)]
+2

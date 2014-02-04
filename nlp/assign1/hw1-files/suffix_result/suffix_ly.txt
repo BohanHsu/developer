@@ -1,0 +1,11 @@
+
+ly
+\b(\w+)\b.*\b\1ly\b|\b(\w+)ly\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ly\b|\b(\w+)ly\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ly\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ly\b|\b(\w+)ly\b.*\b\2\b
+[('on', 96), ('great', 7), ('earth', 2), ('general', 2), ('new', 2), ('real', 2), ('treacherous', 2), ('according', 1), ('bright', 1), ('certain', 1), ('cheefe', 1), ('different', 1), ('equal', 1), ('extreme', 1), ('fair', 1), ('fierce', 1), ('fitful', 1), ('ginger', 1), ('god', 1), ('grievous', 1), ('handsome', 1), ('heaven', 1), ('hopeless', 1), ('near', 1), ('one', 1), ('personal', 1), ('pleasant', 1), ('s', 1), ('safe', 1), ('sane', 1), ('slight', 1), ('sweet', 1), ('wicked', 1), ('wild', 1)]
+34
+\b(\w+)\b.*\b\1\b.*\b\1ly\b|\b(\w+)ly\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ly\b.*\b\1\b
+[('on', 1)]
+1

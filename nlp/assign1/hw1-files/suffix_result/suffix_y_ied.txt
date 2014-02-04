@@ -1,0 +1,11 @@
+y
+ied
+\b(\w+)y\b.*\b\1ied\b|\b(\w+)ied\b.*\b\2y\b
+\b(\w+)y\b.*\b\1y\b.*\b\1ied\b|\b(\w+)ied\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1ied\b.*\b\1y\b
+world occur at least once
+\b(\w+)y\b.*\b\1ied\b|\b(\w+)ied\b.*\b\2y\b
+[('cry', 3), ('bury', 2), ('dry', 2), ('glorify', 2), ('marry', 2), ('try', 2), ('deny', 1), ('embody', 1), ('multiply', 1), ('parry', 1), ('satisfy', 1)]
+11
+\b(\w+)y\b.*\b\1y\b.*\b\1ied\b|\b(\w+)ied\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1ied\b.*\b\1y\b
+[]
+0

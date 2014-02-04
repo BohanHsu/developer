@@ -1,0 +1,11 @@
+
+ness
+\b(\w+)\b.*\b\1ness\b|\b(\w+)ness\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ness\b|\b(\w+)ness\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ness\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ness\b|\b(\w+)ness\b.*\b\2\b
+[('wicked', 11), ('righteous', 10), ('mad', 3), ('unclean', 3), ('white', 3), ('cheerful', 2), ('dark', 2), ('fat', 2), ('sick', 2), ('bitter', 1), ('black', 1), ('dead', 1), ('fierce', 1), ('great', 1), ('much', 1), ('salt', 1), ('upright', 1), ('wild', 1), ('wretched', 1)]
+19
+\b(\w+)\b.*\b\1\b.*\b\1ness\b|\b(\w+)ness\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ness\b.*\b\1\b
+[('salt', 1)]
+1
