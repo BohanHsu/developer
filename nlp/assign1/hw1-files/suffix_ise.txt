@@ -1,0 +1,11 @@
+
+ise
+\b(\w+)\b.*\b\1ise\b|\b(\w+)ise\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ise\b|\b(\w+)ise\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ise\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ise\b|\b(\w+)ise\b.*\b\2\b
+['no']
+1
+\b(\w+)\b.*\b\1\b.*\b\1ise\b|\b(\w+)ise\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ise\b.*\b\1\b
+[]
+0

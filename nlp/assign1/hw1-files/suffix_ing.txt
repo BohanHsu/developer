@@ -1,0 +1,11 @@
+
+ing
+\b(\w+)\b.*\b\1ing\b|\b(\w+)ing\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ing\b|\b(\w+)ing\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ing\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ing\b|\b(\w+)ing\b.*\b\2\b
+['sleep', 'go', 'follow', 'shadow', 'thank', 'cherry', 'th', 'mend', 'do', 'march', 'watch', 'cover', 'break', 'know', 'kiss', 'fall', 'not', 'bit', 'walk', 'flee', 'bless', 't', 'steal', 'enjoy', 'fish', 'play', 'see', 'bark', 'wonder', 'even', 'huzza', 'lead', 'sail', 'leap', 'contrast', 'be', 'burn', 'sing', 'wait', 'linger', 'roar', 'chant', 'curtsey', 's', 'stand', 'act', 'think', 'stray', 'feel', 'number', 'bath', 'duck', 'carry', 'speak', 'eye', 'fight', 'breath', 'paint', 'tink', 'boil', 'offer', 'warn', 'understand', 'minister', 'overflow', 'eat', 'pull', 'rush', 'look', 'work', 'ripen', 'will', 'career', 'learn', 'anchor', 'whisper', 'sting', 'say', 'seem', 'trumpet', 'whirl', 'end', 'perform', 'pay', 'mix', 'labour', 'smell', 'mock', 'draw', 'anoint', 'drink', 'fell', 'multiply', 'weep', 'glow', 'light', 'revolt', 'hear', 'talk']
+99
+\b(\w+)\b.*\b\1\b.*\b\1ing\b|\b(\w+)ing\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ing\b.*\b\1\b
+['huzza']
+1

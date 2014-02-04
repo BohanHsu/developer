@@ -1,0 +1,11 @@
+
+er
+\b(\w+)\b.*\b\1er\b|\b(\w+)er\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1er\b|\b(\w+)er\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1er\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1er\b|\b(\w+)er\b.*\b\2\b
+['mould', 'old', 'fair', 'sweet', 'hard', 'soon', 'deep', 'high', 'bright', 'murder', 'sow', 'queer', 'thick', 'dismember', 'cold', 'out', 'slow', 'pray', 'lean', 'long', 'fight', 'paint', 'black', 'rich', 'prison', 'destroy', 'happy', 'wheel', 'be', 'full', 'farm', 'de', 'coast', 'dark', 'mill', 'sing', 'strong', 'vast', 'great', 'short', 'off', 'chant', 'proud', 'near', 'clipp', 'light', 'quick', 'dream', 'preach']
+49
+\b(\w+)\b.*\b\1\b.*\b\1er\b|\b(\w+)er\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1er\b.*\b\1\b
+[]
+0

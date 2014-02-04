@@ -1,0 +1,11 @@
+
+es
+\b(\w+)\b.*\b\1es\b|\b(\w+)es\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1es\b|\b(\w+)es\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1es\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1es\b|\b(\w+)es\b.*\b\2\b
+['and', 'do', 'them', 'hero', 'kiss', 'ioy', 'on', 'pass', 'worm', 'rush', 'day', 'to', 'vow', 'know', 'branch', 'loss', 'not', 'shadow', 'go', 'witness', 'brush']
+21
+\b(\w+)\b.*\b\1\b.*\b\1es\b|\b(\w+)es\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1es\b.*\b\1\b
+['do', 'them', 'on', 'pass']
+4

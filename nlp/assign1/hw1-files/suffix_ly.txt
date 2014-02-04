@@ -1,0 +1,11 @@
+
+ly
+\b(\w+)\b.*\b\1ly\b|\b(\w+)ly\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ly\b|\b(\w+)ly\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ly\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ly\b|\b(\w+)ly\b.*\b\2\b
+['fair', 'certain', 'cheefe', 'treacherous', 'ginger', 'general', 'bright', 'earth', 'fitful', 'different', 'personal', 'god', 's', 'equal', 'sweet', 'new', 'handsome', 'wicked', 'real', 'grievous', 'slight', 'safe', 'pleasant', 'fierce', 'one', 'extreme', 'on', 'great', 'heaven', 'according', 'near', 'sane', 'hopeless', 'wild']
+34
+\b(\w+)\b.*\b\1\b.*\b\1ly\b|\b(\w+)ly\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ly\b.*\b\1\b
+['on']
+1

@@ -1,0 +1,11 @@
+
+ed
+\b(\w+)\b.*\b\1ed\b|\b(\w+)ed\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ed\b|\b(\w+)ed\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ed\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ed\b|\b(\w+)ed\b.*\b\2\b
+['help', 'trespass', 'kill', 'poison', 'follow', 'fear', 'suffer', 'toast', 'thank', 'hint', 'pray', 'scold', 'arrest', 'shout', 'wood', 'kick', 'return', 'watch', 'dart', 'interview', 'abound', 'kiss', 'govern', 'press', 'affect', 'possess', 'bless', 'heed', 'hasten', 'laugh', 'afflict', 'fish', 'crown', 'back', 'shew', 'expect', 'pass', 'happen', 'wander', 'sail', 'melt', 'suspect', 'wield', 'obey', 'joy', 'burn', 'deliver', 'waif', 'water', 'devour', 'murmur', 'tempt', 'ask', 'reproach', 'wait', 'last', 'chant', 'screech', 'turn', 'leaven', 'blind', 'depart', 'spoil', 'render', 'visit', 'float', 'number', 'walk', 'wash', 'sow', 'ring', 'open', 'select', 'guess', 'to', 'stretch', 'question', 'long', 'breath', 'call', 'listen', 'offer', 'heal', 'reign', 'thatch', 'minister', 'he', 'sound', 'pull', 'join', 'look', 'fold', 'wish', 'work', 'us', 'act', 'light', 'exist', 'fetch', 'whisper', 'graff', 'lust', 'vow', 'torment', 'want', 'need', 'seem', 'fill', 'screw', 'not', 'comfort', 'wound', 'delay', 'labour', 'build', 'reject', 'answer', 'destroy', 'smell', 'roll', 'bleat', 'plant', 'defeat', 'rain', 'wrong', 'blood', 'pooh', 'clasp', 'appoint', 'land', 'remember', 'dream', 'alarm', 'gather', 'revolt', 'command', 'toil', 'yell', 'reward', 'salt', 'talk', 'know']
+142
+\b(\w+)\b.*\b\1\b.*\b\1ed\b|\b(\w+)ed\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ed\b.*\b\1\b
+['sail', 'remember']
+2

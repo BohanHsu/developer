@@ -1,0 +1,11 @@
+y
+ier
+\b(\w+)y\b.*\b\1ier\b|\b(\w+)ier\b.*\b\2y\b
+\b(\w+)y\b.*\b\1y\b.*\b\1ier\b|\b(\w+)ier\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1ier\b.*\b\1y\b
+world occur at least once
+\b(\w+)y\b.*\b\1ier\b|\b(\w+)ier\b.*\b\2y\b
+['mighty', 'goodly', 'happy']
+3
+\b(\w+)y\b.*\b\1y\b.*\b\1ier\b|\b(\w+)ier\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1ier\b.*\b\1y\b
+[]
+0

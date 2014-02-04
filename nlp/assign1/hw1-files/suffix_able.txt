@@ -1,0 +1,11 @@
+
+able
+\b(\w+)\b.*\b\1able\b|\b(\w+)able\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1able\b|\b(\w+)able\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1able\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1able\b|\b(\w+)able\b.*\b\2\b
+['enjoy', 'profit', 'honour', 's', 'reason', 't']
+6
+\b(\w+)\b.*\b\1\b.*\b\1able\b|\b(\w+)able\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1able\b.*\b\1\b
+[]
+0

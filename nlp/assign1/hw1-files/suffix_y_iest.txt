@@ -1,0 +1,11 @@
+y
+iest
+\b(\w+)y\b.*\b\1iest\b|\b(\w+)iest\b.*\b\2y\b
+\b(\w+)y\b.*\b\1y\b.*\b\1iest\b|\b(\w+)iest\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1iest\b.*\b\1y\b
+world occur at least once
+\b(\w+)y\b.*\b\1iest\b|\b(\w+)iest\b.*\b\2y\b
+['silly', 'fishy', 'weary']
+3
+\b(\w+)y\b.*\b\1y\b.*\b\1iest\b|\b(\w+)iest\b.*\b\1y\b.*\b\1y\b|\b(\w+)y\b.*\b\1iest\b.*\b\1y\b
+[]
+0

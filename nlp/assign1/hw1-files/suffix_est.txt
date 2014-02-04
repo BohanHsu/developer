@@ -1,0 +1,11 @@
+
+est
+\b(\w+)\b.*\b\1est\b|\b(\w+)est\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1est\b|\b(\w+)est\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1est\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1est\b|\b(\w+)est\b.*\b\2\b
+['fair', 'high', 'heard', 'bright', 'vow', 'sleep', 'go', 'seek', 'nigh', 'for', 'should', 'crack', 'wicked', 'do', 'bold', 'gay', 'may', 'shallow', 'deliver', 'kind', 'know', 'ask', 'great', 'short', 'say', 'mean']
+26
+\b(\w+)\b.*\b\1\b.*\b\1est\b|\b(\w+)est\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1est\b.*\b\1\b
+['for', 'crack']
+2

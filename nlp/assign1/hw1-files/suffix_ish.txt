@@ -1,0 +1,11 @@
+
+ish
+\b(\w+)\b.*\b\1ish\b|\b(\w+)ish\b.*\b\2\b
+\b(\w+)\b.*\b\1\b.*\b\1ish\b|\b(\w+)ish\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ish\b.*\b\1\b
+world occur at least once
+\b(\w+)\b.*\b\1ish\b|\b(\w+)ish\b.*\b\2\b
+['d', 'child']
+2
+\b(\w+)\b.*\b\1\b.*\b\1ish\b|\b(\w+)ish\b.*\b\1\b.*\b\1\b|\b(\w+)\b.*\b\1ish\b.*\b\1\b
+[]
+0
