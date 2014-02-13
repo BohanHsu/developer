@@ -1,0 +1,22 @@
+package heap;
+
+import graph.Node;
+
+import java.util.ArrayList;
+
+public class NaryTree {
+	private int n;
+	private ArrayList<Entry> array = null;
+	
+	public NaryTree(int n) {
+		super();
+		this.n = n;
+	}
+	
+	public void makeQueue(ArrayList<Entry> list){
+		this.array = new 
+		for (Entry entry : list) {
+			
+		}
+	}
+}

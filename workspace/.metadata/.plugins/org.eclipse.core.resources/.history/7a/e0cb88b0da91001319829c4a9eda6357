@@ -1,0 +1,11 @@
+package comparator;
+
+import graph.Node;
+
+import java.util.Comparator;
+
+public class NodeIdComp implements Comparator<Node> {
+
+	
+	
+}

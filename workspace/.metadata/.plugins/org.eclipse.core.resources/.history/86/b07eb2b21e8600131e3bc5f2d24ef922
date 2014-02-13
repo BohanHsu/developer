@@ -1,8 +1,0 @@
-package algo;
-
-public class Graph {
-	private boolean isDirected = false;
-	public Graph() {
-	}
-
-}

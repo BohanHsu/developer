@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="javax.net.ssl.SSLEngineResult.Status"/>
 <fullyQualifiedTypeName name="net.unto.twitter.Api"/>
 <fullyQualifiedTypeName name="net.unto.twitter.TwitterProtos.Status"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="twitter4j.Status"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -15,6 +14,18 @@
 <fullyQualifiedTypeName name="twitter4j.GeoLocation"/>
 <fullyQualifiedTypeName name="twitter4j.ResponseList"/>
 <fullyQualifiedTypeName name="twitter4j.Place"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="comparator.PostTimeCom"/>
+<fullyQualifiedTypeName name="graph.Edge"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="graph.Graph"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="graph.Node"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="comparator.NodeIdComp"/>
+<fullyQualifiedTypeName name="comparator.IdCom"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

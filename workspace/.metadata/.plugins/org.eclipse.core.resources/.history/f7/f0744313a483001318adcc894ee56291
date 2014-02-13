@@ -1,7 +1,0 @@
-package test;
-
-public class JavaTwitter {
-	public static void main(String[] args) {
-		
-	}
-}
