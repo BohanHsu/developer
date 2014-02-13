@@ -1,0 +1,60 @@
+package graph;
+
+import heap.Entry;
+import heap.NaryTree;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+public class Dijkstra {
+	private Graph g = null;
+	HashMap<Integer, Node> v = null;
+	ArrayList<Edge> e = null;
+	NaryTree nt = null;
+
+	public Dijkstra(Graph g, NaryTree nt) {
+		super();
+		this.g = g;
+		this.e = g.getE();
+		this.v = g.getV();
+		this.nt = nt;
+	}
+
+	public void dijkstra(int source) {
+		HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
+		HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
+		ArrayList<Integer> vs = new ArrayList<Integer>();
+		for (Integer i : v.keySet()) {
+			vs.add(i);
+		}
+		Collections.sort(vs);
+		ArrayList<Entry> eArray = new ArrayList<Entry>();
+		for (Integer i : vs) {
+			Entry e = null;
+			Node n = null;
+			n = new Node(i);
+			if (i == source) {
+				e = new Entry(n, 0, false);
+				dist.put(i, null);
+			} else {
+				e = new Entry(n, 0, true);
+				dist.put(i, null);
+			}
+			eArray.add(e);
+			prev.put(i, null);
+		}
+		this.nt.makeQueue(eArray);
+
+		while (!nt.isEmpty()) {
+			int id = nt.deleteMostPriority().getKey().getId();
+			ArrayList<Edge> edges = g.edgeFromVertex(id);
+			
+			for (Edge edge : edges) {
+				int u = edge.getTgt();
+				dist 
+			}
+		}
+	}
+
+}

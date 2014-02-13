@@ -1,0 +1,34 @@
+package graph;
+
+import heap.NaryTree;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+public class Dijkstra {
+	private Graph g = null;
+	HashMap<Integer, Node> v = null;
+	ArrayList<Edge> e = null;
+	NaryTree nt = null;
+	public Dijkstra(Graph g, NaryTree nt) {
+		super();
+		this.g = g;
+		this.e = g.getE();
+		this.v = g.getV();
+		this.nt = nt;
+	}
+
+	public void dijkstra(int soucre) {
+		HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
+		HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
+		ArrayList<Integer> vs = new ArrayList<Integer>();
+		for(Integer i : v.keySet()){
+			vs.add(i);
+		}
+		Collections.sort(vs);
+		for 
+		
+	}
+
+}

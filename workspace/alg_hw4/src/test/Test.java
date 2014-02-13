@@ -2,6 +2,7 @@ package test;
 
 import graph.Node;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 public class Test {
@@ -13,5 +14,8 @@ public class Test {
 		n.setId(2);
 		n = hm.get(1);
 		System.out.println(n.getId());
+		
+		DecimalFormat df = new DecimalFormat("#.#");
+		System.out.println(df.format(21312.324234));
 	}
 }

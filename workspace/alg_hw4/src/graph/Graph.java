@@ -1,5 +1,6 @@
 package graph;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import comparator.NodeIdComp;
 import comparator.PostTimeCom;
 
 public class Graph {
+	private DecimalFormat df = new DecimalFormat("#.#");
 	private HashMap<Integer, Node> v = null;
 	private ArrayList<Edge> e = null;
 	private int clock = 0;
@@ -43,7 +45,7 @@ public class Graph {
 		return e;
 	}
 
-	private ArrayList<Edge> edgeFromVertex(int id) {
+	public ArrayList<Edge> edgeFromVertex(int id) {
 		ArrayList<Edge> res = new ArrayList<Edge>();
 		for (Edge edge : this.e) {
 			if (edge.getSrc() == id) {
@@ -51,7 +53,6 @@ public class Graph {
 			}
 		}
 		Collections.sort(res, new IdCom());
-		// System.out.println(res);
 		return res;
 	}
 
@@ -62,7 +63,6 @@ public class Graph {
 
 	private void explore(int vertex) {
 		Node n = v.get(vertex);
-		// System.out.println(this.clock);
 		n.setPreVisit(this.clock);
 		this.clock++;
 		for (Edge e : edgeFromVertex(vertex)) {
@@ -72,7 +72,6 @@ public class Graph {
 			}
 		}
 
-		// System.out.println(this.clock);
 		n.setPostVisit(this.clock);
 		this.clock++;
 
@@ -91,6 +90,13 @@ public class Graph {
 		ArrayList<Node> topoList = topologicalSort();
 		HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
 		HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
+		
+		ArrayList<Integer> ids = new ArrayList<Integer>();
+		for(Integer id : v.keySet()){
+			ids.add(id);
+		}
+		Collections.sort(ids);
+		
 		for (Node node : topoList) {
 			dist.put(node.getId(), Double.MAX_VALUE);
 			prev.put(node.getId(), null);
@@ -119,6 +125,22 @@ public class Graph {
 							+ tgtwei);
 				}
 			}
+			
+			
+			
+			// show the vertex
+			for (Integer id : ids){
+				System.out.print("\t" + id);
+			}
+			System.out.println();
+			for (Integer id : ids){
+				System.out.print("\t" + df.format(dist.get(id)));
+			}
+			System.out.println();
+			for (Integer id : ids){
+				System.out.print("\t" + prev.get(id));
+			}
+			System.out.println();
 		}
 	}
 
@@ -156,28 +178,19 @@ public class Graph {
 			for (Integer id : withDist){
 				edges.addAll(edgeFromVertex(id));
 			}
-//			ArrayList<Edge> edges = this.e;
 			Collections.sort(edges, new IdCom());
 
 			for (Edge edge : edges) {
-				// System.out.println("("+edge.getSrc()+","+edge.getTgt()+") in E");
 				int src = edge.getSrc();
 				int tgt = edge.getTgt();
 				double wei = edge.getWeight();
 				double srcwei = dist.get(src);
 				double tgtwei = dist.get(tgt);
 				if (srcwei + wei < tgtwei) {
-					// System.out.println("\t" + srcwei + "+" + wei + " < " +
-					// tgtwei);
-					// System.out.println("\t\t" + tgt + ".dist <- " + (srcwei +
-					// wei));
-					// System.out.println("\t\t" + tgt + ".prev <- " + src);
 					dist.put(tgt, srcwei + wei);
 					prev.put(tgt, src);
 					withDist.add(tgt);
 				} else {
-					// System.out.println("\t" + srcwei + "+" + wei + " >= " +
-					// tgtwei);
 				}
 			}
 			System.out.print("at iteration: " + i);
