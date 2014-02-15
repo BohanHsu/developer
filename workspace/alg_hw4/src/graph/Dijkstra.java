@@ -87,31 +87,105 @@ public class Dijkstra {
 
 		int count = 0;
 		while (!nt.isEmpty()) {
-			System.out.println("E is not empty");
+			System.out.println();
+			System.out.println("\tE is not empty");
 			int u = nt.deleteMostPriority().getKey().getId();
-			System.out.println("\t" + u + " <- deletemin()");
+			System.out.println("\t\tdeletemin()");
+			System.out.println("//\t\tIt will delete the vertex with the smallest key(distance) = "+df.format(dist.get(u))+" from H which is vertex " + u );
+			System.out.println("\t\tu <- " + u);
 			nt.printTree();
+			
+			System.out.println("\t\tfor every adjacent edge ("+u+", v) in E");
+
+			
 			ArrayList<Edge> edges = g.edgeFromVertex(u);
 			for (Edge edge : edges) {
 				int v = edge.getTgt();
-				System.out.println("\t(" + u + "," + v + ") is in E");
+				System.out.println("\t\t(" + u + "," + v + ") is in E");
 				Double newLength = add(dist.get(u), edge.getWeight());
 				if (cmp(dist.get(v), newLength) > 0) {
 					dist.put(v, newLength);
 					prev.put(v, u);
 					nt.update(this.v.get(v), newLength);
-					System.out.println("\t"+ v + ".dist > " + u + ".dist + length("
+					System.out.println("\t\t"+ v + ".dist > " + u + ".dist + length("
 							+ u + "," + v + ")");
-					System.out.println("\t\t" + v + ".dist <- " + df.format(newLength));
-					System.out.println("\t\t" + v + ".prev <- " + u);
-					System.out.println("\t\tQ.decrease-key("+v+")");
+					System.out.println("\t\tupdate("+v+","+u+")");
+					System.out.println("\t\t\t" + v + ".dist <- " + df.format(newLength));
+					System.out.println("\t\t\t" + v + ".prev <- " + u);
+					System.out.println("\t\t\tQ.decrease-key("+v+")");
 					nt.printTree();
 				}else{
-					System.out.println("\t"+ v + ".dist < " + u + ".dist + length("
+					System.out.println("\t\t"+ v + ".dist < " + u + ".dist + length("
 							+ u + "," + v + ")");
 				}
 			}
 		}
 	}
 
+		public void dijkstraNoOutput(int source) {
+			HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
+			HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
+			ArrayList<Integer> vs = new ArrayList<Integer>();
+			for (Integer i : v.keySet()) {
+				vs.add(i);
+			}
+			Collections.sort(vs);
+			ArrayList<Entry> eArray = new ArrayList<Entry>();
+			for (Integer i : vs) {
+				Entry e = null;
+				Node n = null;
+				n = this.v.get(i);
+				if (i == source) {
+					e = new Entry(n, (double) 0);
+					dist.put(i, (double) 0);
+				} else {
+					e = new Entry(n, null);
+					dist.put(i, null);
+				}
+				eArray.add(e);
+				prev.put(i, null);
+			}
+			this.nt.makeQueue(eArray);
+			System.out.println("make-queue");
+			nt.printTree();
+
+			int count = 0;
+			while (!nt.isEmpty()) {
+//				System.out.println();
+//				System.out.println("\tE is not empty");
+				int u = nt.deleteMostPriority().getKey().getId();
+//				System.out.println("\t\tdeletemin()");
+//				System.out.println("//\t\tIt will delete the vertex with the smallest key(distance) = "+df.format(dist.get(u))+" from H which is vertex " + u );
+//				System.out.println("\t\tu <- " + u);
+				System.out.println("remove("+u+")");
+				nt.printTree();
+				
+//				System.out.println("\t\tfor every adjacent edge ("+u+", v) in E");
+
+				
+				ArrayList<Edge> edges = g.edgeFromVertex(u);
+				for (Edge edge : edges) {
+					int v = edge.getTgt();
+//					System.out.println("\t\t(" + u + "," + v + ") is in E");
+					Double newLength = add(dist.get(u), edge.getWeight());
+					if (cmp(dist.get(v), newLength) > 0) {
+						dist.put(v, newLength);
+						prev.put(v, u);
+						nt.update(this.v.get(v), newLength);
+//						System.out.println("\t\t"+ v + ".dist > " + u + ".dist + length("
+//								+ u + "," + v + ")");
+//						System.out.println("\t\tupdate("+v+","+u+")");
+//						System.out.println("\t\t\t" + v + ".dist <- " + df.format(newLength));
+//						System.out.println("\t\t\t" + v + ".prev <- " + u);
+//						System.out.println("\t\t\tQ.decrease-key("+v+")");
+						System.out.println("update(" + u + "," + v + ")");
+						nt.printTree();
+					}else{
+//						System.out.println("\t\t"+ v + ".dist < " + u + ".dist + length("
+//								+ u + "," + v + ")");
+					}
+				}
+			}
+
+	}
 }

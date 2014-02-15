@@ -34,6 +34,10 @@ public class Q1 {
 		Dijkstra dijk = new Dijkstra(g, bt);
 		
 		dijk.dijkstra(6);
+		
+		System.out.println("==============================================");
+		
+		dijk.dijkstraNoOutput(6);
 	}
 }
 

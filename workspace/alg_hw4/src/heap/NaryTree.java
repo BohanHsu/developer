@@ -42,7 +42,7 @@ public class NaryTree {
 
 	private int cmp(Entry e1, Entry e2) {
 		this.count ++;
-//		System.out.println("comparing: "+e1.getKey().getId()+" v.s. "+e2.getKey().getId());
+		System.out.println("comparing: "+e1.getKey().getId()+" v.s. "+e2.getKey().getId());
 		boolean e1Inf = e1.getValue() == null;
 		boolean e2Inf = e2.getValue() == null;
 
@@ -208,7 +208,7 @@ public class NaryTree {
 	
 	public void printTree() {
 		DecimalFormat df = new DecimalFormat("#.#");
-		System.out.print("//\t");
+		System.out.print("//\tH = ");
 		for (Entry e : this.array) {
 			if (e.getValue()==null) {
 				System.out

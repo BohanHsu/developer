@@ -33,6 +33,7 @@ public class Q2 {
 		
 		Dijkstra dijk = new Dijkstra(g, bt);
 		
-		dijk.dijkstra(6);
+//		dijk.dijkstra(6);
+		dijk.dijkstraNoOutput(6);
 	}
 }
