@@ -4,16 +4,16 @@
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
 	<section name="SourceActionDialog.constructors">
-		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="FinalModifier"/>
 	</section>
 	<section name="DialogBounds_GenerateToStringDialog">
 		<item value="511" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="641" key="DIALOG_HEIGHT"/>
 		<item value="465" key="DIALOG_X_ORIGIN"/>
+		<item value="641" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
@@ -25,8 +25,8 @@
 	<section name="DialogBounds_SuperInterfaceSelectionDialog">
 		<item value="356" key="DIALOG_WIDTH"/>
 		<item value="18" key="DIALOG_Y_ORIGIN"/>
-		<item value="456" key="DIALOG_HEIGHT"/>
 		<item value="90" key="DIALOG_X_ORIGIN"/>
+		<item value="456" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="quick_assist_proposal_size">
@@ -34,14 +34,14 @@
 	<section name="SourceActionDialog.methods">
 		<item value="false" key="SkipNull"/>
 		<item value="10" key="LimitValue"/>
-		<item value="0" key="ToStringTemplateSelected"/>
-		<item value="0" key="StringStyle"/>
-		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="0" key="StringStyle"/>
+		<item value="0" key="ToStringTemplateSelected"/>
 		<item value="false" key="LimitElements"/>
 		<item value="false" key="SynchronizedModifier"/>
-		<item value="true" key="IgnoreDefault"/>
 		<item value="false" key="FinalModifier"/>
+		<item value="true" key="IgnoreDefault"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
 		<item value="true" key="ShowStatusLine"/>
@@ -64,8 +64,8 @@
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="529" key="DIALOG_WIDTH"/>
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
-		<item value="456" key="DIALOG_X_ORIGIN"/>
 		<item value="695" key="DIALOG_HEIGHT"/>
+		<item value="456" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="NewClassWizardPage">
@@ -79,8 +79,8 @@
 	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="520" key="DIALOG_WIDTH"/>
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
-		<item value="462" key="DIALOG_X_ORIGIN"/>
 		<item value="677" key="DIALOG_HEIGHT"/>
+		<item value="462" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>
