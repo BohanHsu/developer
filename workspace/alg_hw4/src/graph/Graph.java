@@ -11,6 +11,8 @@ import comparator.EdgeSTComp;
 import comparator.IdCom;
 import comparator.NodeIdComp;
 import comparator.PostTimeCom;
+import excel.Table;
+import excel.Tables;
 
 public class Graph {
 	private DecimalFormat df = new DecimalFormat("#.#");
@@ -276,11 +278,18 @@ public class Graph {
 	}
 
 	public void moore2(int vertex) {
+
+		Tables tables = new Tables(null);
+		
+		
 		ArrayList<Node> list = new ArrayList<Node>();
 		for (Integer id : v.keySet()) {
 			list.add(new Node(id));
 		}
+
 		Collections.sort(list, new NodeIdComp());
+
+		Table iterationTable = new Table("final", list);
 
 		HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
 		HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
@@ -313,11 +322,15 @@ public class Graph {
 		}
 		System.out.println("\n");
 		//
+		//put to excel table
+		iterationTable.addColumn("ite: 0",dist, prev);
+		
+		//
 
 		ArrayList<Edge> edges = this.e;
 		Collections.sort(edges, new EdgeSTComp());
 		for (int i = 1; i < list.size(); i++) {
-
+			Table t = new Table("iteration " + 1, list);
 			for (Edge edge : edges) {
 
 				int src = edge.getSrc();
@@ -333,6 +346,7 @@ public class Graph {
 				} else {
 				}
 
+				//
 				System.out.print("-----id:");
 				for (Node node : list) {
 					System.out.print("\t" + node.getId());
@@ -352,6 +366,9 @@ public class Graph {
 					System.out.print("\t" + prev.get(node.getId()));
 				}
 				System.out.println("\n");
+				//
+				t.addColumn("(" + src + "," + tgt + ")",dist, prev);
+				//
 
 			}
 
@@ -377,7 +394,12 @@ public class Graph {
 			}
 			System.out.println("\n");
 			// end
+			iterationTable.addColumn("ite: " + 1, dist, prev);
+			//
+			
+			tables.addTable(t);
 		}
+		tables.addTable(iterationTable);
 
 	}
 }

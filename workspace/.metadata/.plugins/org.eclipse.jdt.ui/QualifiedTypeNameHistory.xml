@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="net.unto.twitter.TwitterProtos.Status"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="twitter4j.Status"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="twitter4j.Query"/>
 <fullyQualifiedTypeName name="twitter4j.QueryResult"/>
 <fullyQualifiedTypeName name="twitter4j.Twitter"/>
@@ -22,7 +21,6 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="graph.Node"/>
 <fullyQualifiedTypeName name="heap.Entry"/>
 <fullyQualifiedTypeName name="graph.Dijkstra"/>
 <fullyQualifiedTypeName name="heap.NaryTree"/>
@@ -32,8 +30,15 @@
 <fullyQualifiedTypeName name="graph.Edge"/>
 <fullyQualifiedTypeName name="comparator.EdgeSTComp"/>
 <fullyQualifiedTypeName name="addBinary.Solution"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="excel.Tables"/>
+<fullyQualifiedTypeName name="graph.Node"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="excel.Table"/>
+<fullyQualifiedTypeName name="jxl.write.WritableWorkbook"/>
+<fullyQualifiedTypeName name="jxl.Workbook"/>
+<fullyQualifiedTypeName name="jxl.read.biff.File"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>
