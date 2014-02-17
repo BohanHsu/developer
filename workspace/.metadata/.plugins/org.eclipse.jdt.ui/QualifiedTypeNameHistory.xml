@@ -21,7 +21,6 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="heap.Entry"/>
 <fullyQualifiedTypeName name="graph.Dijkstra"/>
 <fullyQualifiedTypeName name="heap.NaryTree"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -42,4 +41,8 @@
 <fullyQualifiedTypeName name="jxl.read.biff.File"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="evaluateReversePolishNotation.Solution"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="heap.Entry"/>
+<fullyQualifiedTypeName name="maxPointsonaLine.Point"/>
+<fullyQualifiedTypeName name="maxPointsonaLine.Solution"/>
 </qualifiedTypeNameHistroy>

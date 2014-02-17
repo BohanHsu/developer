@@ -1,0 +1,5 @@
+package heap;
+
+public abstract class Key implements Comparable<Key>{
+	public String getId();
+}

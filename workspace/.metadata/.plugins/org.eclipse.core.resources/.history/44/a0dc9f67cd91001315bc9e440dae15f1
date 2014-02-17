@@ -1,7 +1,0 @@
-package comparator;
-
-import java.util.Comparator;
-
-public class PostTimeCom implements Comparator<T> {
-
-}

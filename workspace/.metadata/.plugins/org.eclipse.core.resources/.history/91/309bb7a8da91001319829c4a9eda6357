@@ -1,9 +1,0 @@
-package comparator;
-
-import java.util.Comparator;
-
-public class NodeIdComp implements Comparator<Node> {
-
-	
-	
-}

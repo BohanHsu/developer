@@ -23,6 +23,7 @@ public class Q3 {
 		
 		Graph g = new Graph(sa);
 //		g.moore(3);
-		g.moore2(3);
+//		g.moore2(3);
+		g.moore3(3);
 	}
 }

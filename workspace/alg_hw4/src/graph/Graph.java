@@ -401,4 +401,150 @@ public class Graph {
 //		tables.addTable(iterationTable);
 
 	}
+	
+	
+	public void moore3(int vertex) {
+		
+		ArrayList<Node> list = new ArrayList<Node>();
+		for (Integer id : v.keySet()) {
+			list.add(new Node(id));
+		}
+
+		Collections.sort(list, new NodeIdComp());
+
+		HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
+		HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
+
+		for (Node node : list) {
+			dist.put(node.getId(), null);
+			prev.put(node.getId(), null);
+		}
+		dist.put(vertex, (double) 0);
+
+		//
+		/*
+		System.out.println("at iteration: " + 0);
+		System.out.print("id:");
+		for (Node node : list) {
+			System.out.print("\t" + node.getId());
+		}
+		System.out.println();
+		System.out.print("dis:");
+		for (Node node : list) {
+			if (dist.get(node.getId()) == null) {
+				System.out.print("\tinf");
+			} else {
+				System.out.print("\t" + dist.get(node.getId()));
+			}
+		}
+		System.out.println();
+		System.out.print("pre:");
+		for (Node node : list) {
+			System.out.print("\t" + prev.get(node.getId()));
+		}
+		System.out.println("\n");
+		*/
+		//
+
+		ArrayList<Edge> edges = this.e;
+		Collections.sort(edges, new EdgeSTComp());
+		for (int i = 1; i < list.size(); i++) {
+			System.out.println();
+			System.out.println("iteration " + i);
+			for (Edge edge : edges) {
+
+				int src = edge.getSrc();
+				int tgt = edge.getTgt();
+				/*
+				System.out.println("----edge: (" + src + "," + tgt + ")");
+				*/
+				Double wei = edge.getWeight();
+				Double srcwei = dist.get(src);
+				Double tgtwei = dist.get(tgt);
+
+				if (cmp(add(srcwei, wei), tgtwei) < 0) {
+					dist.put(tgt, srcwei + wei);
+					prev.put(tgt, src);
+				} else {
+				}
+
+				//
+				/*
+				System.out.print("-----id:");
+				for (Node node : list) {
+					System.out.print("\t" + node.getId());
+				}
+				System.out.println();
+				System.out.print("----dis:");
+				for (Node node : list) {
+					if (dist.get(node.getId()) == null) {
+						System.out.print("\tinf");
+					} else {
+						System.out.print("\t" + dist.get(node.getId()));
+					}
+				}
+				System.out.println();
+				System.out.print("----pre:");
+				for (Node node : list) {
+					System.out.print("\t" + prev.get(node.getId()));
+				}
+				System.out.println("\n");
+				*/
+				
+				System.out.println("");
+				System.out.println("(" + src + "," + tgt + ")");
+				System.out.println("dist\tprev");
+				for (Node node : list) {
+					if (dist.get(node.getId()) == null) {
+						System.out.print("inf");
+					} else {
+						System.out.print(dist.get(node.getId()));
+					}
+					System.out.println("\t" + prev.get(node.getId()));
+				}
+				//
+
+			}
+
+			// show the vertices
+			/*
+			System.out.println("at iteration: " + i);
+			System.out.print("id:");
+			for (Node node : list) {
+				System.out.print("\t" + node.getId());
+			}
+			System.out.println();
+			System.out.print("dis:");
+			for (Node node : list) {
+				if (dist.get(node.getId()) == null) {
+					System.out.print("\tinf");
+				} else {
+					System.out.print("\t" + dist.get(node.getId()));
+				}
+			}
+			System.out.println();
+			System.out.print("pre:");
+			for (Node node : list) {
+				System.out.print("\t" + prev.get(node.getId()));
+			}
+			System.out.println("\n");
+			*/
+			/*
+			System.out.println("+++++");
+			System.out.println(i);
+			System.out.println("dist\tprev");
+			for (Node node : list) {
+				if (dist.get(node.getId()) == null) {
+					System.out.print("inf");
+				} else {
+					System.out.print(dist.get(node.getId()));
+				}
+				System.out.println("\t" + prev.get(node.getId()));
+			}
+			*/
+			//
+			
+		}
+
+	}
 }

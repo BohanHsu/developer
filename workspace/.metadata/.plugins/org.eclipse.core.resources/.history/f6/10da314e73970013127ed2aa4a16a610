@@ -1,0 +1,87 @@
+package maxPointsonaLine;
+
+// * Definition for a point.
+class Point {
+	int x;
+	int y;
+
+	Point() {
+		x = 0;
+		y = 0;
+	}
+
+	Point(int a, int b) {
+		x = a;
+		y = b;
+	}
+}
+
+public class Solution {
+    public int maxPoints(Point[] points) {
+        int max = 0;
+        int len = points.length;
+        for (int i = 0; i < len; i++){
+            for (int j = i+1; j < len; j++){
+                int count = 2;
+                for (int k = j+1; k < len; k++){
+                    if(inSameLine(points[i],points[j],points[k])){
+                        count++;
+                    }
+                }
+                if (count > max){
+                    max = count;
+                }
+            }
+        }
+        return max;
+    }
+    
+    /**
+     * Point * 3 -> boolean
+     * return true iff the third point is in the same line with the first two points,
+     * otherwise return false.
+    */
+    private boolean inSameLine(Point a, Point b, Point c){
+        int xa = a.x;
+        int xb = b.x;
+        int xc = c.x;
+        int ya = a.y;
+        int yb = b.y;
+        int yc = c.y;
+        
+        if (xa == xb && xb == xc){
+            return true;
+        }else if (xa == xb && xb != xc){
+            return false;
+        }
+        
+        double k = (double)(yb - ya) / (double)(xb - xa);
+        double bb = (double)ya - k * (double)xa;
+        
+        return yc == k * xc + bb;
+    }
+    
+    private boolean inSameLine(Point a, Point b, Point c){
+        int xa = a.x;
+        int xb = b.x;
+        int xc = c.x;
+        int ya = a.y;
+        int yb = b.y;
+        int yc = c.y;
+        
+        if((xa == xb && ya == yb) || (xa == xc && ya == yc) || (xc == xb && yc == yb)){
+            return true;
+        }
+        
+        if (xa == xb && xb == xc){
+            return true;
+        }else if (xa == xb && xb != xc){
+            return false;
+        }
+        
+        double k = (double)(yb - ya) / (double)(xb - xa);
+        double bb = (double)ya - k * (double)xa;
+        
+        return yc == k * xc + bb;
+    }
+}
