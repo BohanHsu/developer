@@ -1,0 +1,126 @@
+import java.util.LinkedList;
+import java.util.HashSet;
+
+//  Definition for a point.
+class Point {
+	int x;
+	int y;
+
+	Point() {
+		x = 0;
+		y = 0;
+	}
+
+	Point(int a, int b) {
+		x = a;
+		y = b;
+	}
+}
+
+public class Solution {
+	public int maxPoints(Point[] points) {
+        LinkedList<Double> slopes = new LinkedList<Double>();
+        LinkedList<Double> shifts = new LinkedList<Double>();
+        // LinkedList<Integer> vertical = new LinkedList<Integer>();
+        HashSet<Integer> vertical = new HashSet<Integer>();
+        int len = points.length;        
+        
+        for (int i = 0; i < len; i++){
+            for (int j = i + 1; j < len ; j++){
+                if(!isOverlaped(points[i],points[j])){
+                    // not overlaped
+                    if(isVertical(points[i], points[j])){
+                        // not vertical
+                        Double slope = getSlope(points[i], points[j]);
+                        Double shift = getShift(points[i], points[j]);
+                        slopes.add(slope);
+                        shifts.add(shift);
+                    }
+                }else{
+                    // overlaped
+                }
+            }
+            vertical.add(points[i].x);
+        }
+        
+        int size = slopes.size();
+        int max = 0;
+        
+        for (int i = 0; i< size; i++){
+            int count = 0;
+            double k = slopes.get(i);
+            double b = shifts.get(i);
+            for (int j = 0; j < len; j++){
+                if (isInLine(points[j], k, b)){
+                    count ++;
+                }
+            }
+            if(count > max){
+                max = count;
+            }
+        }
+        
+        for (Integer i : vertical){
+            int count = 0;
+            for (int k = 0; k < len; k++){
+                if (points[k].x == i){
+                    count++; 
+                }
+            }
+            if (count > max){
+                max = count;
+            }
+        } 
+    }
+
+	/**
+	 * Point, double * 2 -> boolean p : a point k : slope of a line b : shift of
+	 * a line return : true iff the given point is in the line, otherwise return
+	 * false
+	 */
+	private boolean isInLine(Point p, double k, double b) {
+		return (double) p.y == (double) p.x * k + b;
+	}
+
+	/**
+	 * Point * 2 -> boolean return : true iff the given two points formed a
+	 * vertical line
+	 */
+	private boolean isVertical(Point a, Point b) {
+		if (a.x == b.x) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Point * 2 -> boolean return : true iff the given two points overlaped,
+	 * otherwise return false
+	 */
+	private boolean isOverlaped(Point a, Point b) {
+		if (a.x == b.x && a.y == b.y) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Point * 2 -> double return : the slope of the line which formed by the
+	 * given two points
+	 */
+	private double getSlope(Point a, Point b) {
+		return (double) (a.y - b.y) / (double) (a.x - b.x);
+	}
+
+	/**
+	 * Point * 2 -> double return : the shift of the line which formed by the
+	 * given two points
+	 */
+	private double getShift(Point a, Point b) {
+		double k = getSlope(a, b);
+		return (double) a.y - (double) a.x * k;
+	}
+
+}

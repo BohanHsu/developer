@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="graph.Graph"/>
 <fullyQualifiedTypeName name="comparator.NodeIdComp"/>
 <fullyQualifiedTypeName name="comparator.IdCom"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="graph.Dijkstra"/>
@@ -45,4 +44,9 @@
 <fullyQualifiedTypeName name="heap.Entry"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Point"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Solution"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="maxPointsonaLine.Line"/>
+<fullyQualifiedTypeName name="insertionSortList.Solution"/>
+<fullyQualifiedTypeName name="insertionSortList.ListNode"/>
+<fullyQualifiedTypeName name="lRUCache.LRUCache"/>
 </qualifiedTypeNameHistroy>
