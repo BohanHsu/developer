@@ -33,7 +33,6 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="excel.Tables"/>
 <fullyQualifiedTypeName name="graph.Node"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="excel.Table"/>
 <fullyQualifiedTypeName name="jxl.write.WritableWorkbook"/>
 <fullyQualifiedTypeName name="jxl.Workbook"/>
@@ -49,4 +48,7 @@
 <fullyQualifiedTypeName name="insertionSortList.Solution"/>
 <fullyQualifiedTypeName name="insertionSortList.ListNode"/>
 <fullyQualifiedTypeName name="lRUCache.LRUCache"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="binaryTreePostorderTraversal.TreeNode"/>
+<fullyQualifiedTypeName name="binaryTreePostorderTraversal.Solution"/>
 </qualifiedTypeNameHistroy>
