@@ -51,4 +51,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="binaryTreePostorderTraversal.TreeNode"/>
 <fullyQualifiedTypeName name="binaryTreePostorderTraversal.Solution"/>
+<fullyQualifiedTypeName name="reorderList.Solution"/>
+<fullyQualifiedTypeName name="reorderList.ListNode"/>
 </qualifiedTypeNameHistroy>
