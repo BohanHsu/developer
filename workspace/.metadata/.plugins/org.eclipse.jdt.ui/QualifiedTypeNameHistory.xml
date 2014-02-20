@@ -30,7 +30,6 @@
 <fullyQualifiedTypeName name="addBinary.Solution"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="excel.Tables"/>
 <fullyQualifiedTypeName name="graph.Node"/>
 <fullyQualifiedTypeName name="excel.Table"/>
@@ -48,9 +47,10 @@
 <fullyQualifiedTypeName name="insertionSortList.Solution"/>
 <fullyQualifiedTypeName name="insertionSortList.ListNode"/>
 <fullyQualifiedTypeName name="lRUCache.LRUCache"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="binaryTreePostorderTraversal.TreeNode"/>
 <fullyQualifiedTypeName name="binaryTreePostorderTraversal.Solution"/>
 <fullyQualifiedTypeName name="reorderList.Solution"/>
 <fullyQualifiedTypeName name="reorderList.ListNode"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>
