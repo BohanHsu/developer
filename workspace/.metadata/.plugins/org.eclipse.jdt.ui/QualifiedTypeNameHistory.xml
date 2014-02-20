@@ -42,7 +42,6 @@
 <fullyQualifiedTypeName name="heap.Entry"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Point"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Solution"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Line"/>
 <fullyQualifiedTypeName name="insertionSortList.Solution"/>
 <fullyQualifiedTypeName name="insertionSortList.ListNode"/>
@@ -52,5 +51,11 @@
 <fullyQualifiedTypeName name="reorderList.Solution"/>
 <fullyQualifiedTypeName name="reorderList.ListNode"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="linkedListCycle.Solution"/>
+<fullyQualifiedTypeName name="linkedListCycle.ListNode"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="wordBreak.Solution"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
