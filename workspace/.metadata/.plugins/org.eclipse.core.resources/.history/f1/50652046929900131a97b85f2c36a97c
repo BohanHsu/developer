@@ -1,0 +1,68 @@
+package graph;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Graph {
+	private boolean isDirected = false;
+	
+	private HashSet<Integer> v = null;
+	private ArrayList<Edge> e = null;
+	private HashMap<Integer, Integer> root = new HashMap<Integer, Integer>();
+
+//	HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
+//	HashMap<Integer, Integer> prev = new HashMap<Integer, Integer>();
+	
+	public Graph(String[] edge) {
+		HashSet<Integer> ver = new HashSet<Integer>();
+		this.v = new HashSet<Integer>();
+		this.e = new ArrayList<Edge>();
+
+		for (String string : edge) {
+			String[] a = string.split(",");
+			int src = Integer.parseInt(a[0]);
+			int tgt = Integer.parseInt(a[1]);
+			double weight = Double.parseDouble(a[2]);
+			ver.add(src);
+			ver.add(tgt);
+			e.add(new Edge(src, tgt, weight));
+		}
+
+		this.v = ver;
+	}
+
+	public void kruskal(){
+		
+	}
+	
+	/**
+	 * union two vertex
+	 * @param x : the id of first vertex
+	 * @param y : the id of second vertex
+	 */
+	private void union(int x, int y){
+		
+	}
+	
+	/**
+	 * find parent of a vertex
+	 * @param x : id of the vertex need to find root
+	 * @return : id of the root vertex
+	 */
+	private int find(int x){
+		return 
+	}
+	
+	/**
+	 * reset the union find root of each vertex in the graph,
+	 * set the root to the vertex itself
+	 */
+	private void resetUnionFindRoot(){
+		this.root = new HashMap<Integer, Integer>();
+		for (Integer, id : this.v) {
+			
+		}
+	}
+	
+}

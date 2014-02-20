@@ -1,0 +1,12 @@
+package graph;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Graph {
+	private boolean isDirected = false;
+	
+	HashSet<Integer> v = new HashSet<Integer>();
+	HashMap<Integer, Double> dist = new HashMap<Integer, Double>();
+	
+}

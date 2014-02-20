@@ -17,5 +17,15 @@ public class Test {
 		
 		DecimalFormat df = new DecimalFormat("#.#");
 		System.out.println(df.format(21312.324234));
+		
+		
+//		Double a = 1.0;
+//		Double b = null;
+//		System.out.println(a+b);
+		
+		HashMap<Integer, Integer> h = new HashMap<Integer,Integer>();
+		h.put(0, 0);
+		int i = h.get(1);
+		System.out.println(i);
 	}
 }
