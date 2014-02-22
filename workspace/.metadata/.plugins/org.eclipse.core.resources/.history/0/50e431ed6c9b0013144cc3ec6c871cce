@@ -1,0 +1,46 @@
+package copyListwithRandomPointer;
+
+import java.util.HashMap;
+
+//  Definition for singly-linked list with a random pointer.
+class RandomListNode {
+	int label;
+	RandomListNode next, random;
+
+	RandomListNode(int x) {
+		this.label = x;
+	}
+}
+
+public class Solution {
+	public RandomListNode copyRandomList(RandomListNode head) {
+		if (head == null) {
+			return null;
+		}
+
+		HashMap<RandomListNode, RandomListNode> mapf = new HashMap<RandomListNode, RandomListNode>();
+		RandomListNode copy = null;
+		RandomListNode oldrln = head;
+		RandomListNode newrln = null;
+		RandomListNode copyTail = null;
+		while (oldrln != null) {
+			newrln = new RandomListNode(oldrln.label);
+			if (copy == null) {
+				copy = newrln;
+				copyTail = newrln;
+			} else {
+				copyTail.next = newrln;
+				copyTail = newrln;
+			}
+			mapf.add(oldrln, newrln);
+		}
+
+		oldrln = head;
+		while (oldrln != null) {
+			newrln = mapf.get(oldrln);
+			newrln.random = mapf.get(oldrln.random);
+		}
+
+		return copy;
+	}
+}
