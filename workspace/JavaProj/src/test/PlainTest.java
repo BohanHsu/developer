@@ -2,7 +2,10 @@ package test;
 
 public class PlainTest {
 	public static void main(String[] args) {
-		int a = 1 < 2 ? 3 : 4;
-		System.out.println(a);
+		String s = "123456789";
+		StringBuilder sb = new StringBuilder(s);
+		sb.insert(3, ' ');
+		String str = new String(sb);
+		System.out.println(str);
 	}
 }
