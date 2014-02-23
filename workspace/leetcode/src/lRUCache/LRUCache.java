@@ -1,6 +1,6 @@
 package lRUCache;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class LRUCache {
@@ -8,7 +8,7 @@ public class LRUCache {
     private int count;
     private boolean isFull;
     private int capacity;
-    private LinkedList<Unit> cache = null;
+    private ArrayList<Unit> cache = null;
     private int leastUsed;
     
     public LRUCache(int capacity) {
@@ -16,7 +16,7 @@ public class LRUCache {
         this.count = 0;
         this.isFull = false;
         this.capacity = capacity;
-        this.cache = new LinkedList<Unit>();
+        this.cache = new ArrayList<Unit>();
         this.leastUsed = 0;
     }
     
@@ -55,6 +55,7 @@ public class LRUCache {
             // this cache is full
             // invaild the LRU unit, and add a new one
             cache.remove(leastUsed);
+            this.leastUsed = findLeastUsedUnit();
             if (indexOf(key) == -1){
         		// this key is not present in the cache
         		cache.add(new Unit(key,value,-1));
@@ -121,8 +122,10 @@ public class LRUCache {
     	for (Unit u : this.cache) {
 			System.out.println(u);
 		}
+    	System.out.println("lu: "+this.leastUsed);
     	System.out.println();
     }
+
     
     /**
      * test
@@ -131,23 +134,16 @@ public class LRUCache {
     public static void main(String[] args) {
 		LRUCache c = new LRUCache(5);
 		c.set(1, 1);
-		c.showCache();
 		c.set(1, 1);
-		c.showCache();
 		c.set(2, 2);
 		c.set(3, 3);
 		c.set(4, 4);
 		c.set(5, 5);
-		c.showCache();
 		c.set(6, 6);
-		c.showCache();
 		int v = 0;
 		v = c.get(5);
-		System.out.println("value = " + v);
-		c.showCache();
+		v = c.get(2);
 		c.set(7, 7);
-		c.showCache();
-//		System.out.println(c.count);
 	}
 }
 

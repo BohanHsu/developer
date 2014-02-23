@@ -52,24 +52,44 @@ public class Graph {
 		// show sorted edges
 		// System.out.println(sortedEdges);
 
+		System.out.println("// after sort edges by weight:");
+		
 		for (Edge edge : sortedEdges) {
 			System.out.println("{" + edge.getSrc() + "," + edge.getTgt()
 					+ "}  " + udf.format(edge.getWeight()));
 		}
-
+		//
+		
+		//
+		System.out.println("for all v in V: ");
+		System.out.println("\tmakeset(v)");
+		
+		System.out.print("//\tX = {");
+		for (Edge edge : mst) {
+			System.out.print("{"+edge.getSrc()+","+edge.getTgt()+"} ");
+		}
+		System.out.println("}");
+		
+		System.out.print("//");
+		for (Integer i : vertices) {
+			System.out.print("\t"+i+".root = "+this.root.get(i));
+		}
+		System.out.println();
 		//
 
 		for (Edge e : sortedEdges) {
 			int u = e.getSrc();
 			int v = e.getTgt();
 
-			System.out.println("{" + u + "," + v + "}  in E");
+			System.out.println("For edge {" + u + "," + v + "} in E");
 
 			if (find(u) != find(v)) {
 				//
-				System.out.println("find(" + u + ") != find(" + v + ")");
+				System.out.println("AS (find(" + u + ") != find(" + v + "))");
 				//
 				mst.add(e);
+				
+				
 				//
 				System.out.println("add edge {" + u + "," + v + "} to X");
 				System.out.println("union(" + u + "," + v + ")");
@@ -77,9 +97,16 @@ public class Graph {
 				union(u, v);
 
 			} else {
-				System.out.println("find(" + u + ") == find(" + v + ")");
+				System.out.println("AS (find(" + u + ") == find(" + v + "))");
+				System.out.println("// Union not possible both has same subset ");
 			}
-			
+			//
+			System.out.print("//\tX = {");
+			for (Edge edge : mst) {
+				System.out.print("{"+edge.getSrc()+","+edge.getTgt()+"} ");
+			}
+			System.out.println("}");
+			//
 			//
 			System.out.print("//");
 			for (Integer i : vertices) {

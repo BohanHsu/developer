@@ -1,5 +1,6 @@
 package questions;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import graph.Edge;
@@ -7,6 +8,7 @@ import graph.Graph;
 
 public class Q1 {
 	public static void main(String[] args) {
+		DecimalFormat udf = new DecimalFormat("#.#");
 		String[] edges = new String[]{"1,3,4",
 				"1,5,8",
 				"1,6,2",
@@ -33,10 +35,15 @@ public class Q1 {
 		Graph g = new Graph(edges);
 		
 		 ArrayList<Edge> selectedEdges = g.kruskal();
-		 
+
+		 /*
 		 for (Edge edge : selectedEdges) {
-			System.out.println(edge);
+			 System.out.println("");
+//			System.out.println(edge);
+			 System.out.println("{" + edge.getSrc() + "," + edge.getTgt()
+						+ "}  " + udf.format(edge.getWeight()));
 		}
+		*/
 	}
 }
 

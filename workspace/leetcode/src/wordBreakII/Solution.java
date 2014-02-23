@@ -82,11 +82,13 @@ public class Solution {
 								path[j] = new LinkedList<LinkedList<Integer>>();
 							}
 
-							for (LinkedList<Integer> l : path[i]) {
-								LinkedList<Integer> ll = new LinkedList<Integer>(
-										l);
-								ll.add(j);
-								path[j].add(ll);
+							if (path[i] != null) {
+								for (LinkedList<Integer> l : path[i]) {
+									LinkedList<Integer> ll = new LinkedList<Integer>(
+											l);
+									ll.add(j);
+									path[j].add(ll);
+								}
 							}
 						} else {
 							// j is not a punctation
@@ -117,15 +119,9 @@ public class Solution {
 	public static void main(String[] args) {
 		Solution s = new Solution();
 		HashSet<String> dict = new HashSet<String>();
-		dict.add("leet");
-		dict.add("code");
-		dict.add("tcode");
-		dict.add("l");
-		dict.add("e");
-		dict.add("t");
-		dict.add("1");
-		dict.add("leetcode");
-		String str = "leetcode1";
+		dict.add("aaaa");
+		dict.add("aaa");
+		String str = "aaaaaaa";
 		ArrayList<String> list = s.wordBreak(str, dict);
 
 		for (String string : list) {
