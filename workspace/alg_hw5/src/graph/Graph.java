@@ -236,6 +236,10 @@ public class Graph {
 		}
 		this.pq.put(source, (double) 0);
 		this.cost.put(source, (double) 0);
+		
+		// show set
+		System.out.print(visited + "\t");
+		// end
 
 		// show vertices
 		DecimalFormat df = new DecimalFormat("#");
@@ -246,12 +250,9 @@ public class Graph {
 			} else {
 				System.out.print(df.format(ct));
 			}
-			System.out.print("/" + this.prev.get(integer) + "\t");
+			System.out.print("|" + this.prev.get(integer) + "\t");
 		}
-		// end
-
-		// show set
-		System.out.println(visited);
+		System.out.println();
 		// end
 
 		// loop
@@ -278,6 +279,10 @@ public class Graph {
 					this.pq.put(z, w);
 				}
 			}
+			
+			// show set
+			System.out.print(visited + "\t");
+			// end
 
 			// show vertices
 			for (Integer integer : vertexList) {
@@ -289,11 +294,9 @@ public class Graph {
 				}
 				System.out.print("|" + this.prev.get(integer) + "\t");
 			}
+			System.out.println();
 			// end
 
-			// show set
-			System.out.println(visited);
-			// end
 
 		}
 

@@ -1,0 +1,149 @@
+package maxPointsonaLine;
+
+import java.util.LinkedList;
+import java.util.HashSet;
+
+//  Definition for a point.
+class Point {
+	int x;
+	int y;
+
+	Point() {
+		x = 0;
+		y = 0;
+	}
+
+	Point(int a, int b) {
+		x = a;
+		y = b;
+	}
+}
+
+public class Solution {
+	public int maxPoints(Point[] points) {
+		
+        int max = 0;
+        int len = points.length;
+        if(len < 3){
+        	return len; 
+        }
+        for (int i = 0; i < len - 1; i++){
+            int vertical = 0;
+            int samePosition = 0;
+            double[] slopes = new double[len - i];
+            for (int j = i+1; j < len; j++){
+                if (samePosition(points[i], points[j])){
+                    // those two points at the same position
+                    samePosition++;
+                } else if (points[i].x == points[j].x){
+                    // two points at same vertical line, can't compute slope
+                    vertical++;
+                } else{
+                    slopes[j-i-1] = getSlope(points[i], points[j]);
+                    System.out.println("index"+(j-i-1));
+                    System.out.println(slopes[j-i-1]);
+                }
+            }
+            int maxSlopes = getMode(slopes);
+            System.out.println("ms = " + maxSlopes);
+            if (maxSlopes + 1 > max - samePosition){
+                max = maxSlopes + samePosition + 1;
+            }
+            if (vertical + 1 > max - samePosition){
+                max = vertical + samePosition + 1;
+            }
+            //
+            //System.out.println(i);
+            //System.out.println(max);
+            //
+            
+        }
+        
+        return max;
+	}
+
+    /**
+     * double[] -> int
+     * given a double array
+     * return the count of mode in this array
+     */ 
+	private int getMode(double[] a){
+	    double prev = a[0];
+	    int mode = 0;
+	    int count = 0;
+	    for (int i = 0; i < a.length; i++){
+	        if (a[i] - prev < 0.000001){
+	            count++;
+	        }else{
+	            if(count > mode){
+	                mode = count;
+	            }
+	            count = 0;
+	        }
+            prev = a[i];
+	    }
+	    if(count > mode){
+            mode = count;
+        }
+	    return mode;
+	}
+	
+	/**
+	 * Point * 2 -> boolean
+	 * given two points
+	 * return true iff those two points are at same position
+	 */ 
+	private boolean samePosition(Point a, Point b){
+	    return a.x == b.x && a.y == b.y;
+	}
+	
+	/**
+	 * Points * 2 -> double
+	 * given two points
+	 * return the slope
+	 */ 
+	private double getSlope(Point a, Point b){
+	    return (double)(a.y - b.y) / (double)(a.x - b.x);
+	}
+	
+	
+	public static void main(String[] args) {
+		Solution s = new Solution();
+		
+		// (0,0) (1,1)
+		/*
+		Point p1 = new Point();
+		p1.x = 0;
+		p1.y = 0;
+		
+		Point p2 = new Point();
+		p2.x = 1;
+		p2.y = 1;
+		*/
+		
+		//[(0,0),(-1,-1),(2,2)]
+		
+		Point p1 = new Point();
+		p1.x = 2;
+		p1.y = 3;
+		
+		Point p2 = new Point();
+		p2.x = 3;
+		p2.y = 3;
+
+		Point p3 = new Point();
+		p3.x = -5;
+		p3.y = 3;
+		
+		
+		Point[] points = new Point[]{p1,p2,p3};
+		int max = s.maxPoints(points);
+		System.out.println(max);
+		
+		/*
+		System.out.println((double)(3-3)/(double)(2-3)-0.0 < 0.00001);
+		
+		System.out.println(s.getMode(new double[]{0.0,-0.0}));
+		*/
+	}
+}

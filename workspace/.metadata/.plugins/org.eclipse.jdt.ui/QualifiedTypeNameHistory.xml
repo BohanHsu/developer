@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="twitter4j.Status"/>
-<fullyQualifiedTypeName name="twitter4j.Query"/>
-<fullyQualifiedTypeName name="twitter4j.QueryResult"/>
 <fullyQualifiedTypeName name="twitter4j.Twitter"/>
 <fullyQualifiedTypeName name="twitter4j.TwitterFactory"/>
 <fullyQualifiedTypeName name="twitter4j.GeoQuery"/>
 <fullyQualifiedTypeName name="twitter4j.GeoLocation"/>
 <fullyQualifiedTypeName name="twitter4j.ResponseList"/>
 <fullyQualifiedTypeName name="twitter4j.Place"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="comparator.PostTimeCom"/>
 <fullyQualifiedTypeName name="graph.Graph"/>
 <fullyQualifiedTypeName name="comparator.NodeIdComp"/>
 <fullyQualifiedTypeName name="comparator.IdCom"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="graph.Dijkstra"/>
 <fullyQualifiedTypeName name="heap.NaryTree"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -23,7 +18,6 @@
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="comparator.EdgeSTComp"/>
 <fullyQualifiedTypeName name="addBinary.Solution"/>
-<fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="excel.Tables"/>
 <fullyQualifiedTypeName name="graph.Node"/>
@@ -35,7 +29,6 @@
 <fullyQualifiedTypeName name="evaluateReversePolishNotation.Solution"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="heap.Entry"/>
-<fullyQualifiedTypeName name="maxPointsonaLine.Point"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Solution"/>
 <fullyQualifiedTypeName name="maxPointsonaLine.Line"/>
 <fullyQualifiedTypeName name="insertionSortList.Solution"/>
@@ -52,12 +45,19 @@
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="copyListwithRandomPointer.RandomListNode"/>
 <fullyQualifiedTypeName name="copyListwithRandomPointer.Solution"/>
 <fullyQualifiedTypeName name="graph.Edge"/>
 <fullyQualifiedTypeName name="lRUCache.LRUCache"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="candy.Solution"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="maxPointsonaLine.Point"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="gasStation.Solution"/>
 </qualifiedTypeNameHistroy>
