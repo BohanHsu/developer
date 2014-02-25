@@ -1,0 +1,96 @@
+package cloneGraph;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
+//  Definition for undirected graph.
+class UndirectedGraphNode {
+	int label;
+	ArrayList<UndirectedGraphNode> neighbors;
+
+	UndirectedGraphNode(int x) {
+		label = x;
+		neighbors = new ArrayList<UndirectedGraphNode>();
+	}
+};
+
+public class Solution {
+	HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+	Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+
+	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+		if (node == null) {
+			return null;
+		}
+
+		UndirectedGraphNode ugn = null;
+
+		queue.add(node);
+
+		while (!queue.isEmpty()) {
+			ugn = queue.poll();
+			visit(ugn);
+			for (UndirectedGraphNode successor : ugn.neighbors) {
+				queue.add(successor);
+			}
+		}
+		
+		System.out.println(map.size());
+
+		/*
+		UndirectedGraphNode img = null;
+
+		queue.add(node);
+
+		while (!queue.isEmpty()) {
+			ugn = queue.poll();
+			img = map.get(ugn);
+			for (UndirectedGraphNode successor : ugn.neighbors) {
+				if (map.get(successor) != successor) {
+					img.neighbors.add(map.get(successor));
+				}
+			}
+		}
+		*/
+
+		return this.map.get(node);
+	}
+
+	private void visit(UndirectedGraphNode node) {
+		if (map.get(node) == null) {
+			UndirectedGraphNode ugn = new UndirectedGraphNode(node.label);
+			map.put(node, ugn);
+		}
+	}
+
+	private void showGraph(UndirectedGraphNode head) {
+		Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+		queue.add(head);
+		UndirectedGraphNode ugn = null;
+		while (!queue.isEmpty()) {
+			ugn = queue.poll();
+			System.out.print(ugn.label + ",");
+			for (UndirectedGraphNode neighbor : ugn.neighbors) {
+				System.out.print(neighbor.label + ",");
+				if (neighbor != map.get(neighbor)) {
+					System.out.println(neighbor);
+					System.out.println(map.get(neighbor));
+					queue.add(neighbor);
+				}
+			}
+			System.out.print("#");
+		}
+	}
+
+	public static void main(String[] args) {
+		UndirectedGraphNode n0 = new UndirectedGraphNode(0);
+		n0.neighbors.add(n0);
+		n0.neighbors.add(n0);
+		Solution s = new Solution();
+		s.showGraph(n0);
+		// n0 = s.cloneGraph(n0);
+		// s.showGraph(n0);
+	}
+}
