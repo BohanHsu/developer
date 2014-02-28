@@ -1,0 +1,8 @@
+package algo_probs;
+
+public class XORProperty {
+	public static void main(String[] args) {
+		int a = 2^0;
+		System.out.println(a);
+	}
+}

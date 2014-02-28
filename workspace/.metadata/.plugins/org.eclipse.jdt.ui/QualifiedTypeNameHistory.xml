@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="twitter4j.GeoLocation"/>
 <fullyQualifiedTypeName name="twitter4j.ResponseList"/>
 <fullyQualifiedTypeName name="twitter4j.Place"/>
 <fullyQualifiedTypeName name="comparator.PostTimeCom"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="palindromePartitioning.Solution"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="algo_probs.Permutation"/>
 </qualifiedTypeNameHistroy>

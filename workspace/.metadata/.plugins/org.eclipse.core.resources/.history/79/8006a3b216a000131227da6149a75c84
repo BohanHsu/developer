@@ -1,0 +1,31 @@
+package algo_probs;
+
+public class CommonLeastAncestor {
+	// the top down approach
+	public Node claTD(Node root, Node a, Node b){
+		Node cla = null;
+		if (root == null){
+			return null;
+		}
+		
+		if (root == a || root == b){
+			return root;
+		}
+		
+		Node l = root.left;
+		Node r = root.right;
+		
+		if (claTD())
+		
+	}
+}
+
+class Node{
+	int val;
+	public Node(int val) {
+		this.val = val;
+	}
+	
+	Node left;
+	Node right;
+}

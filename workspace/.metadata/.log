@@ -3139,3 +3139,13 @@ org.eclipse.debug.core.DebugException: Terminate failed
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
 !SUBENTRY 1 org.eclipse.debug.core 4 5010 2014-02-25 18:20:23.988
 !MESSAGE Terminate failed
+!SESSION 2014-02-27 19:22:45.248 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/bohan/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.standard.product -keyring /Users/bohan/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-02-27 19:22:51.352
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

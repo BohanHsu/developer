@@ -10,7 +10,5 @@ public class PlainTest {
 		int no = (int)c - 97;
 		int x = no / 5;
 		int y = no % 5;
-		
-		
 	}
 }
