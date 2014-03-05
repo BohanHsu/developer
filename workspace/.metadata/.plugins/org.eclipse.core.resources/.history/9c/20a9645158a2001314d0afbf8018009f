@@ -1,0 +1,71 @@
+package q3;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Q2 {
+	HashMap<Integer, Double>[][] dist = null;
+
+	private ArrayList<Integer> v = null;
+	private ArrayList<Edge> e = null;
+
+	public Q2(String[] edge) {
+		HashSet<Integer> ver = new HashSet<Integer>();
+		this.v = new HashSet<Integer>();
+		this.e = new ArrayList<Edge>();
+
+		for (String string : edge) {
+			String[] a = string.split(",");
+			int src = Integer.parseInt(a[0]);
+			int tgt = Integer.parseInt(a[1]);
+			double weight = Double.parseDouble(a[2]);
+			ver.add(src);
+			ver.add(tgt);
+			e.add(new Edge(src, tgt, weight));
+		}
+
+		this.v = ver;
+		this.dist = new HashMap[this.v.size()][this.v.size()];
+
+		for (int i = 0; i < this.v.size(); i++) {
+			for (int j = 0; j < this.v.size(); j++) {
+				dist[i][j] = new HashMap<Integer, Double>();
+				dist[i][j].put(0, null);
+			}
+		}
+	}
+
+	public void allPairShortestPath() {
+		for (int k = 1; k <= this.v.size(); k++) {
+			for (int i = 0; i < this.v.size(); i++) {
+				for (int j = 0; j < this.v.size(); j++) {
+					Double distijk_1 = this.dist[i][j].get(k-1);
+					Double distikk_1 = this.dist[i][k].get(k-1);
+					Double distkjk_1 = this.dist[k][j].get(k-1);
+					Double distijk = Operator.add(distikk_1, distkjk_1);
+					if (Operator.cmp(distijk, distijk_1) > 0){
+						this.dist[i][j].put(k, distijk);
+					}else{
+						this.dist[i][j].put(k, distijk_1);
+					}
+				}
+			}
+		}
+	}
+	
+	private void showMatrix(Integer k){
+		
+		for (int i = 0; i < this.v.size(); i++) {
+			System.out.print();
+		}
+		
+		for (int i = 0; i < this.v.size(); i++) {
+			for (int j = 0; j < this.v.size(); j++) {
+				dist[i][j] = new HashMap<Integer, Double>();
+				dist[i][j].put(0, null);
+			}
+		}
+	}
+
+}

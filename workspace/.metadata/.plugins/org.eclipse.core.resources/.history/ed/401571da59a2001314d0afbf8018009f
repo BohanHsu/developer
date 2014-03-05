@@ -1,0 +1,93 @@
+package q3;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Q2 {
+	DecimalFormat df = new DecimalFormat("#");
+	HashMap<Integer, Double>[][] dist = null;
+
+	private ArrayList<Integer> v = null;
+	private ArrayList<Edge> e = null;
+
+	public Q2(String[] edge) {
+		ArrayList<Integer> ver = new ArrayList<Integer>();
+		this.v = new ArrayList<Integer>();
+		this.e = new ArrayList<Edge>();
+
+		for (String string : edge) {
+			String[] a = string.split(",");
+			int src = Integer.parseInt(a[0]);
+			int tgt = Integer.parseInt(a[1]);
+			double weight = Double.parseDouble(a[2]);
+			ver.add(src);
+			ver.add(tgt);
+			e.add(new Edge(src, tgt, weight));
+		}
+
+		this.v = ver;
+		// sort the list
+		Collections.sort(this.v);
+		this.dist = new HashMap[this.v.size()][this.v.size()];
+
+		for (int i = 0; i < this.v.size(); i++) {
+			for (int j = 0; j < this.v.size(); j++) {
+				dist[i][j] = new HashMap<Integer, Double>();
+				// dist[i][j].put(0, null);
+				dist[i][j].put(0, weigthOfEdge(i, j));
+			}
+		}
+	}
+
+	private Double weigthOfEdge(int i, int j) {
+		int src = this.v.get(i);
+		int tgt = this.v.get(j);
+
+		for (Edge edge : this.e) {
+			if (edge.getSrc() == src && edge.getTgt() == tgt) {
+				return edge.getWeight();
+			}
+			// if (edge.getSrc() == tgt && edge.getTgt() == src){
+			// return edge.getWeight();
+			// }
+		}
+
+		return null;
+	}
+
+	public void allPairShortestPath() {
+		for (int k = 1; k <= this.v.size(); k++) {
+			for (int i = 0; i < this.v.size(); i++) {
+				for (int j = 0; j < this.v.size(); j++) {
+					Double distijk_1 = this.dist[i][j].get(k - 1);
+					Double distikk_1 = this.dist[i][k].get(k - 1);
+					Double distkjk_1 = this.dist[k][j].get(k - 1);
+					Double distijk = Operator.add(distikk_1, distkjk_1);
+					if (Operator.cmp(distijk, distijk_1) > 0) {
+						this.dist[i][j].put(k, distijk);
+					} else {
+						this.dist[i][j].put(k, distijk_1);
+					}
+				}
+			}
+		}
+	}
+
+	private void showMatrix(Integer k) {
+		System.out.println("\t");
+		for (int i = 0; i < this.v.size(); i++) {
+			System.out.print(this.v.get(i) + "\t");
+		}
+
+		for (int i = 0; i < this.v.size(); i++) {
+			System.out.print(this.v.get(i) + "\t");
+			for (int j = 0; j < this.v.size(); j++) {
+				System.out.println(df.format(this.dist[i][j].get(k)) + "\t");
+			}
+		}
+	}
+
+}

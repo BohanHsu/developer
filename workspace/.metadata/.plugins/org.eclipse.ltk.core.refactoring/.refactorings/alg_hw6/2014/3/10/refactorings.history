@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Edge.java&apos; to &apos;alg_hw5/src/graph&apos;&#x0A;- Original project: &apos;alg_hw6&apos;&#x0A;- Destination element: &apos;alg_hw5/src/graph&apos;&#x0A;- Original element: &apos;q3.Edge.java&apos;" description="Copy compilation unit" destination="=alg_hw5/src&lt;graph" element1="/src&lt;q3{Edge.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1393797202021" units="1" version="1.0"/>
+</session>
