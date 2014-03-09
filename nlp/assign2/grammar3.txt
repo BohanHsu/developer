@@ -1,0 +1,431 @@
+# Comments start at a hash (#) character and go to the end of the line.
+# Ignore lines that only have whitespace.
+
+# All other lines should have a non-negative weight, a left-hand-side
+# nonterminal symbol, and one or more right-hand-side terminals and
+# nonterminals.
+
+# The start symbol is START.
+# These two rules are required; choose their weights carefully!
+# If S1 is chosen, the generator will use your human-written grammar.
+# If S2 is chosen, the generator will use a tag bigram model.
+
+# We start the weight for S2 at 0 so that you can play around with
+# generating sentences from your grammar without being confused by the
+# bigram model.
+
+99	START	S1
+0	START	S2
+
+## Beginning of human-written grammar.
+
+# Edit the rules and weights in this part of the grammar.
+# This is a very, very, very simple grammar to get you started.
+
+0	S1	NP VP .
+0	S1	'do'/'does' NP VP ?
+1	S1	'do'/'does' VP !
+
+20	VP	VerbT NP
+2	VP	'not' VerbT NP
+
+20	NP	Det Nbar
+1	NP	Proper
+
+20	Nbar	Noun
+
+# first modifed to make generated sentence longer
+#1	Nbar	Nbar PP
+# significantly increased length of generated
+2	Nbar	Nbar PP
+
+1	PP	Prep NP
+
+## End of human-written grammar
+
+## Vocabulary section
+# This is a hand-generated set of preterminal rules.
+# It specifies a simple tag set which will be handled by the S2
+# grammar and which can (though doesn't necessarily need to be)
+# handled by the S1 grammar.
+
+# The weights and left-hand-side tags given here may be changed, but
+# no new vocabulary items are to be added. That keeps you from
+# stumping other parsers simply by adding new words.
+
+# Miscellaneous items that don't fit into any of our simple tags are
+# given to Misc.  You will want to develop your own tags for these!
+
+
+# Singular and mass nouns.  Notice that only the
+# ones that start with consonants get our Noun tag.
+1	Noun	castle
+1	Noun	king
+1	Noun	defeater
+1	Noun	sovereign
+1	Noun	servant
+1	Noun	corner
+1	Noun	land
+1	Noun	quest
+1	Noun	chalice
+1	Noun	master
+1	Noun	horse
+1	Noun	fruit
+1	Noun	swallow
+1	Noun	sun
+1	Noun	winter
+1	Noun	coconut
+1	Noun	pound
+1	Noun	husk
+1	Noun	home
+1	Noun	weight
+1	Noun	story
+
+# Determiners.
+1	Det	a
+1	Det	another
+1	Det	any
+1	Det	each
+1	Det	every
+1	Det	no
+1	Det	that
+1	Det	the
+1	Det	this
+
+# Prepositions.
+1	Prep	above
+1	Prep	across
+1	Prep	at
+1	Prep	below
+1	Prep	by
+1	Prep	for
+1	Prep	from
+1	Prep	into
+1	Prep	near
+1	Prep	of
+1	Prep	on
+1	Prep	over
+1	Prep	through
+1	Prep	with
+
+# Proper nouns.  Note that our Proper tag is just for people.
+1	Proper	Arthur
+1	Proper	Guinevere
+1	Proper	Sir Lancelot
+1	Proper	Sir Bedevere
+1	Proper	Zoot
+1	Proper	Dingo
+1	Proper	Patsy
+1	Proper	Uther Pendragon
+
+# Verbs (third person singular present).
+# Note that only transitive verbs get our VerbT tag,
+# and some of those could also function as intransitives!
+1	VerbT	has
+1	VerbT	covers
+1	VerbT	is
+1	VerbT	drinks
+1	VerbT	carries
+1	VerbT	rides
+
+# End-of-sentence.
+1	MiscEnd-of-sentence	!
+1	MiscEnd-of-sentence	.
+1	MiscEnd-of-sentence	?
+
+# Pauses.
+1	Pauses	,
+1	Pauses	...
+1	Pauses	--
+1	Pauses	;
+1	Pauses	:
+
+# Coordinating conjunctions.
+1	Coordinating_conjunction	and
+1	Coordinating_conjunction	but
+1	Coordinating_conjunction	or
+1	Coordinating_conjunction	either
+1	Coordinating_conjunction	nor
+1	Coordinating_conjunction	neither
+1	Coordinating_conjunction	so
+
+# Numbers.
+1	Numbers	eight
+1	Numbers	five
+1	Numbers	one
+1	Numbers	5.5
+1	Numbers	sixty
+1	Numbers	5,000
+
+# Expletive.
+1	Expletive	there
+
+# Subordinating conjunctions.
+1	Subordinating_conjunctions	that
+1	Subordinating conjunctions	so
+1	Subordinating conjunctions	while
+1	Subordinating conjunctions	because
+1	Subordinating conjunctions	if
+
+# Modals.
+1	Modals	can
+1	Modals	could
+1	Modals	may
+1	Modals	might
+1	Modals	must
+1	Modals	ought
+1	Modals	shall
+1	Modals	should
+1	Modals	will
+1	Modals	would
+
+
+# Adjectives.
+1	Adjectives	bloody
+1	Adjectives	weary
+1	Adjectives	unable
+1	Adjectives	trusty
+1	Adjectives	further
+1	Adjectives	sacred
+1	Adjectives	tropical
+1	Adjectives	indigenous
+1	Adjectives	temperate
+1	Adjectives	hot
+1	Adjectives	lucky
+1	Adjectives	simple
+1	Adjectives	tiny
+1	Adjectives	hard	
+1	Adjectives	sensational
+1	Adjectives	comparable
+1	Adjectives	angolian
+1	Adjectives	yellow
+1	Adjectives	plodding
+
+# Comparative adjectives.
+1	Comparative_adjective	bloodier
+1	Comparative_adjective	wearier
+1	Comparative_adjective	trustier
+1	Comparative_adjective	hotter
+1	Comparative_adjective	simpler
+1	Comparative_adjective	tinier
+1	Comparative_adjective	harder
+
+# Superlative adjectives.
+1	Superlative_adjectives	bloodiest
+1	Superlative_adjectives	weariest
+1	Superlative_adjectives	trustiest
+1	Superlative_adjectives	hottest
+1	Superlative_adjectives	simplest
+1	Superlative_adjectives	tiniest
+1	Superlative_adjectives	hardest
+
+# Plural nouns.
+1	Plural_nouns	coconuts
+1	Plural_nouns	halves
+1	Plural_nouns	snows
+1	Plural_nouns	mountains
+1	Plural_nouns	areas
+1	Plural_nouns	strangers
+1	Plural_nouns	inches
+1	Plural_nouns	snakes
+1	Plural_nouns	ants
+1	Plural_nouns	nights
+
+# More proper nouns, not people.
+
+1	proper_nouns	Camelot
+1	proper_nouns	England
+1	proper_nouns	Holy Grail
+1	proper_nouns	Round Table
+
+# Plural proper nouns.
+1	Plural_proper_nouns	Britons
+1	Plural_proper_nouns	Saxons
+
+# Personal pronouns.
+1	Personal_pronouns	he
+1	Personal_pronouns	her
+1	Personal_pronouns	him
+1	Personal_pronouns	it
+1	Personal_pronouns	one
+1	Personal_pronouns	she
+1	Personal_pronouns	them
+1	Personal_pronouns	they
+
+
+# Possessive personal pronouns
+1	Possessive_personal_pronouns	her
+1	Possessive_personal_pronouns	his
+1	Possessive_personal_pronouns	its
+1	Possessive_personal_pronouns	their
+
+# Adverbs.
+1	Adverbs	again
+1	Adverbs	already
+1	Adverbs	currently
+1	Adverbs	frequently
+1	Adverbs	precisely
+1	Adverbs	south
+1	Adverbs	successfully
+1	Adverbs	unfortunately
+
+# 'do'/'does'
+1	'do'/'does'	do
+1	'do'/'does'	does
+
+# 'to'
+1	'to'	to
+
+# 'not'
+1	'not'	not
+
+# Verbs (base form).
+1	Verbs_base_form	have
+1	Verbs_base_form	speak
+1	Verbs_base_form	cover
+1	Verbs_base_form	be
+1	Verbs_base_form	ride
+1	Verbs_base_form	drink
+1	Verbs_base_form	grow
+1	Verbs_base_form	carry
+1	Verbs_base_form	suggest
+1	Verbs_base_form	migrate
+1	Verbs_base_form	know
+
+# Verbs (past tense).
+1	Verbs_past_tense	had
+1	Verbs_past_tense	spoke
+1	Verbs_past_tense	covered
+1	Verbs_past_tense	was
+1	Verbs_past_tense	were
+1	Verbs_past_tense	rode
+1	Verbs_past_tense	drank
+1	Verbs_past_tense	grew
+1	Verbs_past_tense	carried
+1	Verbs_past_tense	suggested
+1	Verbs_past_tense	migrated
+1	Verbs_past_tense	knew
+
+# Verbs (present participles).
+1	Verbs_present_participles	having
+1	Verbs_present_participles	speaking
+1	Verbs_present_participles	covering
+1	Verbs_present_participles	being
+1	Verbs_present_participles	riding
+1	Verbs_present_participles	drinking
+1	Verbs_present_participles	growing
+1	Verbs_present_participles	carrying
+1	Verbs_present_participles	suggesting
+1	Verbs_present_participles	migrating
+1	Verbs_present_participles	knowing
+
+# Verbs (past participle).
+1	Verbs_past_participle	had
+1	Verbs_past_participle	spoken
+1	Verbs_past_participle	covered
+1	Verbs_past_participle	been
+1	Verbs_past_participle	ridden
+1	Verbs_past_participle	drunk
+1	Verbs_past_participle	grown
+1	Verbs_past_participle	carried
+1	Verbs_past_participle	suggested
+1	Verbs_past_participle	migrated
+1	Verbs_past_participle	known
+
+# More third person singular verbs.
+1	verbs_third_person_singular	speaks
+1	verbs_third_person_singular	grows
+1	verbs_third_person_singular	goes
+1	verbs_third_person_singular	migrates
+1	verbs_third_person_singular	suggests
+1	verbs_third_person_singular	knows
+
+# Verbs (present, plural, third person).
+1	Verbs_present_plural_third_person	have
+1	Verbs_present_plural_third_person	speak
+1	Verbs_present_plural_third_person	cover
+1	Verbs_present_plural_third_person	are
+1	Verbs_present_plural_third_person	ride
+1	Verbs_present_plural_third_person	drink
+1	Verbs_present_plural_third_person	grow
+1	Verbs_present_plural_third_person	carry
+1	Verbs_present_plural_third_person	suggest
+1	Verbs_present_plural_third_person	migrate
+1	Verbs_present_plural_third_person	know
+
+# Wh-determiners.
+1	Wh-determiners	that
+1	Wh-determiners	what
+1	Wh-determiners	which
+
+# Wh-pronouns.
+1	Wh-pronouns	what
+1	Wh-pronouns	who
+
+# Wh possessive pronoun.
+1	Wh_possessive_pronoun	whose
+
+# Wh-adverbs
+1	Wh-adverbs	how
+1	Wh-adverbs	when
+1	Wh-adverbs	where
+1	Wh-adverbs	why
+
+
+# Possessive marker.
+1	Possessive_marker	's
+
+## S2 tag bigram model
+
+# You may change the weights here or add new rules if you introduce
+# new tags.
+
+1	S2
+1	S2	_Det
+1	S2	_Misc
+1	S2	_Noun
+1	S2	_Prep
+1	S2	_Proper
+1	S2	_VerbT
+1	_Det	Det
+1	_Det	Det _Det
+1	_Det	Det _Misc
+1	_Det	Det _Noun
+1	_Det	Det _Prep
+1	_Det	Det _Proper
+1	_Det	Det _VerbT
+1	_Misc	Misc
+1	_Misc	Misc _Det
+1	_Misc	Misc _Misc
+1	_Misc	Misc _Noun
+1	_Misc	Misc _Prep
+1	_Misc	Misc _Proper
+1	_Misc	Misc _VerbT
+1	_Noun	Noun
+1	_Noun	Noun _Det
+1	_Noun	Noun _Misc
+1	_Noun	Noun _Noun
+1	_Noun	Noun _Prep
+1	_Noun	Noun _Proper
+1	_Noun	Noun _VerbT
+1	_Prep	Prep
+1	_Prep	Prep _Det
+1	_Prep	Prep _Misc
+1	_Prep	Prep _Noun
+1	_Prep	Prep _Prep
+1	_Prep	Prep _Proper
+1	_Prep	Prep _VerbT
+1	_Proper	Proper
+1	_Proper	Proper _Det
+1	_Proper	Proper _Misc
+1	_Proper	Proper _Noun
+1	_Proper	Proper _Prep
+1	_Proper	Proper _Proper
+1	_Proper	Proper _VerbT
+1	_VerbT	VerbT
+1	_VerbT	VerbT _Det
+1	_VerbT	VerbT _Misc
+1	_VerbT	VerbT _Noun
+1	_VerbT	VerbT _Prep
+1	_VerbT	VerbT _Proper
+1	_VerbT	VerbT _VerbT

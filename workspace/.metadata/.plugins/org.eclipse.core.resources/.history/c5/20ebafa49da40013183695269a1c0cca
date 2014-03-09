@@ -1,0 +1,10 @@
+package utility;
+
+import java.util.Random;
+
+public class RandomNumberGenerator {
+	public static int randomIntTo(int to){
+		Random generator = new Random(System.currentTimeMillis());
+		return generator.nextInt(to);
+	}
+}

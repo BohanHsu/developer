@@ -1,0 +1,18 @@
+package test;
+
+import sentenceBuilder.SentenceBuilder;
+import grammar.ContextFreeLanguage;
+
+public class TestForProb1 {
+	public static void main(String[] args) {
+		String path = "src/grammar1.txt";
+		ContextFreeLanguage cfl = new ContextFreeLanguage(path,true);
+		SentenceBuilder sb = new SentenceBuilder(cfl);
+		String generatedStr = sb.buildSentence(5);
+		if (generatedStr == null){
+			System.out.println("returned null");
+		}else{
+		System.out.println(generatedStr);
+		}
+	}
+}

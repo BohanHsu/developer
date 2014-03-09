@@ -1,0 +1,28 @@
+package grammar;
+
+import java.util.ArrayList;
+
+public class Rule {
+	double weight = 0;
+	String fromSymbol = null;
+	ArrayList<String> toSymbols = new ArrayList<String>();
+
+	/**
+	 * construct function
+	 * 
+	 * @param weight
+	 * @param fromSymbol
+	 * @param toSymbolsArray
+	 */
+	public Rule(double weight, String fromSymbol, String[] toSymbolsArray) {
+		super();
+		this.weight = weight;
+		this.fromSymbol = fromSymbol;
+		this.toSymbols = new ArrayList<String>();
+		if (toSymbolsArray != null) {
+			for (String symbol : toSymbolsArray) {
+				this.toSymbols.add(symbol);
+			}
+		}
+	}
+}

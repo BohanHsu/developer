@@ -1,0 +1,81 @@
+package sentenceBuilder;
+
+import java.util.Stack;
+
+import grammar.ContextFreeLanguage;
+
+public class SentenceBuilder {
+	private ContextFreeLanguage cfl = null;
+	private boolean printingLog = false;
+
+	public SentenceBuilder(ContextFreeLanguage cfl) {
+		super();
+		this.cfl = cfl;
+		this.printingLog = cfl.isPrintingLog();
+	}
+
+	/**
+	 * build a sentence with specific length, automatically ignore the ending period when count length
+	 * 
+	 * @param sentenceLength
+	 *            : length of this sentence
+	 * @return : a sentence iff this grammar can build this sentence, or null
+	 */
+	public String buildSentence(int sentenceLength){
+		return buildSentence(sentenceLength, true);
+		
+	}
+
+	/**
+	 * build a sentence with specific length
+	 * 
+	 * @param sentenceLength
+	 *            : length of this sentence
+	 * @param ignorePeriod
+	 *            : iff true ignore the period in the end to count length,
+	 *            otherwise not ignore
+	 * @return : a sentence iff this grammar can build this sentence, or null
+	 */
+	public String buildSentence(int sentenceLength, boolean ignorePeriod) {
+		if (ignorePeriod){
+			sentenceLength = sentenceLength + 1;
+		}
+		String builtSentence = null;
+		Stack<IntermediateSentence> stack = new Stack<IntermediateSentence>();
+		IntermediateSentence startSymbol = new IntermediateSentence(cfl);
+
+		// printing log
+		if (this.printingLog) {
+			System.out.println("--choosed start symbol");
+			startSymbol.printLog();
+		}
+		// end
+
+		stack.push(startSymbol);
+
+		IntermediateSentence is = null;
+		while (!stack.empty()) {
+			is = stack.peek();
+
+			// printing log
+			if (this.printingLog) {
+				System.out.println("--sentence now:");
+				is.printLog();
+			}
+			// end
+
+			if (is.qualifiedForSentenceOfLength(sentenceLength)) {
+				// return sentence
+				return is.getBuiltSentence();
+			}
+			if (is.needBackOffForSentenceOfLength(sentenceLength)) {
+				// need back off
+				stack.pop();
+			} else {
+				is = new IntermediateSentence(is);
+				stack.push(is);
+			}
+		}
+		return builtSentence;
+	}
+}

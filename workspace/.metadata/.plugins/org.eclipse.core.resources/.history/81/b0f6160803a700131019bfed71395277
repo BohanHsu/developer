@@ -1,0 +1,22 @@
+package cmd;
+
+import java.util.HashMap;
+
+public class CMDInterface {
+	/**
+	 * command line interface
+	 * @param args
+	 * args[0] : is the grammar configuration file path
+	 * args[1] : indicate how much sentence should generate
+	 * args[2] : is optional arguments
+	 * 			example : -al
+	 * 			a : show average length of generated sentence
+	 * 			l : show detail of generating sentence 
+	 */
+	public static void main(String[] args) {
+		HashMap<Character, Boolean> optionalArgument = new HashMap<Character, Boolean>();
+		String filepath = args[0];
+		int number = Integer.parseInt(args[1]);
+		args[2].toCharArray();
+	}
+}

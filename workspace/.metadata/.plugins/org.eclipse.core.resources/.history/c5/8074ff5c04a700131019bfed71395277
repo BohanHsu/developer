@@ -1,0 +1,10 @@
+package cmd;
+
+public class TestCMDInterface {
+	public static void main(String[] args) {
+		String path = "src/grammar1.txt";
+		String number = "5";
+		String optional = "-al";
+		CMDInterface.main(new String[]{"","",""});
+	}
+}

@@ -1,0 +1,47 @@
+package sentenceBuilder;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Stack;
+
+import grammar.ContextFreeLanguage;
+import grammar.Rule;
+
+public class SentenceBuilder {
+	private ContextFreeLanguage cfl = null;
+	private HashSet<String> startSymbols = null;
+	private HashSet<String> nonTerminalSymbols = null;
+	private HashSet<String> terminalSymbols = null;
+	private HashMap<String, ArrayList<Rule>> mapping = null;
+	
+	public SentenceBuilder(ContextFreeLanguage cfl) {
+		super();
+		this.cfl = cfl;
+		this.startSymbols = cfl.getStartSymbols();
+		this.nonTerminalSymbols = cfl.getNonTerminalSymbols();
+		this.terminalSymbols = cfl.getTerminalSymbols();
+		this.mapping = cfl.getMapping();
+	}
+	
+	/**
+	 * build a sentence with specific length
+	 * @param sentenceLength : length of this sentence
+	 * @return : a sentence iff this grammar can build this sentence, or null
+	 */
+	public String buildSentence(int sentenceLength){
+		String builtSentence = null;
+		Stack<IntermediateSentence> stack = new Stack<IntermediateSentence>();
+		IntermediateSentence startSymbol = new IntermediateSentence(cfl);
+		stack.push(startSymbol);
+		
+		IntermediateSentence is = null;
+		while(!stack.empty()){
+			is = stack.peek();
+			if (is.qualified(sentenceLength))
+		}
+		
+		
+		return builtSentence;
+	}
+}

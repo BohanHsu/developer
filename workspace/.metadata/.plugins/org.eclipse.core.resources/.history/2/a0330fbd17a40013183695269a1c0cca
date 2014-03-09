@@ -1,0 +1,15 @@
+package grammar;
+
+import java.util.ArrayList;
+
+public class Rule {
+	double weight = 0;
+	String fromSymbol = null;
+	ArrayList<String> toSymbols = new ArrayList<String>();
+	public Rule(double weight, String fromSymbol, ArrayList<String> toSymbols) {
+		super();
+		this.weight = weight;
+		this.fromSymbol = fromSymbol;
+		this.toSymbols = toSymbols;
+	}
+}

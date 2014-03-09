@@ -1,0 +1,18 @@
+package test;
+
+import java.util.ArrayList;
+
+import sentenceBuilder.SentenceBuilder;
+import grammar.ContextFreeLanguage;
+
+public class TestForProb1 {
+	public static void main(String[] args) {
+		String path = "src/grammar1.txt";
+		ContextFreeLanguage cfl = new ContextFreeLanguage(path, true);
+		SentenceBuilder sb = new SentenceBuilder(cfl);
+		ArrayList<String> generatedStrs = sb.buildSentence(5);
+		for (String string : generatedStrs) {
+			System.out.println(string);
+		}
+	}
+}

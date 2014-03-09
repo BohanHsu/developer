@@ -1,0 +1,10 @@
+package grammar;
+
+public class ContextFreeLanguage {
+	public ContextFreeLanguage() {
+	}
+	
+	public ContextFreeLanguage(String grammarPath) {
+		
+	}
+}

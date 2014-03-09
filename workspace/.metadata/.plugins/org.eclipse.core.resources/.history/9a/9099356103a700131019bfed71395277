@@ -1,0 +1,25 @@
+package cmd;
+
+import java.util.HashSet;
+
+public class CMDInterface {
+	/**
+	 * command line interface
+	 * 
+	 * @param args
+	 *            args[0] : is the grammar configuration file path args[1] :
+	 *            indicate how much sentence should generate args[2] : is
+	 *            optional arguments example : -al a : show average length of
+	 *            generated sentence l : show detail of generating sentence
+	 */
+	public static void main(String[] args) {
+		HashSet<Character> optionalArgument = new HashSet<Character>();
+		String filepath = args[0];
+		int number = Integer.parseInt(args[1]);
+		char[] optionalArgumentArray = args[2].toCharArray();
+		for (int i = 1; i < optionalArgumentArray.length; i++) {
+			optionalArgument.add(optionalArgumentArray[i]);
+		}
+	}
+
+}
