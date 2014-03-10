@@ -1,0 +1,19 @@
+import nltk
+
+def drawTree(s):
+    tree = nltk.Tree.parse(s, remove_empty_top_bracketing=True)
+    tree.draw() 
+
+#s = '(ROOT (SQ (VBP do) (NP (NNS coconuts)) (VP (VB speak)) (. ?)))'
+
+#s = '(ROOT (SBARQ (WHNP (WP who)) (SQ (VBZ does) (NP (NNP Arthur)) (VP (VB suggest) (S (NP (PRP she)) (VP (VB carry))))) (. ?)))'
+
+#s = '(ROOT (SQ (VBP are) (NP (PRP they)) (VP (VBG suggesting) (NP (NNP Arthur) (NN ride)) (PP (TO to) (NP (NNP Camelot)))) (. ?)))'
+
+#s = '(ROOT (S (NP (DT the) (NNP Holy) (NNP Grail)) (VP (VBD was) (VP (VBN covered) (PP (IN by) (NP (DT a) (JJ yellow) (NN fruit))))) (. .)))'
+
+#s = '(ROOT (S (VP (VB do) (RB not) (VP (VB speak))) (. !)))'
+
+s = '(ROOT (S (NP (NNP Arthur)) (VP (MD will) (VP (VB have) (VP (VBN been) (VP (VBG riding) (PP (IN for) (NP (CD eight) (NNS nights))))))) (. .)))' 
+
+drawTree(s)

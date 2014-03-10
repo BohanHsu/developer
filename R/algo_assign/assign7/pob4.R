@@ -7,7 +7,7 @@
 ### y + 3z is at most -20.
 
 # the standard format of this problem is:
-# -5 * x +  -1 * y + 0 * z <= -15
+# -5 * x + 0 * y + -1 * z <= -15
 # -1 * x + -5 * x + 0 * z <= -5
 # 4 * x + y + 0 * z <= 10
 # 0 * x + y + 3 * z <= -20
@@ -23,7 +23,7 @@ names(cvec) <- c("x","y","z")
 bvec <- c(-15,-5,10,-20)
 names(bvec) <- c("cons1","cons2","cons3","cons4")
 
-Amat <- rbind(	c(-5,-1,0),
+Amat <- rbind(	c(-5,0,-1),
 		c(-1,-5,0),
 		c(4,1,0),
 		c(0,1,3))

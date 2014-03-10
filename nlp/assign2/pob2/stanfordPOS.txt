@@ -1,0 +1,26 @@
+do coconuts speak ?
+(ROOT (SQ (VBP do) (NP (NNS coconuts)) (VP (VB speak)) (. ?)))
+
+who does Arthur suggest she carry ?
+(ROOT (SBARQ (WHNP (WP who)) (SQ (VBZ does) (NP (NNP Arthur)) (VP (VB suggest) (S (NP (PRP she)) (VP (VB carry))))) (. ?)))
+
+are they suggesting Arthur ride to Camelot ?
+(ROOT (SQ (VBP are) (NP (PRP they)) (VP (VBG suggesting) (NP (NNP Arthur) (NN ride)) (PP (TO to) (NP (NNP Camelot)))) (. ?)))
+
+the Holy Grail was covered by a yellow fruit .
+(ROOT (S (NP (DT the) (NNP Holy) (NNP Grail)) (VP (VBD was) (VP (VBN covered) (PP (IN by) (NP (DT a) (JJ yellow) (NN fruit))))) (. .)))
+
+do not speak !
+(ROOT (S (VP (VB do) (RB not) (VP (VB speak))) (. !)))
+
+Arthur will have been riding for eight nights .
+(ROOT (S (NP (NNP Arthur)) (VP (MD will) (VP (VB have) (VP (VBN been) (VP (VBG riding) (PP (IN for) (NP (CD eight) (NNS nights))))))) (. .)))
+
+Arthur and Guinevere migrate frequently .
+(ROOT (S (NP (NNP Arthur) (CC and) (NNP Guinevere)) (VP (VB migrate) (ADVP (RB frequently))) (. .)))
+
+he knows what they are covering with that story .
+(ROOT (S (NP (PRP he)) (VP (VBZ knows) (SBAR (WHNP (WP what)) (S (NP (PRP they)) (VP (VBP are) (VP (VBG covering) (PP (IN with) (NP (DT that) (NN story)))))))) (. .)))
+
+the king drank to the castle that was his home .
+(ROOT (S (NP (DT the) (NN king)) (VP (VBD drank) (PP (TO to) (NP (NP (DT the) (NN castle)) (SBAR (WHNP (WDT that)) (S (VP (VBD was) (NP (PRP$ his) (NN home)))))))) (. .)))

@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="jxl.write.WritableWorkbook"/>
-<fullyQualifiedTypeName name="jxl.Workbook"/>
-<fullyQualifiedTypeName name="jxl.read.biff.File"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="evaluateReversePolishNotation.Solution"/>
-<fullyQualifiedTypeName name="java.lang.Comparable"/>
-<fullyQualifiedTypeName name="heap.Entry"/>
-<fullyQualifiedTypeName name="maxPointsonaLine.Solution"/>
-<fullyQualifiedTypeName name="maxPointsonaLine.Line"/>
-<fullyQualifiedTypeName name="insertionSortList.Solution"/>
-<fullyQualifiedTypeName name="insertionSortList.ListNode"/>
-<fullyQualifiedTypeName name="binaryTreePostorderTraversal.TreeNode"/>
-<fullyQualifiedTypeName name="binaryTreePostorderTraversal.Solution"/>
 <fullyQualifiedTypeName name="reorderList.Solution"/>
 <fullyQualifiedTypeName name="reorderList.ListNode"/>
 <fullyQualifiedTypeName name="linkedListCycle.Solution"/>
@@ -60,4 +47,17 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="utility.RandomNumberGenerator"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.trees.TreebankLanguagePack"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.trees.PennTreebankLanguagePack"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.trees.GrammaticalStructureFactory"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.parser.lexparser.LexicalizedParser"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.process.TokenizerFactory"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.process.PTBTokenizer"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.process.CoreLabelTokenFactory"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.StringReader"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.trees.Tree"/>
+<fullyQualifiedTypeName name="edu.stanford.nlp.trees.GrammaticalStructure"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="com.chaoticity.dependensee.Main"/>
 </qualifiedTypeNameHistroy>

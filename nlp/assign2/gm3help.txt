@@ -10,15 +10,24 @@ Pauses
 Numbers
 Expletive
 Modals
+Adverbs
+
 
 Plural_nouns
 proper_nouns
 Plural_proper_nouns
 
+1	NOUN	Plural_nouns
+1	NOUN	proper_nouns
+1	NOUN	Plural_proper_nouns
+
+
 Personal_pronouns
 Possessive_personal_pronouns
 
-Adverbs
+1	PRONOUN	Personal_pronouns
+1	PRONOUN	Possessive_personal_pronouns
+
 
 Verbs_base_form
 Verbs_past_tense
@@ -27,15 +36,37 @@ Verbs_past_participle
 verbs_third_person_singular
 Verbs_present_plural_third_person
 
+0	Verb	Verbs_base_form
+0	Verb	Verbs_past_tense
+0	Verb	Verbs_present_participles
+0	Verb	Verbs_past_participle
+0	Verb	verbs_third_person_singular
+0	Verb	Verbs_present_plural_third_person
+
+
 Wh-determiners
 Wh-pronouns
 Wh_possessive_pronoun
 Wh-adverbs
 
+1	WH	Wh-determiners
+1	WH	Wh-pronouns
+1	WH	Wh_possessive_pronoun
+1	WH	Wh-adverbs
+
+
 Coordinating_conjunction
 Subordinating_conjunctions
+
+1	Conjunction	Coordinating_conjunction
+1	Conjunction	Subordinating_conjunctions
+
 
 Adjectives
 Comparative_adjective
 Superlative_adjectives
+
+1	ADJ	Adjectives
+1	ADJ	Comparative_adjective
+1	ADJ	Superlative_adjectives
 

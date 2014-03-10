@@ -1,0 +1,14 @@
+import sys
+
+read_path = sys.argv[1]
+write_path = sys.argv[2]
+
+f = open(read_path)
+lines = f.readlines()
+f.close()
+
+pos = ''
+
+for l in lines:
+    if cmp(l[:1],'(') == 0 and  cmp(l[-1:],')'):
+        print l
