@@ -3724,3 +3724,18 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.core.net 1 0 2014-03-14 00:32:48.777
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2014-03-14 12:01:12.343 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_30
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-03-14 12:01:58.683
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2014-03-14 12:02:02.167
+!MESSAGE Installed JRE 'Java SE 7 [1.7.0_45]' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2014-03-14 12:02:02.173
+!MESSAGE Installed JRE 'Java SE 6 [1.6.0_65-b14-462]' removed due to missing VM type extension.
