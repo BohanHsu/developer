@@ -32,9 +32,7 @@
 20	Nbar	Noun
 
 # first modifed to make generated sentence longer
-#1	Nbar	Nbar PP
-# significantly increased length of generated
-10	Nbar	Nbar PP
+5	Nbar	Nbar PP
 
 1	PP	Prep NP
 

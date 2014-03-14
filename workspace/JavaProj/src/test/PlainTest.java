@@ -3,9 +3,17 @@ package test;
 public class PlainTest {
 	public static void main(String[] args) {
 		
-//		int a = 6^6^3;
-		int a = 
-		System.out.println(a);
+		int[][] array = new int[5][10];
 		
+		/*
+		for (int i = 0 ; i < array.length;i++){
+			for (int j = 0; j < array[0].length; j++){
+				System.out.print(array[i][j]);
+			}
+			System.out.println();
+		} 
+		*/
+		
+		System.out.println(array[9][4]);
 	}
 }

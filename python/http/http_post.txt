@@ -1,0 +1,39 @@
+Request URL:https://myneu.neu.edu/cp/home/login
+Request Method:POST
+Status Code:200 OK
+
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip,deflate,sdch
+Accept-Language:en-US,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Content-Length:61
+Content-Type:application/x-www-form-urlencoded
+Cookie:UserAgentId=-3915453055399775437; fos.web.server=myneuweb05; fos.secure.web.server=myneuweb05; luminus=1880170907.20480.0000; LtpaToken2=Ax71kQv8qLM8kJJBD17aC2vyqAPaXYFYBdl6I+aEqfpnFJ7X+lO3VkSPqXNjeWpd1z54FlGe7y3cxbNyaMRWla+Pfg57zXOiiF7dcHRlKYx0zIIb+pb7BdhDl0nElxoCc0y8+it9/IUaKCRqCMOx6lLDJm+M7Sl0AEQtpJbkAx7LC9tStt+kx5A230lfOOG0fZQvf9biYWD0HLaL+9VNFCILMCdQ/3Qr/2ZZr+UQyRrVDtAh7rZKRglt6j1W7hp2AgU8Z6dMdfYN5WEOEEnjfB+nlecM6rXiMrZA1JwSSFnY/bt5XRXfneKPfsBX3delH6yqYzsRlM0/g3YgiQ6imLvtW1GL3i2m6seJs6jNlp3Qb7FvNgUaDmfuxCW3YTtRZPm+MvuCNkQVmSncSsP7OQHyiWkrGqZO25pB1ocdrsK1/1HDbla/1WLUaHNBxTgJq7g9Eju6ePyEldJQjvaerXH5LBTpj0WOHLRXcickxTTl6o/dIFerx/orIvi4aJLe9/tmkRWr9L6eG+3CYwyjd9qI7NuV349rcPvkDp9dRwgNpFsjzJfdO7qSiSqjiY0mRq9lK4OSgYK04B57iUU34b23nvSVt1a7O/qnz3368LvLvNn/RPUbGUVS3tSKJ4ndV9uXDalh9H52UUWnY0fWk+BLc+nFj0Fi1TsVkytKVEE=; LtpaToken=x/Tz8gjOKWxGrAx+pNeFH48T4BjeNHQCBcl2rRjuytm/d5GGzJ08IUY/uQin73qtDC0V3Wn7Owz/LK230Rk+s1H+Um63uch0dw8qp/PdoAWvlNl3ivVID3jMjcsqnyKwLn1nB9uGv8slokZa55t0IB56yYBDC9NM2X3YwiAIzh/K7fwTnfJM24WR5dAQLZSnkNtan1r4heumPs8dCfCOD4hB+0GtZ5bG8IJgyQ2D/ZHgw93bZmWYN7HMUTwDamp9yU83Bp5mA1CkwylFTIZxmvEq492Ks5VcDgusPtW+pyUMPioWb16gZF/6lTYx/yTLYS82b8VFBpizhAguwmIdRA==; myneuwas=Y; pgv_pvi=3299196928; pgv_si=s5761845248; amlbcookie=01; iPlanetDirectoryPro=AQIC5wM2LY4SfcykjkWgMHJ3Q6VxtVTrCJiIoSDpyc8LfQQ.*AAJTSQACMDMAAlMxAAIwMQ..*; runId=7008545041756820572; badprotocol=10; usidsec=9wwRYCbLi+nwuLoKJR0XTw__
+Host:myneu.neu.edu
+Origin:http://myneu.neu.edu
+Referer:http://myneu.neu.edu/cp/home/displaylogin
+User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+
+Form Dataview sourceview URL encoded
+pass:sdb
+user:xu.vo
+uuid:68e71641-7a8f-4c54-a8fe-946c4c009f5b
+Response Headersview source
+Cache-Control:no-cache
+Connection:close
+Content-Language:en-US
+Content-Length:6429
+Content-Type:text/html;charset=UTF-8
+Date:Fri, 14 Mar 2014 00:04:36 GMT
+Expires:Wed, 01 Jan 1970 00:00:00 GMT
+Pragma:no-cache
+Server:Apache-Coyote/1.1
+Set-Cookie:CPSESSID=""; Domain=.neu.edu; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie:WebCTTicket=""; Domain=webct.cookie.domain; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie:WebCTTicket=""; Domain=webct.cookie.domain; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure
+Set-Cookie:usid=dALaVwUURtTYRWwmHj4etA__; Domain=.neu.edu; Path=/
+Set-Cookie:usidsec=R61kdx4i0XPNwCrFwUc0qg__; Domain=neu.edu; Path=/; Secure
+Set-Cookie:JSESSIONID=07C31EAF3B8BEF1C7425DD600A16D3C0; Path=/
+Set-Cookie:CPSESSID=""; Domain=.neu.edu; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure

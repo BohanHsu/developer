@@ -29,7 +29,7 @@ public class ContextFreeLanguage {
 		this.nonTerminalSymbols = new HashSet<String>();
 		this.terminalSymbols = new HashSet<String>();
 		this.mapping = new HashMap<String, ArrayList<Rule>>();
-
+		
 		for (String line : lines) {
 			String[] parts = line.split("\t");
 

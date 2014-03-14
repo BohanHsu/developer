@@ -1,7 +1,0 @@
-import sys
-import os
-
-folderFrom = sys.argv[1]
-folderIn = sys.argv[2]
-
-fileList = os.listdir(folderFrom)

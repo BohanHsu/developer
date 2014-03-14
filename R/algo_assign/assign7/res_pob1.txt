@@ -1,0 +1,49 @@
+> source("./pob1.R")
+
+
+Results of Linear Programming / Linear Optimization
+
+Objective function (Minimum): 80000 
+
+Iterations in phase 1: 6
+Iterations in phase 2: 0
+Solution
+            opt
+fertilizer1 500
+fertilizer2 100
+fertilizer3 300
+
+Basic Variables
+                  opt
+fertilizer1       500
+fertilizer2       100
+fertilizer3       300
+S Nitrogen_min     45
+S Phosphorusn_min  60
+S Sullfurn_min     30
+S Potassiumn_max   40
+
+Constraints
+                actual dir bvec free         dual dual.reg
+Nitrogen_min      -205  <= -160   45  0.00000e+00       45
+Phosphorusn_min   -100  <=  -40   60  0.00000e+00       60
+Potassiumn_min     -80  <=  -80    0  1.00000e+03       20
+Sullfurn_min       -50  <=  -20   30  0.00000e+00       30
+Phosphorusn_max    100  <=  100    0 -1.13687e-13       60
+Potassiumn_max      80  <=  120   40  0.00000e+00       40
+Sullfurn_max        50  <=   50    0 -4.54747e-13        5
+
+All Variables (including slack variables)
+                  opt cvec    min.c    max.c marg marg.reg
+fertilizer1       500  100  -100.00  100.000   NA       NA
+fertilizer2       100  150  -150.00  150.000   NA       NA
+fertilizer3       300   50   -50.00  116.667   NA       NA
+S Nitrogen_min     45    0 -1333.33    0.000    0       NA
+S Phosphorusn_min  60    0     0.00      Inf    0       NA
+S Potassiumn_min    0    0 -1000.00      Inf 1000       20
+S Sullfurn_min     30    0     0.00      Inf    0       NA
+S Phosphorusn_max   0    0     0.00      Inf    0       60
+S Potassiumn_max   40    0       NA 1000.000    0       NA
+S Sullfurn_max      0    0     0.00      Inf    0        5
+
+> 
