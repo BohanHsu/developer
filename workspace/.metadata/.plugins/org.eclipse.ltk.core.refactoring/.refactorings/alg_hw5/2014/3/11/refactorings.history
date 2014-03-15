@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;graph&apos; to &apos;alg_hw8/src&apos;&#x0D;&#x0A;- Original project: &apos;alg_hw5&apos;&#x0D;&#x0A;- Destination element: &apos;alg_hw8/src&apos;&#x0D;&#x0A;- Original element: &apos;alg_hw5/src/graph&apos;" description="Copy package" destination="=alg_hw8/src" element1="/src&lt;graph" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1394911975840" version="1.0"/>
+</session>
