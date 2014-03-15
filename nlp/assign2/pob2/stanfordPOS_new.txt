@@ -1,0 +1,2 @@
+At the corner of Park Street is the bus stop
+(ROOT (SINV (PP (IN At) (NP (NP (DT the) (NN corner)) (PP (IN of) (NP (NNP Park) (NNP Street))))) (VP (VBZ is)) (NP (DT the) (NN bus) (NN stop))))

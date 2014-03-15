@@ -2,18 +2,10 @@ package test;
 
 public class PlainTest {
 	public static void main(String[] args) {
-		
-		int[][] array = new int[5][10];
-		
-		/*
-		for (int i = 0 ; i < array.length;i++){
-			for (int j = 0; j < array[0].length; j++){
-				System.out.print(array[i][j]);
-			}
-			System.out.println();
-		} 
-		*/
-		
-		System.out.println(array[9][4]);
+		String s = "1,2,3,4,5,6,7,8,9,0";
+		String[] s1 = s.split(",");
+		System.out.println(s1.length);
+		String[] s2 = s.split(",",5);
+		System.out.println(s2.length);
 	}
 }

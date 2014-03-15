@@ -1,0 +1,478 @@
+# Comments start at a hash (#) character and go to the end of the line.
+# Ignore lines that only have whitespace.
+
+# All other lines should have a non-negative weight, a left-hand-side
+# nonterminal symbol, and one or more right-hand-side terminals and
+# nonterminals.
+
+# The start symbol is START.
+# These two rules are required; choose their weights carefully!
+# If S1 is chosen, the generator will use your human-written grammar.
+# If S2 is chosen, the generator will use a tag bigram model.
+
+# We start the weight for S2 at 0 so that you can play around with
+# generating sentences from your grammar without being confused by the
+# bigram model.
+
+99	START	S1
+0	START	S2
+
+## Beginning of human-written grammar.
+
+# Edit the rules and weights in this part of the grammar.
+# This is a very, very, very simple grammar to get you started.
+
+1	S1	NP VP .
+
+1	VP	VerbT NP
+
+20	NP	Det Nbar
+2	NP	Proper
+
+20	Nbar	Noun
+1	Nbar	Nbar PP
+
+1	PP	Prep NP
+
+# modified part
+
+1	S1	SBARQ ?
+1	S1	S .
+1	S1	SQ ?
+
+1	NP	PRP 
+1	NP	DT NN 
+1	NP	NNP NN 
+1	VP	VB VP 
+1	VP	MD VP 
+1	NP	NP SBAR 
+1	VP	VBG PP 
+1	VP	VBG NP PP 
+1	VP	VBP VP 
+1	VP	VBN VP 
+1	WHNP	WP 
+1	PP	TO NP 
+1	NP	DT NNP NNP 
+1	SBARQ	WHNP SQ
+1	NP	NNS 
+1	NP	NNP CC NNP 
+1	VP	VB ADVP 
+1	ADVP	RB 
+1	S	NP VP
+1	VP	VBZ SBAR 
+1	VP	VB RB VP 
+1	S	NP VP 
+1	VP	VBD NP 
+1	SQ	VBZ NP VP 
+1	SQ	VBP NP VP
+1	VP	VBD VP 
+1	VP	VBD PP 
+1	VP	VBN PP 
+1	S	VP 
+1	S	VP 
+1	VP	VB S 
+1	NP	CD NNS 
+1	PP	IN NP 
+1	NP	NNP 
+1	SBAR	WHNP S 
+1	NP	PRP$ NN 
+1	WHNP	WDT 
+1	NP	DT JJ NN 
+1	VP	VB 
+# 
+1	DT	Det
+1	NN	Noun
+1	ADVP	RB
+1	VBP	VBPZ
+1	VBP	DOE
+1	CD	NUM
+
+
+## End of human-written grammar
+
+## Vocabulary section
+# This is a hand-generated set of preterminal rules.
+# It specifies a simple tag set which will be handled by the S2
+# grammar and which can (though doesn't necessarily need to be)
+# handled by the S1 grammar.
+
+# The weights and left-hand-side tags given here may be changed, but
+# no new vocabulary items are to be added. That keeps you from
+# stumping other parsers simply by adding new words.
+
+# Miscellaneous items that don't fit into any of our simple tags are
+# given to Misc.  You will want to develop your own tags for these!
+
+
+# Singular and mass nouns.  Notice that only the
+# ones that start with consonants get our Noun tag.
+1	Noun	castle
+1	Noun	king
+1	Noun	defeater
+1	Noun	sovereign
+1	Noun	servant
+1	Noun	corner
+1	Noun	land
+1	Noun	quest
+1	Noun	chalice
+1	Noun	master
+1	Noun	horse
+1	Noun	fruit
+1	Noun	swallow
+1	Noun	sun
+1	Noun	winter
+1	Noun	coconut
+1	Noun	pound
+1	Noun	husk
+1	Noun	home
+1	Noun	weight
+1	Noun	story
+
+# Determiners.
+1	Det	a
+1	Det	another
+1	Det	any
+1	Det	each
+1	Det	every
+1	Det	no
+1	Det	that
+1	Det	the
+1	Det	this
+
+# Prepositions.
+1	Prep	above
+1	Prep	across
+1	Prep	at
+1	Prep	below
+1	Prep	by
+1	Prep	for
+1	Prep	from
+1	Prep	into
+1	Prep	near
+1	Prep	of
+1	Prep	on
+1	Prep	over
+1	Prep	through
+1	Prep	with
+
+# Proper nouns.  Note that our Proper tag is just for people.
+1	Proper	Arthur
+1	Proper	Guinevere
+1	Proper	Sir Lancelot
+1	Proper	Sir Bedevere
+1	Proper	Zoot
+1	Proper	Dingo
+1	Proper	Patsy
+1	Proper	Uther Pendragon
+
+# Verbs (third person singular present).
+# Note that only transitive verbs get our VerbT tag,
+# and some of those could also function as intransitives!
+1	VerbT	has
+1	VerbT	covers
+1	VerbT	is
+1	VerbT	drinks
+1	VerbT	carries
+1	VerbT	rides
+
+# End-of-sentence. 
+1	EOS	!
+1	EOS	.
+1	EOS	?
+
+# Pauses. 
+1	PAU	,
+1	PAU	...
+1	PAU	--
+1	PAU	;
+1	PAU	:
+
+# Coordinating conjunctions.  
+1	CC	and
+1	CC	but
+1	CC	or
+1	CC	either
+1	CC	nor
+1	CC	neither
+1	CC	so
+
+# Numbers. 
+1	NUM	eight
+1	NUM	five
+1	NUM	one
+1	NUM	5.5
+1	NUM	sixty
+1	NUM	5,000
+
+# Expletive. 
+1	EX	there
+
+# Subordinating conjunctions. 
+1	IN	that
+1	IN	so
+1	IN	while
+1	IN	because
+1	IN	if
+
+# Modals. 
+1	MD	can
+1	MD	could
+1	MD	may
+1	MD	might
+1	MD	must
+1	MD	ought
+1	MD	shall
+1	MD	should
+1	MD	will
+1	MD	would
+
+
+# Adjectives. 
+1	JJ	bloody
+1	JJ	weary
+1	JJ	unable
+1	JJ	trusty
+1	JJ	further
+1	JJ	sacred
+1	JJ	tropical
+1	JJ	indigenous
+1	JJ	temperate
+1	JJ	hot
+1	JJ	lucky
+1	JJ	simple
+1	JJ	tiny
+1	JJ	hard	
+1	JJ	sensational
+1	JJ	comparable
+1	JJ	angolian
+1	JJ	yellow
+1	JJ	plodding
+
+# Comparative adjectives. 
+1	JJR	bloodier
+1	JJR	wearier
+1	JJR	trustier
+1	JJR	hotter
+1	JJR	simpler
+1	JJR	tinier
+1	JJR	harder
+
+# Superlative adjectives. 
+1	JJS	bloodiest
+1	JJS	weariest
+1	JJS	trustiest
+1	JJS	hottest
+1	JJS	simplest
+1	JJS	tiniest
+1	JJS	hardest
+
+# Plural nouns. 
+1	NNS	coconuts
+1	NNS	halves
+1	NNS	snows
+1	NNS	mountains
+1	NNS	areas
+1	NNS	strangers
+1	NNS	inches
+1	NNS	snakes
+1	NNS	ants
+1	NNS	nights
+
+# More proper nouns, not people. 
+
+1	NNP	Camelot
+1	NNP	England
+1	NNP	Holy Grail
+1	NNP	Round Table
+
+# Plural proper nouns. 
+1	NNPS	Britons
+1	NNPS	Saxons
+
+# Personal pronouns. 
+1	PRP	he
+1	PRP	her
+1	PRP	him
+1	PRP	it
+1	PRP	one
+1	PRP	she
+1	PRP	them
+1	PRP	they
+
+
+# Possessive personal pronouns 
+1	PRP$	her
+1	PRP$	his
+1	PRP$	its
+1	PRP$	their
+
+# Adverbs. 
+1	RB	again
+1	RB	already
+1	RB	currently
+1	RB	frequently
+1	RB	precisely
+1	RB	south
+1	RB	successfully
+1	RB	unfortunately
+
+# 'do'/'does' 
+1	DOE	do
+1	DOE	does
+
+# 'to' 
+1	TO	to
+
+# 'not'
+1	NOT	not
+
+# Verbs (base form). 
+1	VB	have
+1	VB	speak
+1	VB	cover
+1	VB	be
+1	VB	ride
+1	VB	drink
+1	VB	grow
+1	VB	carry
+1	VB	suggest
+1	VB	migrate
+1	VB	know
+
+# Verbs (past tense). 
+1	VBD	had
+1	VBD	spoke
+1	VBD	covered
+1	VBD	was
+1	VBD	were
+1	VBD	rode
+1	VBD	drank
+1	VBD	grew
+1	VBD	carried
+1	VBD	suggested
+1	VBD	migrated
+1	VBD	knew
+
+# Verbs (present participles).
+1	VBG	having
+1	VBG	speaking
+1	VBG	covering
+1	VBG	being
+1	VBG	riding
+1	VBG	drinking
+1	VBG	growing
+1	VBG	carrying
+1	VBG	suggesting
+1	VBG	migrating
+1	VBG	knowing
+
+# Verbs (past participle). 
+1	VBN	had
+1	VBN	spoken
+1	VBN	covered
+1	VBN	been
+1	VBN	ridden
+1	VBN	drunk
+1	VBN	grown
+1	VBN	carried
+1	VBN	suggested
+1	VBN	migrated
+1	VBN	known
+
+# More third person singular verbs. 
+1	VBZ	speaks
+1	VBZ	grows
+1	VBZ	goes
+1	VBZ	migrates
+1	VBZ	suggests
+1	VBZ	knows
+
+# Verbs (present, plural, third person). 
+1	VBPZ	have
+1	VBPZ	speak
+1	VBPZ	cover
+1	VBPZ	are
+1	VBPZ	ride
+1	VBPZ	drink
+1	VBPZ	grow
+1	VBPZ	carry
+1	VBPZ	suggest
+1	VBPZ	migrate
+1	VBPZ	know
+
+# Wh-determiners. 
+1	WDT	that
+1	WDT	what
+1	WDT	which
+
+# Wh-pronouns. 
+1	WP	what
+1	WP	who
+
+# Wh possessive pronoun. 
+1	WP$	whose
+
+# Wh-adverbs
+1	WRB	how
+1	WRB	when
+1	WRB	where
+1	WRB	why
+
+
+# Possessive#  marker. 
+1	PM	's
+
+## S2 tag bigram model
+
+# You may change the weights here or add new rules if you introduce
+# new tags.
+
+1	S2
+1	S2	_Det
+1	S2	_Misc
+1	S2	_Noun
+1	S2	_Prep
+1	S2	_Proper
+1	S2	_VerbT
+1	_Det	Det
+1	_Det	Det _Det
+1	_Det	Det _Misc
+1	_Det	Det _Noun
+1	_Det	Det _Prep
+1	_Det	Det _Proper
+1	_Det	Det _VerbT
+1	_Misc	Misc
+1	_Misc	Misc _Det
+1	_Misc	Misc _Misc
+1	_Misc	Misc _Noun
+1	_Misc	Misc _Prep
+1	_Misc	Misc _Proper
+1	_Misc	Misc _VerbT
+1	_Noun	Noun
+1	_Noun	Noun _Det
+1	_Noun	Noun _Misc
+1	_Noun	Noun _Noun
+1	_Noun	Noun _Prep
+1	_Noun	Noun _Proper
+1	_Noun	Noun _VerbT
+1	_Prep	Prep
+1	_Prep	Prep _Det
+1	_Prep	Prep _Misc
+1	_Prep	Prep _Noun
+1	_Prep	Prep _Prep
+1	_Prep	Prep _Proper
+1	_Prep	Prep _VerbT
+1	_Proper	Proper
+1	_Proper	Proper _Det
+1	_Proper	Proper _Misc
+1	_Proper	Proper _Noun
+1	_Proper	Proper _Prep
+1	_Proper	Proper _Proper
+1	_Proper	Proper _VerbT
+1	_VerbT	VerbT
+1	_VerbT	VerbT _Det
+1	_VerbT	VerbT _Misc
+1	_VerbT	VerbT _Noun
+1	_VerbT	VerbT _Prep
+1	_VerbT	VerbT _Proper
+1	_VerbT	VerbT _VerbT

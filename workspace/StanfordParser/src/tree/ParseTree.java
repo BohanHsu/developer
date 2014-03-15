@@ -34,16 +34,19 @@ public class ParseTree {
 	}
 
 	public static void main(String[] args) {
-		String[] stringArray = new String[] { "do coconuts speak ?",
-				"who does Arthur suggest she carry ?",
-				"are they suggesting Arthur ride to Camelot ?",
-				"the Holy Grail was covered by a yellow fruit .",
-				"do not speak !",
-				"Arthur will have been riding for eight nights .",
-				"Arthur and Guinevere migrate frequently .",
-				"he knows what they are covering with that story .",
-				"the king drank to the castle that was his home ." };
-		
+		/*
+		 * String[] stringArray = new String[] { "do coconuts speak ?",
+		 * "who does Arthur suggest she carry ?",
+		 * "are they suggesting Arthur ride to Camelot ?",
+		 * "the Holy Grail was covered by a yellow fruit .", "do not speak !",
+		 * "Arthur will have been riding for eight nights .",
+		 * "Arthur and Guinevere migrate frequently .",
+		 * "he knows what they are covering with that story .",
+		 * "the king drank to the castle that was his home ." };
+		 */
+		String[] stringArray = new String[] {
+				"roman rulers are named after july and august",
+				"At the corner of Park Street is the bus stop" };
 		for (String string : stringArray) {
 			System.out.println(string);
 			System.out.println(parseTree(string));
