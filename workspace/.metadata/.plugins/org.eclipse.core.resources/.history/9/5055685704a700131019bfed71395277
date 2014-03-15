@@ -1,7 +1,0 @@
-package cmd;
-
-public class TestCMDInterface {
-	public static void main(String[] args) {
-		CMDInterface.main(new String[]{"","",""});
-	}
-}

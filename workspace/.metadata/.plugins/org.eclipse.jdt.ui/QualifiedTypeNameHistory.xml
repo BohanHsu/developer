@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="gasStation.Solution"/>
-<fullyQualifiedTypeName name="cloneGraph.Solution"/>
-<fullyQualifiedTypeName name="cloneGraph.UndirectedGraphNode"/>
 <fullyQualifiedTypeName name="palindromePartitioning.Solution"/>
 <fullyQualifiedTypeName name="algo_probs.Permutation"/>
 <fullyQualifiedTypeName name="graph.Edge"/>
@@ -15,7 +12,6 @@
 <fullyQualifiedTypeName name="utility.GrammarReader"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="grammar.Rule"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="test.Rule"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
@@ -26,7 +22,6 @@
 <fullyQualifiedTypeName name="sentenceBuilder.SentenceBuilder"/>
 <fullyQualifiedTypeName name="cmd.CMDInterface"/>
 <fullyQualifiedTypeName name="utility.RandomNumberGenerator"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="edu.stanford.nlp.trees.TreebankLanguagePack"/>
 <fullyQualifiedTypeName name="edu.stanford.nlp.trees.PennTreebankLanguagePack"/>
 <fullyQualifiedTypeName name="edu.stanford.nlp.trees.GrammaticalStructureFactory"/>
@@ -46,18 +41,23 @@
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="longestConsecutiveSequence.Solution"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.net.CookieHandler"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="http_test.HttpTest"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="q3.Path"/>
+<fullyQualifiedTypeName name="q3.Graph"/>
+<fullyQualifiedTypeName name="q3.Edge"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>

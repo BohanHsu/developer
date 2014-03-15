@@ -1,0 +1,16 @@
+package q3;
+
+import java.util.LinkedList;
+
+public class Path {
+	LinkedList<Integer> path = null;
+	int capacity = 0;
+	
+	public Path() {
+		this.path = new LinkedList<Integer>();
+	}
+	
+	public void addToHead(int i){
+		this.path.addFirst(i);
+	}
+}
