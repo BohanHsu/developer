@@ -101,7 +101,7 @@ public class Graph {
 
 //		System.out.println(capa.get(tgt));
 
-		if (capa.get(tgt) == 0) {
+		if (capa.get(tgt) == null) {
 			// no path
 			return null;
 		}
@@ -120,9 +120,12 @@ public class Graph {
 
 	private void modifyGraph(Path path) {
 		LinkedList<Edge> es = path.modifyEdge();
+		
+		/*
 		for (Edge ed : es) {
 			System.out.println(ed.getSrc() +"," + ed.getTgt() + ","+ ed.getWeight());
 		}
+		*/
 		for (Edge ed : es) {
 			for (Edge ted : this.e) {
 				if (ted.getSrc() == ed.getSrc() && ted.getTgt() == ed.getTgt()) {
