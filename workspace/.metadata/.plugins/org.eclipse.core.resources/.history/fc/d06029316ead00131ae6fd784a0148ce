@@ -1,0 +1,12 @@
+package q3;
+
+public class GraphLatex {
+	Graph g  = null;
+
+	public GraphLatex(Graph g) {
+		super();
+		this.g = g;
+	}
+	
+	
+}

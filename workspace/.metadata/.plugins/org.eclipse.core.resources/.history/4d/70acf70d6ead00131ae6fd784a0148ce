@@ -1,0 +1,6 @@
+package q3;
+
+public class GraphLatex {
+	Graph g  = null;
+	
+}

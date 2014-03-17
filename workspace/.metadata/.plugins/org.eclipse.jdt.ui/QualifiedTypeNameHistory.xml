@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="palindromePartitioning.Solution"/>
-<fullyQualifiedTypeName name="algo_probs.Permutation"/>
 <fullyQualifiedTypeName name="graph.Edge"/>
 <fullyQualifiedTypeName name="java.io.DataOutput"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
@@ -51,13 +49,15 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="q3.Path"/>
-<fullyQualifiedTypeName name="q3.Graph"/>
-<fullyQualifiedTypeName name="q3.Edge"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="q3.Edge"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="q3.Graph"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.awt.PageAttributes.OriginType"/>
+<fullyQualifiedTypeName name="q3.GraphLatex"/>
 </qualifiedTypeNameHistroy>
