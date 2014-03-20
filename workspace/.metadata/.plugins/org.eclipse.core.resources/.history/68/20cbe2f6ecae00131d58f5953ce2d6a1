@@ -45,8 +45,8 @@ public class Question {
 	GraphLatex gl = new GraphLatex(g, xc, yc, null);
 	GraphLatex gl2 = new GraphLatex(xc, yc, null);
 	
-//	int tc = g.dinic(5, 2,gl, gl2);
-	int tc = g.dinic(5, 2,null, null);
+	int tc = g.dinic(5, 2,gl, gl2);
+//	int tc = g.dinic(5, 2,null, null);
 	System.out.println(tc);
 	}
 }

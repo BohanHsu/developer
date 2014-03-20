@@ -99,11 +99,10 @@ public class Graph {
 				System.out.println("");
 				System.out.println(gl.toLatex());
 				System.out.println("");
-			} else {
+			}else{
 				for (Edge edge : e) {
-					if (edge.getWeight() != 0) {
-						// System.out.println("("+edge.getSrc()+","+edge.getTgt()+")"
-						// + "\t" + edge.getWeight());
+					if (edge.getWeight() != 0){
+//						System.out.println("("+edge.getSrc()+","+edge.getTgt()+")" + "\t" + edge.getWeight());
 					}
 				}
 			}
@@ -166,21 +165,6 @@ public class Graph {
 
 		// System.out.println(capa.get(tgt));
 
-		LinkedList<String> sb = new LinkedList<String>();
-		for (Integer vertex : prev.keySet()) {
-			if (prev.get(vertex) == tgt) {
-
-			} else {
-				sb.add("("+prev.get(vertex) + "," + vertex + ")\t"
-						+ capa.get(vertex));
-			}
-		}
-		
-		for (String string : sb) {
-			System.out.println(string);
-		}
-		
-		
 		if (capa.get(tgt) == null) {
 			// no path
 			return null;
@@ -195,23 +179,19 @@ public class Graph {
 			p.addToHead(n);
 		} while (n != src);
 
-		// print the graph
-		String[] sa = new String[prev.size()];
-		int i = 0;
-		for (Integer vertex : prev.keySet()) {
-			if (prev.get(vertex) == tgt) {
-
-			} else {
-				sa[i] = prev.get(vertex) + "," + vertex + ","
-						+ capa.get(vertex);
-				i++;
-				sb.add("("+prev.get(vertex) + "," + vertex + ")\t"
-						+ capa.get(vertex));
-			}
-		}
-
-		
 		if (gl != null) {
+			// print the graph
+			String[] sa = new String[prev.size()];
+			int i = 0;
+			for (Integer vertex : prev.keySet()) {
+				if (prev.get(vertex) == tgt) {
+
+				} else {
+					sa[i] = prev.get(vertex) + "," + vertex + ","
+							+ capa.get(vertex);
+					i++;
+				}
+			}
 			Graph tg = new Graph(sa);
 			gl.setG(tg);
 			String latex = gl.toLatex();

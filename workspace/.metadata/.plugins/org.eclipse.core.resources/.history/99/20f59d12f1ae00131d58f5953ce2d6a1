@@ -176,10 +176,6 @@ public class Graph {
 			}
 		}
 		
-		for (String string : sb) {
-			System.out.println(string);
-		}
-		
 		
 		if (capa.get(tgt) == null) {
 			// no path
@@ -209,7 +205,10 @@ public class Graph {
 						+ capa.get(vertex));
 			}
 		}
-
+//		
+//		for (String string : sb) {
+//			System.out.println(string);
+//		}
 		
 		if (gl != null) {
 			Graph tg = new Graph(sa);
