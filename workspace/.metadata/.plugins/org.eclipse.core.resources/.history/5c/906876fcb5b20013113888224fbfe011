@@ -1,0 +1,24 @@
+package parser;
+
+import grammar.ContextFreeLanguage;
+import grammar.Rule;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class State {
+	private ContextFreeLanguage cfl = null;
+	private String from = null;
+	private LinkedList<String> beforeDot = null;
+	private LinkedList<String> afterDot = null;
+	private int prev = 0;
+	
+	public State(ContextFreeLanguage cfl, Rule rule) {
+		this.cfl = cfl;
+		this.beforeDot = new LinkedList<String>();
+		this.afterDot = new LinkedList<String>();
+		this.from = rule.getFromSymbol();
+	}
+	
+
+}

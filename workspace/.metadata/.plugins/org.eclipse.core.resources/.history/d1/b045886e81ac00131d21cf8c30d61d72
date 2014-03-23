@@ -1,5 +1,0 @@
-package q3;
-
-public class Question {
-	Graph g = new Graph(edge);
-}

@@ -1,0 +1,21 @@
+package parser;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+
+import grammar.ContextFreeLanguage;
+
+public class SentenceParser {
+	private ContextFreeLanguage cfl = null;
+	private HashMap<Integer, LinkedList<State>> chart = null;
+	
+	
+	public SentenceParser(ContextFreeLanguage cfl) {
+		this.cfl = cfl;
+	}
+	
+	public void earleyParse(){
+		this.chart = new HashMap<Integer, LinkedList<State>>();
+		
+	}
+}

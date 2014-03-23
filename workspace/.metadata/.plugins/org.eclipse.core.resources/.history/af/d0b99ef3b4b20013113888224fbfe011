@@ -1,0 +1,16 @@
+package parser;
+
+import java.util.LinkedList;
+
+public class State {
+	private LinkedList<String> brforeDot = null;
+	private LinkedList<String> afterDot = null;
+	private int prev = 0;
+	
+	public State() {
+		this.brforeDot = new LinkedList<String>();
+		this.afterDot = new LinkedList<String>();
+	}
+	
+	
+}

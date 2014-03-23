@@ -12,6 +12,7 @@ public class ContextFreeLanguage {
 	private HashSet<String> nonTerminalSymbols = null;
 	private HashSet<String> terminalSymbols = null;
 	private HashMap<String, ArrayList<Rule>> mapping = null;
+	private HashMap<String, ArrayList<String>> terminalPOS = null;
 	private boolean printingLog = false;
 
 	public ContextFreeLanguage() {
@@ -77,6 +78,26 @@ public class ContextFreeLanguage {
 			System.out.println("--rules:");
 			System.out.println(mapping);
 		}
+		
+		this.terminalPOS = new HashMap<String, ArrayList<String>>();
+		
+		for (String nonter : this.mapping.keySet()) {
+			ArrayList<Rule> rules = this.mapping.get(nonter);
+			for (Rule rule : rules) {
+				ArrayList<String> toSymbs = rule.getToSymbols();
+				if (toSymbs.size() == 1 && this.terminalSymbols.contains(toSymbs.get(0))){
+					if (!this.terminalPOS.containsKey(toSymbs.get(0))){
+						this.terminalPOS.put(toSymbs.get(0), new ArrayList<String>());
+					}
+					this.terminalPOS.get(toSymbs.get(0)).add(nonter);
+				}
+			}
+		}
+		
+		if (printingLog) {
+			System.out.println("--POS:");
+			System.out.println(terminalPOS);
+		}
 	}
 	
 	
@@ -101,6 +122,12 @@ public class ContextFreeLanguage {
 
 	public boolean isPrintingLog() {
 		return printingLog;
+	}
+
+	
+	
+	public HashMap<String, ArrayList<String>> getTerminalPOS() {
+		return terminalPOS;
 	}
 
 	public static void main(String[] args) {

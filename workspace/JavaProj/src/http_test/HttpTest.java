@@ -146,10 +146,11 @@ public class HttpTest {
 		String uuid = ht.getUuid(returnPage);
 		System.out.println(uuid);
 		
-		String postForm = ht.getPostForm(uuid, "xbh", "xbh");
+		String postForm = ht.getPostForm(uuid, "xu.bo", "xbh");
 		System.out.println(postForm);
 		
 		String verifySuccessUrl = "http://myneu.neu.edu/render.userLayoutRootNode.uP?uP_root=root";
-		
+		returnPage = ht.getPageContent(verifySuccessUrl);
+		System.out.println(returnPage);
 	}
 }

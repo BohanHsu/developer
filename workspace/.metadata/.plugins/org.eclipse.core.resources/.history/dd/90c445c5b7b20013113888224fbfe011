@@ -1,0 +1,47 @@
+package parser;
+
+import grammar.ContextFreeLanguage;
+import grammar.Rule;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class State {
+	private ContextFreeLanguage cfl = null;
+	private String from = null;
+	private LinkedList<String> beforeDot = null;
+	private LinkedList<String> afterDot = null;
+	private int prev = 0;
+	
+	/**
+	 * construct for start symbols and prediction
+	 * @param cfl : a context free language
+	 * @param rule : a rule contain in this state
+	 * @param k : the previous dot position
+	 */
+	public State(ContextFreeLanguage cfl, Rule rule, int k) {
+		this.cfl = cfl;
+		this.beforeDot = new LinkedList<String>();
+		this.afterDot = new LinkedList<String>(rule.getToSymbols());
+		this.from = rule.getFromSymbol();
+		this.prev = k;
+	}
+	
+	/**
+	 * if there are no symbol after the dot, this rule is terminated 
+	 * @return : true if this state is complete
+	 */
+	public boolean isComplete(){
+		return this.afterDot.isEmpty();
+	}
+	
+	/**
+	 * check if next symbol is non-terminal	 
+	 * this state must be incomplete
+	 * @return : true if next symbol is non-terminal
+	 */
+	public boolean isNextSymNonTerminal(){
+		this.afterDot.get(0);
+	}
+
+}

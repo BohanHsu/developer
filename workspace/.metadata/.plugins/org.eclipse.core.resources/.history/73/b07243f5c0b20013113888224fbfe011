@@ -1,0 +1,12 @@
+package test;
+
+import parser.SentenceParser;
+import grammar.ContextFreeLanguage;
+
+public class TestParser {
+	public static void main(String[] args) {
+		String path = "src/grammar1.txt";
+		ContextFreeLanguage cfl = new ContextFreeLanguage(path, true);
+		SentenceParser sp = new SentenceParser(cfl);
+	}
+}

@@ -1,0 +1,54 @@
+package parser;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+
+import grammar.ContextFreeLanguage;
+import grammar.Rule;
+
+public class SentenceParser {
+	private ContextFreeLanguage cfl = null;
+	private HashMap<Integer, LinkedList<State>> chart = null;
+	
+	
+	public SentenceParser(ContextFreeLanguage cfl) {
+		this.cfl = cfl;
+	}
+	
+	public void earleyParse(ArrayList<String> words){
+		this.chart = new HashMap<Integer, LinkedList<State>>();
+		
+		//initialize
+		
+		for (int i = 0; i< words.size(); i++){
+			for (State state :this.chart.get(i)){
+				if (!state.isComplete()){
+					// this state is incomplete
+					if (state.isNextSymNonTerminal()){
+						// next is non-terminal
+						// do perdictor
+					}else{
+						// do scanner
+					}
+				} else{
+					// this is complete
+					// do complete
+				}
+			}
+		}
+	}
+	
+	private void perdictor(State state, int j){
+		String nextB = state.peekNext();
+		ArrayList<Rule> rules = this.cfl.getMapping().get(nextB);
+		
+	}
+	
+	private void addToSet(State state, int j){
+		if (!this.chart.containsKey(j)){
+			this.chart.put(j, new LinkedList<State>());
+		}
+		this.chart.get(j).add(state);
+	}
+}
