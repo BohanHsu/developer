@@ -15,6 +15,7 @@ public class Solution {
 		String str = null;
 		int d = 0;
 		while (!queue.isEmpty()) {
+			System.out.println(queue);
 			str = queue.poll();
 			d = dist.get(str);
 			if (str.equals(end)) {
@@ -22,10 +23,10 @@ public class Solution {
 			} else {
 				HashSet<String> successors = allConjunctedWords(str);
 				for (String successor : successors) {
-					if (dict.contains(successor) || end.equals(successor)) {
-						if (!dist.containsKey(successor)) {
-							queue.add(successor);
-							dist.put(successor, d + 1);
+					if (dict.contains(successor)) {
+						if (!dist.containsKey(successor)){
+						queue.add(successor);
+						dist.put(successor, d + 1);
 						}
 					}
 				}

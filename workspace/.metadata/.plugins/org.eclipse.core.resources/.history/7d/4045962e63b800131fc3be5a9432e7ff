@@ -15,6 +15,7 @@ public class Solution {
 		String str = null;
 		int d = 0;
 		while (!queue.isEmpty()) {
+			System.out.println(queue);
 			str = queue.poll();
 			d = dist.get(str);
 			if (str.equals(end)) {
