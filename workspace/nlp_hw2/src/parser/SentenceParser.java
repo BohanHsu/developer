@@ -11,132 +11,141 @@ import grammar.Rule;
 
 public class SentenceParser {
 	private ContextFreeLanguage cfl = null;
-	private HashMap<Integer, LinkedList<State>> chart = null;
+	private HashMap<Integer, ArrayList<State>> chart = null;
+	private String startf = null;
+	private Queue<State> queue = new LinkedList<State>();
+	private int q = 0;
 
 	public SentenceParser(ContextFreeLanguage cfl) {
 		this.cfl = cfl;
 	}
 
-	public void earleyParse(ArrayList<String> words, String start) {
-		this.chart = new HashMap<Integer, LinkedList<State>>();
-
-		// initialize
-
+	public boolean earleyParser(ArrayList<String> words, String start){
+		this.startf = start;
+		this.chart = new HashMap<Integer, ArrayList<State>>();
 		ArrayList<Rule> rules = this.cfl.getMapping().get(start);
-
 		for (Rule rule : rules) {
 			addToSet(new State(this.cfl, rule, 0), 0);
 		}
-
-		
 		
 		for (int i = 0; i < words.size(); i++) {
-			LinkedList<State> states = this.chart.get(i);
-			for (State state : states) {
-				// test
-				System.out.println(i + " " + state);
-				if (!state.isComplete()) {
-					// this state is incomplete
-					if (state.isNextSymNonTerminal()) {
-						// next is non-terminal
-						// do perdictor
-						perdictor(state, i);
-					} else {
-						// do scanner
-						scanner(state, i);
+			
+			ArrayList<State> nextSet = this.chart.get(i);
+			
+			if (nextSet == null){
+				return false;
+			}
+			
+			
+			this.queue = new LinkedList<State>(nextSet);
+			this.q = i;
+			while(!this.queue.isEmpty()){
+				State state = this.queue.poll();
+				if (!state.isComplete()){
+					// not complete
+					if (state.isNextNonterminal()){
+						// non terminal
+						predictor(state,i);
+					}else{
+						// terminal
+						scanner(state,i,words.get(i));
 					}
-				} else {
-					// this is complete
-					// do complete
-					complete(state, i);
+				} else{
+					// complete
+					complete(state,i);
+					
 				}
 			}
 		}
+		return isAccepted();
 	}
-
-	/**
-	 * Prediction of earley parse algorithm
-	 * 
-	 * @param state
-	 *            : the current state
-	 * @param j
-	 *            : the current of index in loop
-	 */
-	private void perdictor(State state, int j) {
-		String nextB = state.peekNext();
+	
+	private void predictor(State state, int j){
+		String nextB = state.next();
 		ArrayList<Rule> rules = this.cfl.getMapping().get(nextB);
-
 		for (Rule rule : rules) {
-			State newState = new State(cfl, rule, j);
-			addToSet(newState, j);
+			addToSet(new State(this.cfl, rule, j), j);
 		}
-
+	}
+	
+	private void scanner(State state, int j, String word){		
+		if (state.next().equals(word)){
+			addToSet(new State(state), j+1);
+		}
 	}
 
-	/**
-	 * scanner a state
-	 * 
-	 * @param state
-	 *            : the original state
-	 * @param j
-	 *            : the current set
-	 */
-	private void scanner(State state, int j) {
-		addToSet(new State(state), j + 1);
-	}
-
-	/**
-	 * complete in earley parser
-	 * 
-	 * @param state
-	 *            : the original state
-	 * @param k
-	 *            : the current set
-	 */
-	private void complete(State state, int k) {
-		String fromX = state.getFrom();
+	
+	private void complete(State state, int k){
+		
 		int j = state.getPrev();
-		LinkedList<State> states = this.chart.get(j);
-		for (State sta : states) {
-			if ((!sta.isComplete()) && sta.peekNext().equals(fromX)) {
-				addToSet(new State(state), k);
+		ArrayList<State> sj = this.chart.get(j);
+		
+		for (State state2 : sj) {
+			if (!state2.isComplete() && state2.next().equals(state.getFrom())){
+				
+				addToSet(new State(state2), k);
 			}
 		}
 	}
 
-	/**
-	 * add a state to set
-	 * 
-	 * @param state
-	 *            : the adding state
-	 * @param j
-	 *            : the index of set
-	 */
 	private void addToSet(State state, int j) {
 		if (!this.chart.containsKey(j)) {
-			this.chart.put(j, new LinkedList<State>());
+			this.chart.put(j, new ArrayList<State>());
 		}
-		this.chart.get(j).add(state);
+		if (!inSet(j, state)) {
+			this.chart.get(j).add(state);
+			if (j == this.q) {
+				this.queue.add(state);
+			}
+		}
 	}
 
-	/**
-	 * split a string by space and store into ArrayList
-	 * 
-	 * @param str
-	 *            : a string
-	 * @return : a arraylist
-	 */
-	public ArrayList<String> stringToArrayList(String str) {
-		ArrayList<String> list = new ArrayList<String>();
+	private boolean inSet(int j, State state) {
+		ArrayList<State> states = this.chart.get(j);
+		for (State state2 : states) {
+			if (state2.equals(state)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public ArrayList<String> stringToArrayList(String str){
 		String[] sa = str.split(" ");
+		ArrayList<String> res = new ArrayList<String>();
 		for (String string : sa) {
-			list.add(string);
+			res.add(string);
 		}
-		return list;
+		return res;
 	}
 
-	public HashMap<Integer, LinkedList<State>> getChart() {
+	public HashMap<Integer, ArrayList<State>> getChart() {
 		return chart;
+	}
+	
+	public boolean isAccepted(){
+		for (Integer i : this.chart.keySet()) {
+			ArrayList<State> los = this.chart.get(i);
+			for (State state : los) {
+				if (state.isComplete() && state.getPrev() == 0 && state.getFrom().equals(startf)){
+					
+					ArrayList<Rule> rules = this.cfl.getMapping().get(startf);
+					
+					for (Rule rule : rules) {
+						ArrayList<String> tosym = rule.getToSymbols();
+						if (tosym.size() == state.getBeforeDot().size()){
+							for (int j = 0 ; j < tosym.size(); j++){
+								if (!tosym.get(j).equals(state.getBeforeDot().get(j))){
+									return false;
+								}
+							}
+						}
+					}
+					
+				}
+			}
+		}
+		return true;
 	}
 
 }

@@ -7,111 +7,107 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class State {
-	private static final Object State = null;
 	private ContextFreeLanguage cfl = null;
-	private String from = null;
-	private LinkedList<String> beforeDot = null;
-	private LinkedList<String> afterDot = null;
+	private String from  = null;
+	private ArrayList<String> beforeDot = null;
+	private ArrayList<String> afterDot = null;
 	private int prev = 0;
-
-	/**
-	 * construct for start symbols and prediction
-	 * 
-	 * @param cfl
-	 *            : a context free language
-	 * @param rule
-	 *            : a rule contain in this state
-	 * @param k
-	 *            : the previous dot position
-	 */
-	public State(ContextFreeLanguage cfl, Rule rule, int k) {
+	
+	public State(ContextFreeLanguage cfl, Rule rule, int prev) {
 		this.cfl = cfl;
-		this.beforeDot = new LinkedList<String>();
-		this.afterDot = new LinkedList<String>(rule.getToSymbols());
 		this.from = rule.getFromSymbol();
-		this.prev = k;
+		this.beforeDot = new ArrayList<String>();
+		this.afterDot = new ArrayList<String>(rule.getToSymbols());
+		this.prev = prev;
 	}
-
-	/**
-	 * construct a state by another state use for scanner
-	 * 
-	 * @param state
-	 *            : the previous state
-	 */
+	
 	public State(State state) {
-		this.cfl = state.getCfl();
-		this.beforeDot = new LinkedList<String>(state.getBeforeDot());
-		this.afterDot = new LinkedList<String>(state.getAfterDot());
-		
-		if (this.afterDot.size() > 0){
-			this.beforeDot.add(this.afterDot.get(0));
-			this.afterDot.remove(0);
-		}
-
-		this.from = state.getFrom();
-		this.prev = state.getPrev();
+		this.cfl = state.cfl;
+		this.from = state.from;
+		this.beforeDot = new ArrayList<String>(state.beforeDot);
+		this.afterDot = new ArrayList<String>(state.afterDot);
+		this.beforeDot.add(this.afterDot.get(0));
+		this.afterDot.remove(0);
+		this.prev = state.prev;
 	}
-
-	/**
-	 * if there are no symbol after the dot, this rule is terminated
-	 * 
-	 * @return : true if this state is complete
-	 */
-	public boolean isComplete() {
-		return this.afterDot.isEmpty();
+	
+	public State(ContextFreeLanguage cfl, String pos, String word, int i){
+		this.cfl = cfl;
+		this.from = pos;
+		this.beforeDot = new ArrayList<String>();
+		this.beforeDot.add(word);
+		this.afterDot = new ArrayList<String>();
+		this.prev = i;
 	}
-
-	/**
-	 * check if next symbol is non-terminal this state must be incomplete
-	 * 
-	 * @return : true if next symbol is non-terminal
-	 */
-	public boolean isNextSymNonTerminal() {
-		return this.cfl.getNonTerminalSymbols().contains(this.afterDot.get(0));
-	}
-
-	/**
-	 * peek the next symbol of this state this state must be incomplete
-	 * 
-	 * @return : the first symbol after dot
-	 */
-	public String peekNext() {
+	
+	public String next(){
 		return this.afterDot.get(0);
 	}
-
-	public ContextFreeLanguage getCfl() {
-		return cfl;
+	
+	public boolean isNextNonterminal(){
+		return this.cfl.getNonTerminalSymbols().contains(this.afterDot.get(0));
+	}
+	
+	public boolean isComplete(){
+		return this.afterDot.isEmpty();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof State){
+			State s = (State)obj;
+			if (s.from.equals(this.from)){
+				if (this.beforeDot.size() == s.beforeDot.size() && this.afterDot.size() == s.afterDot.size()){
+					for (int i = 0 ; i < this.beforeDot.size(); i++){
+						if (!this.beforeDot.get(i).equals(s.beforeDot.get(i))){
+							return false;
+						}
+					}
+					
+					for (int i = 0 ; i < this.afterDot.size(); i++){
+						if (! this.afterDot.get(i).equals(s.afterDot.get(i))){
+							return false;
+						}
+					}
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public String getFrom() {
 		return from;
 	}
 
-	public LinkedList<String> getBeforeDot() {
-		return beforeDot;
-	}
-
-	public LinkedList<String> getAfterDot() {
-		return afterDot;
-	}
-
 	public int getPrev() {
 		return prev;
 	}
-
+	
 	@Override
 	public String toString() {
 		String str = this.from + " -> ";
 		for (String s : this.beforeDot) {
 			str += s + " ";
 		}
-		str += "~ ";
+		
+		str += "* ";
+		
 		for (String s : this.afterDot) {
 			str += s + " ";
 		}
-		return str;
+		
+		return str + "(" + this.prev + ")";
+		
+	}
+
+	public ContextFreeLanguage getCfl() {
+		return cfl;
+	}
+
+	public ArrayList<String> getBeforeDot() {
+		return beforeDot;
 	}
 	
 	
-
 }
