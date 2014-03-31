@@ -1,4 +1,4 @@
-c class Solution {
+class Solution {
     private HashMap<String, ArrayList<String>> next = new HashMap<String, ArrayList<String>>();
     public ArrayList<ArrayList<String>> findLadders(String start, String end, HashSet<String> dict) {
         ArrayList<ArrayList<String>> allPath = new ArrayList<ArrayList<String>>();
