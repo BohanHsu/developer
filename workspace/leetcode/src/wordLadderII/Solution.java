@@ -22,8 +22,10 @@ class Solution {
 		String str = null;
 		int d = 0;
 		while (!queue.isEmpty()) {
+		
 			System.out.println(queue);
 			System.out.println(dist);
+			
 			str = queue.poll();
 			d = dist.get(str);
 			if (d + 1 > shortestLength) {
@@ -80,8 +82,13 @@ class Solution {
 			}
 			allPath = newPath;
 		}
-
-		return allPath;
+		newPath = new ArrayList<ArrayList<String>>();
+		for (ArrayList<String> path1 : allPath) {
+			if (path1.get(shortestLength).equals(end)){
+				newPath.add(path1);
+			}
+		}
+		return newPath;
 	}
 
 	private void addToMap(String key, String value) {
@@ -111,10 +118,13 @@ class Solution {
 	public static void main(String[] args) {
 		Solution s = new Solution();
 
-		String start = "a";
-		String end = "c";
+		//"hot", "dog", ["hot","cog","dog","tot","hog","hop","pot","dot"]
 
-		String[] dictArray = new String[] { "a", "b", "c"};
+		
+		String start = "hot";
+		String end = "dog";
+
+		String[] dictArray = new String[] { "hot","cog","dog","tot","hog","hop","pot","dot"};
 		HashSet<String> dict = new HashSet<String>();
 
 		for (String string : dictArray) {

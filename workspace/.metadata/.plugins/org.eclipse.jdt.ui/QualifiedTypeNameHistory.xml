@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="utility.GrammarReader"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="test.Rule"/>
-<fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="sentenceBuilder.IntermediateSentence"/>
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
@@ -47,17 +43,21 @@
 <fullyQualifiedTypeName name="grammar.Rule"/>
 <fullyQualifiedTypeName name="javax.sql.rowset.Predicate"/>
 <fullyQualifiedTypeName name="parser.SentenceParser"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="grammar.ContextFreeLanguage"/>
 <fullyQualifiedTypeName name="parser.State"/>
 <fullyQualifiedTypeName name="cmd.CMDParser"/>
 <fullyQualifiedTypeName name="wordLadder.Solution"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
 <fullyQualifiedTypeName name="wordLadderII.Solution"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="validPalindrome.Solution"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="binaryTreeMaximumPathSum.Solution"/>
+<fullyQualifiedTypeName name="binaryTreeMaximumPathSum.TreeNode"/>
 </qualifiedTypeNameHistroy>
