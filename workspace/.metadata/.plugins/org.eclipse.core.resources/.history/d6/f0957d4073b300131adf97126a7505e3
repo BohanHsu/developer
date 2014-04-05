@@ -1,7 +1,0 @@
-package cmd;
-
-public class TestCMDParser {
-	public static void main(String[] args) {
-		CMDParser.main(new String[]{"","","",""});
-	}
-}
