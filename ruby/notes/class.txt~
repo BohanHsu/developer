@@ -1,0 +1,67 @@
+
+constructing method:
+initialize
+
+a method for showing information
+inspect: associate with each class
+
+to_s is the to string function:
+a example of to_s method is 
+def to_s
+     “Song: #{@name} — #{@artist}”
+end
+
+ in ruby, #{} is the notation of adding information into string
+
+Inheritance 
+
+class Song
+     def initialize(name,artrit)
+          … end end
+
+class KaraokeSong < Song
+     def initialize(name,artrit,lyric)
+          super(name,artist)
+     end
+end
+
+# in ruby, using the notation < to indicate the inheritance of a class
+# in ruby, using super in initialize method to class super class’ initialize method
+
+in a method, super is calling the same name method of it’s parent class
+sending super a message without arguments
+
+Every instance variable is private
+need provide accessor, or getter
+
+a way of declare accessor:
+attr_reader :name, :artist, :duration
+
+setting a instance variable outside object:
+
+using setter function:
+example:
+def duration=(newDuartion)
+     @duration = newDuration
+end
+
+or declare this attribute is writable:
+attr_writer :duration 
+
+---
+In ruby, one can declare a method like:
+def doSomethingWithArgument=(value)
+     value * 3
+end
+
+can call this method using the syntax:
+doSomethingWithArgument = 1
+notice the space between the equal mark
+
+Class variable:
+in ruby, a class is begin with two @ sign
+
+a class variable must be initialized when declaring
+
+
+
