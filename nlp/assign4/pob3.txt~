@@ -1,0 +1,7 @@
+Let g=chase and h=λx.∀y.(dog(y)⇒chase(x,y)). If h=f(g), write down a λ-abstract for f.
+
+\x. for all y.(dog(x) -> chase(x,y))
+\P. x.(dog(x) -> P(x))(\z.chase(z, y))
+
+
+

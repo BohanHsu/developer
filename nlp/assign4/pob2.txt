@@ -1,0 +1,8 @@
+feed Cyril and give a cappucino to Angus
+be loved by everyone
+be loved by everyone and detested by no-one
+
+
+\x y z.feed(x) and give(y,z)[Cyril/x, capucino/y, Angus/z]
+\exist y. (for all x. (love(x,y)))
+\exist y. (for all x. (love(x,y))) and (for all z. -detest(z,y))
