@@ -1,0 +1,10 @@
+a = None
+
+def setA():
+    a = [1,2,3,4,5]
+
+def readA():
+    print a[2]
+
+setA()
+readA()
