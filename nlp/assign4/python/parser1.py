@@ -134,7 +134,7 @@ def parseing(sent1,sent2,grammar,lexical):
         for v in range(1,V+1):
             delta[t][t][v-1][v] = grammar.epsilonWord #b(epsilon/cv)
 
-    print delta
+#    print delta
 
     # recursion
     for s in range(0,T):
@@ -163,15 +163,15 @@ def parseing(sent1,sent2,grammar,lexical):
         if not lq is None and not checkExist(nodes,lq):
             queue.append(lq)
             nodes.append(lq)
-            print lq,'->',q
+#            print lq,'->',q
             
         if not rq is None and not checkExist(nodes,rq):
             queue.append(rq)
             nodes.append(rq)
-            print q,'<-',rq
+#           print q,'<-',rq
 
         if lq is None and rq is None:
-            print q,'leaf'
+#            print q,'leaf'
             leaf.append(q)
 
 
@@ -187,9 +187,12 @@ def parseing(sent1,sent2,grammar,lexical):
             w2 = '<e>'
         
         aligns.append((w1,w2))
-
+    
+    print '===='
+    print sent1
+    print sent2
     print aligns
-    print nodes
+#    print nodes
 
 def checkExist(ns,n):
     for en in ns:
@@ -205,7 +208,7 @@ def checkExist(ns,n):
 deltaStack = []
     
 def deltaFunction(s,t,u,v,grammar):
-    print 'deltaFunction',s,t,u,v
+#    print 'deltaFunction',s,t,u,v
     
     # declaring global 
     global delta
@@ -231,7 +234,7 @@ def deltaFunction(s,t,u,v,grammar):
 
     
 def setDelta(s,t,u,v,grammar):
-    print 'setDelta',s,t,u,v
+#    print 'setDelta',s,t,u,v
     # declaring global 
     global delta
     global theta
@@ -263,7 +266,7 @@ def setDelta(s,t,u,v,grammar):
     return True
 
 def deltaSbAb(s,t,u,v,grammar):
-    print 'deltaSbAb',s,t,u,v
+#    print 'deltaSbAb',s,t,u,v
     """the possiblity of align in suqare bracket"""
     # declaring global 
     global delta
@@ -344,28 +347,34 @@ def right(s,t,u,v):
 
 
 # interface
-lines = None
-sentence1 = None
-sentence2 = None
+#lines = None
+#sentence1 = None
+#sentence2 = None
 
-
-if __name__ == "__main__":
+    
+def main():
     dicpath = sys.argv[1]
     f = open(dicpath)
     lines =  f.readlines()
     f.close()
+    lexical = LecxicalDictionary(lines)
+    grammar = BTGGrammar(-1,-2,-20,-21)
     ep = sys.argv[2]
     dp = sys.argv[3]
     f = open(ep)
-    sentence1 = f.readlines()[99][:-1].split(' ')
+    lang1sents = f.readlines()
     f.close()
     f = open(dp)
-    sentence2 = f.readlines()[99][:-1].split(' ')
+    lang2sents = f.readlines()
     f.close()
-    
-lexical = LecxicalDictionary(lines)
-grammar = BTGGrammar(-1,-2,-20,-21)
+
+    for i in range(0,len(lang1sents)):
+        sentence1 = lang1sents[i][:-1].split(' ')
+        sentence2 = lang2sents[i][:-1].split(' ')
+        parseing(sentence1,sentence2,grammar,lexical)
+
+if __name__ == "__main__":
+    main()
+
 #def __init__(self,sb,ab,epw,wep):
-
-
-parseing(sentence1,sentence2,grammar,lexical)
+#parseing(sentence1,sentence2,grammar,lexical)
