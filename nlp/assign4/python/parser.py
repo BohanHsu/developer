@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 # this is a BTG parse
 # for natural language processing homework 4
 
@@ -50,6 +51,7 @@ itoaab = None
 kappaab = None
 sigmaab = None
 upsilonab = None
+nodes = []
 
 def parseing(sent1,sent2,grammar,lexical):
     """parsing 2 sentences in two language"""
@@ -64,6 +66,7 @@ def parseing(sent1,sent2,grammar,lexical):
     global kappaab 
     global sigmaab
     global upsilonab
+    global nodes
 
     # declare variable
     T = len(sent1)
@@ -140,23 +143,39 @@ def parseing(sent1,sent2,grammar,lexical):
                         setDelta(s,t,u,v,grammar)
                         
     # resonstruction
-    queue = []
+    queue = deque([])
     q1 = (0,T,0,V)
     queue.append(q1)
     aligns = []
-    while queue.len() > 0:
-        q = deque(queue)
+    while len(queue) > 0:
+        q = queue.popleft()
+        print q
         if q[1]-q[0] <= 1 and q[3] - q[2] <= 1:
             aligns.append(q)
     
         lq = left(q[0],q[1],q[2],q[3])
         rq = right(q[0],q[1],q[2],q[3])
-        if not lq is None:
+        if not lq is None and not checkExist(nodes,lq):
             queue.append(lq)
+            nodes.append(lq)
             
-        if not rq is None:
+        if not rq is None and not checkExist(nodes,rq):
             queue.append(rq)
+            nodes.append(rq)
 
+    print delta
+    print aligns
+
+def checkExist(ns,n):
+    for en in ns:
+        eql = True
+        for i in range(0,len(en)):
+            if n[i] != en[i]:
+                eql = False
+                break
+        
+        if eql:
+            return True
     
 def setDelta(s,t,u,v,grammar):
     # declaring global 
@@ -184,7 +203,7 @@ def setDelta(s,t,u,v,grammar):
     
     return delta[s][t][u][v]
 
-def deltaSbAb(s,u,v,t,grammar):
+def deltaSbAb(s,t,u,v,grammar):
     """the possiblity of align in suqare bracket"""
     # declaring global 
     global delta
@@ -235,7 +254,7 @@ def left(s,t,u,v):
     if theta[s][t][u][v] == 'a' and t-s+v-u > 2:
         return (s,sigmaab[s][t][u][v],upsilonab[s][t][u][v],v)
 
-def right():
+def right(s,t,u,v):
     """right of a node"""
     if t-s+v-u<=2:
         return None

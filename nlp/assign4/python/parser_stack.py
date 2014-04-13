@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 # this is a BTG parse
 # for natural language processing homework 4
 
@@ -50,6 +51,7 @@ itoaab = None
 kappaab = None
 sigmaab = None
 upsilonab = None
+nodes = []
 
 def parseing(sent1,sent2,grammar,lexical):
     """parsing 2 sentences in two language"""
@@ -64,6 +66,7 @@ def parseing(sent1,sent2,grammar,lexical):
     global kappaab 
     global sigmaab
     global upsilonab
+    global nodes
 
     # declare variable
     T = len(sent1)
@@ -131,36 +134,104 @@ def parseing(sent1,sent2,grammar,lexical):
         for v in range(1,V+1):
             delta[t][t][v-1][v] = grammar.epsilonWord #b(epsilon/cv)
 
+    print delta
+
     # recursion
     for s in range(0,T):
         for t in range(s+1,T+1):
             for u in range(0,V):
                 for v in range(u+1,V+1):
                     if (t-s+v-u) > 2:
-                        setDelta(s,t,u,v,grammar)
+#                        setDelta(s,t,u,v,grammar)
+                        deltaFunction(s,t,u,v,grammar)
                         
     # resonstruction
-    queue = []
+    queue = deque([])
     q1 = (0,T,0,V)
     queue.append(q1)
+    nodes.append(q1)
     aligns = []
-    while queue.len() > 0:
-        q = deque(queue)
-        if q[1]-q[0] <= 1 and q[3] - q[2] <= 1:
-            aligns.append(q)
+    leaf = []
+    while len(queue) > 0:
+        q = queue.popleft()
+       # print q
+#        if q[1]-q[0] <= 1 and q[3] - q[2] <= 1:
+#            aligns.append(q)
     
         lq = left(q[0],q[1],q[2],q[3])
         rq = right(q[0],q[1],q[2],q[3])
-        if not lq is None:
+        if not lq is None and not checkExist(nodes,lq):
             queue.append(lq)
+            nodes.append(lq)
+            print lq,'->',q
             
-        if not rq is None:
+        if not rq is None and not checkExist(nodes,rq):
             queue.append(rq)
+            nodes.append(rq)
+            print q,'<-',rq
 
+        if lq is None and rq is None:
+            print q,'leaf'
+            leaf.append(q)
+
+
+    for  l in leaf:
+        if (l[1]-l[0]) == 1:
+            w1 = sent1[l[0]]
+        else:
+            w1 = '<e>'
+            
+        if (l[3]-l[2]) == 1:
+            w2 = sent2[l[2]]
+        else:
+            w2 = '<e>'
+        
+        aligns.append((w1,w2))
+
+    print aligns
+    print nodes
+
+def checkExist(ns,n):
+    for en in ns:
+        eql = True
+        for i in range(0,len(en)):
+            if n[i] != en[i]:
+                eql = False
+                break
+        
+        if eql:
+            return True
 
 deltaStack = []
     
+def deltaFunction(s,t,u,v,grammar):
+    print 'deltaFunction',s,t,u,v
+    
+    # declaring global 
+    global delta
+    global theta
+    global itoasb
+    global kappasb
+    global sigmasb
+    global upsilonsb
+    global itoaab
+    global kappaab 
+    global sigmaab
+    global upsilonab
+    global deltaStack
+
+    if delta[s][t][u][v] is None:
+        # push to stack
+        deltaStack.append([s,t,u,v])
+
+    while len(deltaStack) > 0:
+        q = deltaStack[-1]
+        if setDelta(q[0],q[1],q[2],q[3],grammar) == True:
+            deltaStack.pop()
+
+    
 def setDelta(s,t,u,v,grammar):
+    print 'setDelta',s,t,u,v
     # declaring global 
     global delta
     global theta
@@ -174,26 +245,25 @@ def setDelta(s,t,u,v,grammar):
     global upsilonab
     global deltaStack
     
-    if delta[s][t][u][v] is None: 
-        deltaStack.append([s,t,u,v])
-        dsbab = deltaSbAb(s,t,u,v,grammar)
+    dsbab = deltaSbAb(s,t,u,v,grammar)
+    if dsbab is None:
+        # can't calculate now 
+        # return false
+        return False
 
-        if dsbab is None:
-            # there are elements in the stack
-            
-
-        dsb = dsbab[0]
-        dab = dsbab[1]
-        if dsb <= dab:
-            delta[s][t][u][v] = dsb
-            theta[s][t][u][v] = 's'
-        else:
-            delta[s][t][u][v] = dab
-            theta[s][t][u][v] = 'a'
+    dsb = dsbab[0]
+    dab = dsbab[1]
+    if dsb >= dab:
+        delta[s][t][u][v] = dsb
+        theta[s][t][u][v] = 's'
+    else:
+        delta[s][t][u][v] = dab
+        theta[s][t][u][v] = 'a'
     
-    return delta[s][t][u][v]
+    return True
 
-def deltaSbAb(s,u,v,t,grammar):
+def deltaSbAb(s,t,u,v,grammar):
+    print 'deltaSbAb',s,t,u,v
     """the possiblity of align in suqare bracket"""
     # declaring global 
     global delta
@@ -222,16 +292,16 @@ def deltaSbAb(s,u,v,t,grammar):
                 dv3 = delta[s][S][U][v]
                 dv4 = delta[S][t][u][U]
                 
-                if dv1 is None:
+                if dv1 is None and not checkExist(deltaStack,[s,S,u,U]):
                     deltaStack.append([s,S,u,U])
                 
-                if dv2 is None:
+                if dv2 is None and not checkExist(deltaStack,[S,t,U,v]):
                     deltaStack.append([S,t,U,v])
 
-                if dv3 is None:
+                if dv3 is None and not checkExist(deltaStack,[s,S,U,v]):
                     deltaStack.append([s,S,U,v])
 
-                if dv4 is None:
+                if dv4 is None and not checkExist(deltaStack,[S,t,u,U]):
                     deltaStack.append([S,t,u,U])
                 
                 if dv1 is None or dv2 is None or dv3 is None or dv4 is None:
@@ -256,20 +326,20 @@ def deltaSbAb(s,u,v,t,grammar):
 
 def left(s,t,u,v):
     """left of a node"""
-    if t-s+v-u<=2:
-        return None
-    if theta[s][t][u][v] == 's' and t-s+v-u > 3:
+#    if t-s+v-u<=2:
+#        return None
+    if theta[s][t][u][v] == 's':# and t-s+v-u > 3:
         return (s,sigmasb[s][t][u][v],u,upsilonsb[s][t][u][v])
-    if theta[s][t][u][v] == 'a' and t-s+v-u > 2:
+    if theta[s][t][u][v] == 'a':# and t-s+v-u > 2:
         return (s,sigmaab[s][t][u][v],upsilonab[s][t][u][v],v)
 
-def right():
+def right(s,t,u,v):
     """right of a node"""
-    if t-s+v-u<=2:
-        return None
-    if theta[s][t][u][v] == 's' and t-s+v-u > 2:
+#    if t-s+v-u<=2:
+#        return None
+    if theta[s][t][u][v] == 's':# and t-s+v-u > 2:
         return (sigmasb[s][t][u][v],t,upsilonsb[s][t][u][v],v)
-    if theta[s][t][u][v] == 'a' and t-s+v-u > 2:
+    if theta[s][t][u][v] == 'a':# and t-s+v-u > 2:
         return (sigmaab[s][t][u][v],t,u,upsilonab[s][t][u][v])
 
 
@@ -285,10 +355,10 @@ if __name__ == "__main__":
     ep = sys.argv[2]
     dp = sys.argv[3]
     f = open(ep)
-    sentence1 = f.readline().split(' ')
+    sentence1 = f.readline()[:-1].split(' ')
     f.close()
     f = open(dp)
-    sentence2 = f.readline().split(' ')
+    sentence2 = f.readline()[:-1].split(' ')
     f.close()
     
 lexical = LecxicalDictionary(lines)
