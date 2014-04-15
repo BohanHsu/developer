@@ -15,6 +15,12 @@ from collections import deque
 #  sigma: store the argmax of s
 #  upsilon: store the argmax of u
 
+# global variable:
+sbCount = 0 # the number of square bracket []
+abCount = 0 # the number of angel bracket <>
+epWord = 0 # the number of <e>-word align
+wordEp = 0 # the number of word-<e> align
+
 # define the data structure for lexical dictionary
 class LecxicalDictionary:
     """the data structure of the lexical"""
@@ -66,6 +72,11 @@ def parseing(sent1,sent2,grammar,lexical):
     global sigmaab
     global upsilonab
     global nodes
+    global sbCount
+    global abCount
+    global epWord
+    global wordEp
+
     # declare variable
     T = len(sent1)
     V = len(sent2)
@@ -151,10 +162,6 @@ def parseing(sent1,sent2,grammar,lexical):
     stack2.append(0)
     
     while len(stack1) > 0: # this stack is not empty
-#        print parStr
-#        print stack1
-#        print stack2
-#        print stackc
         q = stack1[-1] # peek the top of stack1
         stat = stack2[-1] # peek the status of the top node
 
@@ -176,9 +183,11 @@ def parseing(sent1,sent2,grammar,lexical):
                 if theta[q[0]][q[1]][q[2]][q[3]] == 's':
                     parStr = parStr + '['
                     stackc.append(']')
+                    sbCount = sbCount + 1
                 else:
                     parStr = parStr + '<'
                     stackc.append('>')
+                    abCount = abCount + 1
                 
         elif stat == 1: # left child has visit but right has not
             # put the right
@@ -200,11 +209,13 @@ def parseing(sent1,sent2,grammar,lexical):
                     w1 = sent1[q[0]]
                 else:
                     w1 = '<e>'
+                    epWord = epWord + 1
 
                 if q[3] - q[2] == 1:
                     w2 = sent2[q[2]]
                 else:
                     w2 = '<e>'
+                    wordEp = wordEp + 1
                     
                 parStr = parStr + w1 + '/' + w2 + ' '
         
@@ -212,41 +223,6 @@ def parseing(sent1,sent2,grammar,lexical):
             stack2.pop()
 
     print parStr
-#    queue = deque([])
-#    q1 = (0,T,0,V)
-#    queue.append(q1)
-#    nodes.append(q1)
-#    aligns = []
-#    leaf = []
-#    while len(queue) > 0:
-#        q = queue.popleft()
-#        lq = left(q[0],q[1],q[2],q[3])
-#        rq = right(q[0],q[1],q[2],q[3])
-#        if not lq is None and not checkExist(nodes,lq):
-#            queue.append(lq)
-#            nodes.append(lq)
-#            
-#        if not rq is None and not checkExist(nodes,rq):
-#            queue.append(rq)
-#            nodes.append(rq)
-#
-#       if lq is None and rq is None:
-#           leaf.append(q)
-#
-#    for  l in leaf:
-#        if (l[1]-l[0]) == 1:
-#            w1 = sent1[l[0]]
-#        else:
-#            w1 = '<e>'
-#            
-#        if (l[3]-l[2]) == 1:
-#            w2 = sent2[l[2]]
-#        else:
-#            w2 = '<e>'
-#        
-#        aligns.append((w1,w2))
-#
-#    print aligns
 
 def checkExist(ns,n):
     for en in ns:
@@ -299,7 +275,6 @@ def setDelta(s,t,u,v,grammar):
     
     dsbab = deltaSbAb(s,t,u,v,grammar)
     if dsbab is None:
-        # return false
         return False
 
     dsb = dsbab[0]
@@ -411,9 +386,11 @@ if __name__ == "__main__":
     sents2 = f.readlines()
     f.close()
     for i in range(0,len(sents1)):
-#    for i in range(0,1):
         sentence1 = sents1[i][:-1].split(' ')
         sentence2 = sents2[i][:-1].split(' ')
-#        print sentence1
-#        print sentence2
         parseing(sentence1,sentence2,grammar,lexical)
+    
+    print 'total number of []:', sbCount
+    print 'total number of <>:', abCount
+    print 'total number of word-<e> align', epWord
+    print 'total number of <e>-word align', wordEp
