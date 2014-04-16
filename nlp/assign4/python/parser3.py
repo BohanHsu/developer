@@ -3,6 +3,14 @@ from collections import deque
 # this is a BTG parse
 # for natural language processing homework 4
 
+# how to run this file:
+# the first argument is the dictionary file
+# the second argument is the first language file
+# the third argument is the second language file
+# the forth argument is optional: it can be 'nomotonic' or 'swap': 
+#    if it is 'monotonic', it will prohibit the swap rule in grammar
+#    the default value is 'swap'
+
 # abbrivation: 
 #  [] square bracket: sb
 #  <> angle bracket: ab
@@ -20,6 +28,7 @@ sbCount = 0 # the number of square bracket []
 abCount = 0 # the number of angel bracket <>
 epWord = 0 # the number of <e>-word align
 wordEp = 0 # the number of word-<e> align
+totAlign = 0 # the number of word-word align
 
 # define the data structure for lexical dictionary
 class LecxicalDictionary:
@@ -76,6 +85,7 @@ def parseing(sent1,sent2,grammar,lexical):
     global abCount
     global epWord
     global wordEp
+    global totAlign
 
     # declare variable
     T = len(sent1)
@@ -218,6 +228,7 @@ def parseing(sent1,sent2,grammar,lexical):
                     wordEp = wordEp + 1
                     
                 parStr = parStr + w1 + '/' + w2 + ' '
+                totAlign = totAlign + 1
         
             stack1.pop()
             stack2.pop()
@@ -376,9 +387,21 @@ if __name__ == "__main__":
     lines =  f.readlines()
     f.close()
     lexical = LecxicalDictionary(lines)
-    grammar = BTGGrammar(-1,-2,-20,-21)
+    grammar1 = BTGGrammar(-1,-2,-20,-21)
+    grammar2 = BTGGrammar(-1,float('-inf'),-20,-21)
     ep = sys.argv[2]
     dp = sys.argv[3]
+    if len(sys.argv) == 5:
+        graAgv = sys.argv[4]
+        if graAgv == 'monotonic':
+            grammar = grammar2
+        elif graAgv == 'swap':
+            grammar = grammar1
+        else:
+            grammar = grammar1
+    else:
+        grammar = grammar1
+
     f = open(ep)
     sents1 = f.readlines()
     f.close()
@@ -392,5 +415,7 @@ if __name__ == "__main__":
     
     print 'total number of []:', sbCount
     print 'total number of <>:', abCount
-    print 'total number of word-<e> align', epWord
-    print 'total number of <e>-word align', wordEp
+    print 'total number of word-<e> align:', epWord
+    print 'total number of <e>-word align:', wordEp
+    print 'precentage of word-<e>:', (float(epWord)/float(totAlign)) * 100, '%'
+    print 'precentage of <e>-word>:', (float(wordEp)/float(totAlign)) * 100, '%'
