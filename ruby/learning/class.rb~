@@ -1,0 +1,8 @@
+# simplt test is that freeze is associate with all the class
+class Test
+  def initialize(i)
+    @i = i
+  end  
+  attr_reader :i
+  arrr_writer :i
+end
