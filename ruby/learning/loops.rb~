@@ -1,0 +1,19 @@
+# this file is for test loop iterator
+
+class MyClass
+      def initialize(array)
+      	  @a = array
+      end
+      
+      def each
+      	  for element in a
+	      yield element
+	  end
+      end
+end
+
+mc = MyClass.new([1,2,3,4,5])
+
+for a in mc
+    puts a
+end
