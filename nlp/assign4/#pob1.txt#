@@ -1,0 +1,7 @@
+Angus likes someone and someone likes Julia.
+Nobody smiles at Pat.
+Nobody coughed or sneezed.
+
+(like(Angus,x) and like(x,Angus)) 
+-(simle(x,y) and Pat(y))
+-(cough(x) or sneeze

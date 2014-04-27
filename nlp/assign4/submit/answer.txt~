@@ -1,0 +1,56 @@
+question 1
+
+Angus likes someone and someone likes Julia.
+∃x.∃y.(like(Angus,x) and like(y,Angus)) 
+
+Nobody smiles at Pat.
+∀x.∃y.-(person(x) and simle(x,y) and Pat(y))
+
+Nobody coughed or sneezed.
+∀x.(person(x) and -(cough(x) or sneeze(x)))
+
+
+question 2
+
+feed Cyril and give a cappucino to Angus
+λx y z.feed(x) and give(y,z)[Cyril/x, capucino/y, Angus/z]
+
+be loved by everyone
+λ∃y.(∀x. (love(x,y)))
+
+be loved by everyone and detested by no-one
+λ∃y.(∀x. (love(x,y)) and -detest(x,y))
+
+question 3
+λP.(λx.λ∀y.(dog(x) -> x.y.P(x,y)))(λz1.λz2.chase(z1, z2))
+
+question 4
+λP. (λz.λx.λ∃y. (present(y) and x.y.z.P(x,y,z))(λx.λy.λz.give(x,y,z)))
+
+question 5
+[wonderful/wunderbar !/!] = −15.4 + −7.82 + -1 = -22.42
+
+question 6
+A -> [A A] -> [wonderful/<e> !/!] = -28.82
+A -> [A A] -> [wonderful/wunderbar !/<e>] = -36.4
+A -> <A A> -> [!/! wonderful/wunderbar] = -25.22
+A -> <A A> -> [!/! wonderful/<e>] = -29.82
+A -> <A A> -> [!/<e> wonderful/wunderbar] = -37.4
+
+question 7
+Run parser.py first argument is the path of itg.dict, the second argumet is the path of test.en, the third argument is test.de. The forth argument is optional. It could be 'monotonic' or 'swap', if it is 'monotonic' the swap rule will be prohibit.
+The output consist alignment of each sentence and the last 6 lines are statistic of the alignment.
+
+question 8
+precentage of English-<e>:= 142 / 756 = 18.7830687831 %
+precentage of <e>-German:= 128 / 742 = 17.2506738544 %
+
+question9
+71/(713+71) = 9.056%
+
+question 10
+precentage of English-<e>:= 219 / 756 = 28.9682539683 %
+precentage of <e>-German:= 205 / 742 = 27.628032345 %
+
+
+
