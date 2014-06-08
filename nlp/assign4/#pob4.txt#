@@ -1,3 +1,0 @@
-Let g=give and h=λz.λx.∃y.(present(y)∧give(x,y,z)). If h=f(g), write down a λ-abstract for f.
-
-\P. (\z. \x. \exists y. (present(y) and x.y.z.P(x,y,z))(\x.\y.\z.give(x,y,z)))
