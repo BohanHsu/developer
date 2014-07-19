@@ -9,6 +9,9 @@ class Solution:
   # @param root, a tree node
   # @return an integer
   def minDepth(self, root):
+    if not root:
+      return 0
+
     queue =  collections.deque()
     depth = {}
     depth[root] = 1
