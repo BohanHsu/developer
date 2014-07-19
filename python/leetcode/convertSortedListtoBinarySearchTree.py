@@ -13,12 +13,13 @@ class ListNode:
 class Solution:
   def __init__(self):
     self.index = {}
+    self.root = {}
+    self.position = {}
+    self.queue = collections.deque()
 
   # @param head, a list node
   # @return a tree node
   def sortedListToBST(self, head):
-    h_root = {}
-    h_position = {}
     if not head:
       return None
 
@@ -29,27 +30,35 @@ class Solution:
       i = i + 1
       n = n.next
 
-    queue = collections.deque()
-    rootIndex = getRootIndexByInterval(0,i+1)
-    root = TreeNode(index[rootIn].val)
-    queue.append((0,rootIndex))
-    h_root[(0,rootIndex)] = root
-    h_position[(0,rootIndex)] = 'l'
-    queue.append((rootIndex+1,i+1))
-    h_root[(rootIndex+1,i+1)] = root
-    h_position[(rootIndex+1,i+1)] = 'r'
+    root = self.handleInterval((0,i))
     while queue:
       interval = queue.popleft()
-      ind = getRootIndexByInterval(interval)
-      r = TreeNode(self.index[ind].val)
-      if 
-      queue.append((interval[0],ind))
-      h_root[(interval[0],ind)] = r
-      h_position[(interval[0],ind)] = 'l'
-      queue.append((ind+1,interval[1]))
-      h_root[(ind+1,interval[1])] = r
-      h_position[(ind+1,interval[1])] = 'r'
+      self.handleInterval(interval)
+        
+    return root
 
+  # effect: if this is a real interval, get the root node, add left 
+  # interval and right interval to queue. mark position of those interval
+  # else add none to Node position
+  # @return
+  def handleInterval(self,interval):
+    ind = self.getRootIndexByInterval(interval)
+    if ind:
+      r = TreeNode(self.index[ind].val)
+      if self.position[interval] == 'l':
+        self.root[interval].left = r
+      elif self.position[interval] == 'r':
+        self.root[interval].right = r
+
+      self.queue.append((interval[0],ind))
+      self.root[(interval[0],ind)] = r
+      self.position[(interval[0],ind)] = 'l'
+      self.queue.append((ind+1,interval[1]))
+      self.root[(ind+1,interval[1])] = r
+      self.position[(ind+1,interval[1])] = 'r'
+      return r
+    else:
+      return None
 
   # @interval: part of the list represent by index
   # example (a,b) a is index of first element, b-1 is index of last element
@@ -60,3 +69,23 @@ class Solution:
       return None
     else:
       return (interval[1] - interval[0] - 1)/2 + interval[0]
+    
+# test code
+s = Solution()
+
+last = None
+for i in range(0,100):
+  l = ListNode(i)
+  if i == 0:
+    head = l
+  else:
+    last.next = l
+
+  last = l
+
+#l = head
+#while l:
+#  print l.val
+#  l = l.next
+
+s.sortedListToBST(head)
