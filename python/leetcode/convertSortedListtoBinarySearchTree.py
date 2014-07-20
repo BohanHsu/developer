@@ -30,9 +30,9 @@ class Solution:
       i = i + 1
       n = n.next
 
-    root = self.handleInterval((0,i))
-    while queue:
-      interval = queue.popleft()
+    root = self.handleInterval((0,i),True)
+    while self.queue:
+      interval = self.queue.popleft()
       self.handleInterval(interval)
         
     return root
@@ -41,14 +41,15 @@ class Solution:
   # interval and right interval to queue. mark position of those interval
   # else add none to Node position
   # @return
-  def handleInterval(self,interval):
+  def handleInterval(self,interval,isRoot=False):
     ind = self.getRootIndexByInterval(interval)
-    if ind:
+    if ind is not None:
       r = TreeNode(self.index[ind].val)
-      if self.position[interval] == 'l':
-        self.root[interval].left = r
-      elif self.position[interval] == 'r':
-        self.root[interval].right = r
+      if not isRoot:
+        if self.position[interval] == 'l':
+          self.root[interval].left = r
+        elif self.position[interval] == 'r':
+          self.root[interval].right = r
 
       self.queue.append((interval[0],ind))
       self.root[(interval[0],ind)] = r
@@ -68,13 +69,13 @@ class Solution:
     if interval[1] - interval[0] == 0:
       return None
     else:
-      return (interval[1] - interval[0] - 1)/2 + interval[0]
+      return (interval[1] - interval[0])/2 + interval[0]
     
 # test code
 s = Solution()
 
 last = None
-for i in range(0,100):
+for i in range(0,1):
   l = ListNode(i)
   if i == 0:
     head = l
@@ -88,4 +89,21 @@ for i in range(0,100):
 #  print l.val
 #  l = l.next
 
-s.sortedListToBST(head)
+root = s.sortedListToBST(head)
+
+import balancedBinaryTree
+bst = balancedBinaryTree.Solution()
+print bst.isBalanced(root)
+print root.val
+
+q = collections.deque()
+q.append(root)
+while q:
+  n = q.popleft()
+  if n.left:
+    print n.val, ' left=', n.left.val
+    q.append(n.left)
+  if n.right:
+    print n.val, ' right=', n.right.val
+    q.append(n.right)
+  

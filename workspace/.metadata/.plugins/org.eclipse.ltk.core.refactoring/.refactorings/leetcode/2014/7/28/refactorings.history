@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;populatingNextRightPointersinEachNodeII.Solution.getNextByFatherAndNode(...)&apos; to &apos;getNextFatherByFatherAndNode&apos;&#x0A;- Original project: &apos;leetcode&apos;&#x0A;- Original element: &apos;populatingNextRightPointersinEachNodeII.Solution.getNextByFatherAndNode(...)&apos;&#x0A;- Renamed element: &apos;populatingNextRightPointersinEachNodeII.Solution.getNextFatherByFatherAndNode(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;getNextByFatherAndNode&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;populatingNextRightPointersinEachNodeII{Solution.java[Solution~getNextByFatherAndNode~QTreeLinkNode;~QTreeLinkNode;" name="getNextFatherByFatherAndNode" references="true" stamp="1405182974351" version="1.0"/>
+</session>
