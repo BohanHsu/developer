@@ -5,6 +5,10 @@ class TreeNode:
         self.left = None
         self.right = None
 
+# this code was developed for inorder and postorder, but the methods
+# inside is actually inorder and preorder, so I only change the master 
+# method's argument name and assign preorder list to a variable named
+# postorder.
 class Solution:
   def __init__(self):
     self.root = {}
@@ -15,6 +19,7 @@ class Solution:
   # @param postorder, a list of integers
   # @return a tree node
   def buildTree(self, inorder, postorder):
+    postorder = preorder
     if not inorder or not postorder:
       return None
 
@@ -34,13 +39,13 @@ class Solution:
     #print 'inorder: ', inorder
     #print 'postorder', postorder
     if len(inorder) > 0 and len(postorder) > 0:
-      rootVal = postorder[-1]
+      rootVal = postorder[0]
       inorderPosition = inorder.index(rootVal)
       rootNode = TreeNode(rootVal)
       leftInorder = inorder[0:inorderPosition] 
       rightInorder = inorder[(inorderPosition+1):]
-      leftPostorder = postorder[0:inorderPosition]
-      rightPostorder = postorder[inorderPosition:-1]
+      leftPostorder = postorder[1:(inorderPosition+1)]
+      rightPostorder = postorder[(inorderPosition+1):]
       #print 'leftInorder',leftInorder
       #print 'leftPostorder',leftPostorder
       #print 'rightInorder',rightInorder
