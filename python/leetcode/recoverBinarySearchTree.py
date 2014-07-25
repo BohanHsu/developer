@@ -9,58 +9,36 @@ class Solution:
   # @param root, a tree node
   # @return a tree node
   def recoverTree(self, root):
-    odd = []
-    i = 0
+    n = root
     p = None
-    stack = []
-    stack.append(root)
-    while stack:
-      n = stack[-1]
-      print n.val
+    large = None
+    while n:
       if n.left:
-        stack.append(n.left)
+        m = n.left
+        while m.right:
+          m = m.right
+
+        l = n.left
+        n.left = None
+        m.right = n
+        n = l
+        root = n
+
       else:
-        if p:
-          if p.val > n.val:
-            odd.extend([i-1,i])
+        print n.val
+        n = n.right
 
-        p = n
-        #visit(n)
-        stack.pop()
-        if n.right:
-          stack.append(n.right)
-
-      i = i+1
-
-    i = 0
-    stack.append(root)
-    while stack:
-      n = stack[-1]
-      if n.left:
-        stack.append(n.left)
-      else:
-        if i == odd[1]:
-          l = n
-        if i == odd[3]:
-          s = n
-
-      stack.pop()
-      if n.right:
-        stack.append(n.right)
-
-    tmp = l.val
-    l.val = s.val
-    s.val = tmp
     return root
 
+
 # test code 
-t1 = TreeNode(10)
-t2 = TreeNode(3)
-t3 = TreeNode(7)
+t1 = TreeNode(4)
+t2 = TreeNode(2)
+t3 = TreeNode(5)
 t4 = TreeNode(1)
-t5 = TreeNode(15)
-t6 = TreeNode(12)
-t7 = TreeNode(16)
+t5 = TreeNode(3)
+t6 = TreeNode(6)
+t7 = TreeNode(7)
 
 t1.left = t2
 t1.right = t3
@@ -71,16 +49,34 @@ t3.right = t7
 
 s = Solution()
 root = s.recoverTree(t1)
+print root.val
+
+print t1.left
+print t1.right.val
+print t2.left
+print t2.right.val
+print t3.left
+print t3.right.val
+print t4.left
+print t4.right.val
+print t5.left
+print t5.right.val
+print t6.left
+print t6.right.val
+print t7.left
+print t7.right
+
+print '====='
 
 q = collections.deque()
-q.append(root)
+q.append(t1)
 while q:
-  n = q
+  n = q.popleft()
   print n.val
   if n.left:
-    print n,'.left', n.left.val
+    print n.val,'.left', n.left.val
     q.append(n.left)
 
   if n.right:
-    print n, '.right', n.right.val
+    print n.val, '.right', n.right.val
     q.append(n.right)
