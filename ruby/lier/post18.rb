@@ -56,6 +56,8 @@ class Post
   end
 
   def come_on
+    t2 = Time.now
+    c = 0
     forever(1) do
       id = generate_id
       pass = generate_password
@@ -63,9 +65,16 @@ class Post
         :u => id,
         :p => pass 
       })
+      puts '=' * 20
       puts id
       puts pass
-      puts response.code
+      puts "response code: #{response.code}"
+      t1 = Time.now
+      puts "time: #{t1}"
+      puts "time usage: #{t1 - t2 unless t2.nil?}"
+      t2 = t1
+      c = c + 1
+      puts "count: #{c}"
     end
   end
 end
