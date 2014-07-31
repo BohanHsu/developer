@@ -30,7 +30,8 @@ class Post
   end
 
   def generate_random_str(range,char_set)
-    length = rand(range)
+    #length = rand(range)
+    length = range.to_a.sample
     str = ""
     length.times do
       str += char_set.sample.chr.to_s
