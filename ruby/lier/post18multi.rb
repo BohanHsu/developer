@@ -6,6 +6,7 @@
 # 97 - 122
 require "net/http"
 require "uri"
+require "thread"
 
 @@count = 0
 @@start_time = Time.now
