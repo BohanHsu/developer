@@ -6018,3 +6018,22 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.ui 4 4 2014-07-09 21:17:20.030
 !MESSAGE Unable to find Action Set: org.eclipse.mylyn.tasks.ui.navigation
+!SESSION 2014-11-11 21:52:34.684 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/bohan/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.standard.product -keyring /Users/bohan/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-11-11 21:52:43.802
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 4 4 2014-11-11 21:52:44.695
+!MESSAGE Unable to find Action Set: org.eclipse.mylyn.context.ui.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2014-11-11 21:52:44.695
+!MESSAGE Unable to find Action Set: org.eclipse.mylyn.doc.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2014-11-11 21:52:44.695
+!MESSAGE Unable to find Action Set: org.eclipse.mylyn.tasks.ui.navigation
