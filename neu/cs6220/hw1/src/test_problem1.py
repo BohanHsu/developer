@@ -1,10 +1,10 @@
 import unittest
 
-from problem1 import Problem1
+from linear_regression import LinearRegression
 
-class TestProblem1(unittest.TestCase):
+class TestLinearRegression(unittest.TestCase):
     def setUp(self):
-        self.p = Problem1()
+        self.p = LinearRegression()
 
     def test_mean_square_error(self):
         x = [
