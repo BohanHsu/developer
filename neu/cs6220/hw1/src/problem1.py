@@ -26,14 +26,9 @@ def main():
             training_set_mse = p.mean_square_error(train_set.x, train_set.y, w)
             test_set_mse = p.mean_square_error(test_set.x, test_set.y, w)
             results[file_name].append([w, training_set_mse, test_set_mse])
-            print '====='
-            print 'i', i
-            print 'w', w
-            print 'file_name', file_name
-            print 'training_set_mse', training_set_mse
-            print 'test_set_mse', test_set_mse
+            print file_name, ',', i, ',', training_set_mse, ',', test_set_mse
 
-    print results
+    #print results
     
 if __name__ == '__main__':
     main()

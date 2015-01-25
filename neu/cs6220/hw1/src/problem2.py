@@ -29,7 +29,7 @@ def main():
                 w = lr.linear_regression(tx, ty, lambdaa)
                 training_mse = lr.mean_square_error(tx, ty, w)
                 test_mse = lr.mean_square_error(test_x, test_y, w)
-                print sub_size, lambdaa, training_mse, test_mse
+                print sub_size, ',', lambdaa, ',', training_mse, ',', test_mse
                 results.append([sub_size, lambdaa, training_mse, test_mse])
                 
     return results

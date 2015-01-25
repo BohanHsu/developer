@@ -21,7 +21,7 @@ def main():
         y = train_set.y
         for i in range(0, 151):
             mse = cvlr.cv_linear_regression(x, y, i, fold)
-            print file_name, i, mse
+            print file_name, ',', i, ',', mse
             results.append([file_name, i, mse])
 
 if __name__ == '__main__':
