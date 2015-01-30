@@ -18,21 +18,20 @@ class LinearRegression:
     # x: a list of list
     # y: a list
     # w: a list
-    def mean_square_error(self, x, y, w):
-        wT = np.matrix(w).getT()
+    def mean_square_error(self, x, y, w, lambdaa):
         N = len(x)
+        vx = np.matrix(x)
+        vw = np.matrix(w)
+        vwT = vw.getT()
         vy = np.matrix(y)
-        sum = 0
-        for i in range(0, len(x)):
-            vxnT = np.matrix(x[i])
-            yn = np.matrix(y[i])
-            vxn = vxnT.getT()
-            sum = sum + math.pow((np.matrix.dot(wT, vxn) - yn), 2)
-
-        ew = sum / float(N)
-        return ew
+        w1 = np.matrix.dot(vx, vw)
+        w2 = w1 - y
+        w2T = w2.getT()
+        w3 = np.matrix.dot(w2T, w2)
+        w4 = np.matrix.dot(vwT, vw)
+        ew = 1 / float(N) * w3 + lambdaa * w4
+        return math.pow(ew, 1)
 
     # return a list represent same matrix
     def matrix_to_list(self, matrix):
         return np.array(matrix).tolist()
-

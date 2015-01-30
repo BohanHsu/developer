@@ -13,10 +13,21 @@ class TestLinearRegression(unittest.TestCase):
                 [1, 8, 9]]
         y = [[6], [3], [-2]]
         w = [[7], [4], [1]]
-        ew = self.p.mean_square_error(x, y, w)
+        ew = self.p.mean_square_error(x, y, w, 0)
         ew_should_be = 3544 / float(3)
         self.assertEqual(ew, ew_should_be)
 
+    def test_mean_square_error1(self):
+        x = [
+                [1, 2, 3], 
+                [1, 5, 6], 
+                [1, 8, 9]]
+        y = [[6], [3], [-2]]
+        w = [[7], [4], [1]]
+        lambdaa = 1
+        ew = self.p.mean_square_error(x, y, w, lambdaa)
+        ew_should_be = 3544 / float(3) + 66
+        self.assertEqual(ew, ew_should_be)
 
     def test_linear_regression(self):
         x = [

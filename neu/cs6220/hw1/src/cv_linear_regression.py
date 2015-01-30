@@ -15,7 +15,7 @@ class CVLinearRegression:
             training_y = ys[0]
             test_y = ys[1]
             w = lr.linear_regression(training_x, training_y, lambdaa)
-            mse = lr.mean_square_error(test_x, test_y, w)
+            mse = lr.mean_square_error(test_x, test_y, w, lambdaa)
             mses.append(mse)
 
         #average_mse = mses.reduce(lambda x, y: x + y) / float(fold)
