@@ -18,3 +18,16 @@ will output the result of problem3 to standard output in CSV format, the first c
 
 5. Results
 
+
+6. Discussion
+1. 
+How dose lambda affect MSE in general?
+By increasing lambda's value, trains set and test set MSE may fall at the very begining, but will keep increase as the lambda increased.
+
+3.
+
+What are the drawbacks of CV?
+It require more training times.
+//It don't have a specifiy test set.
+
+What are thre factors affecting the performance of CV?

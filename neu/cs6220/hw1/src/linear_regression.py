@@ -28,8 +28,9 @@ class LinearRegression:
         w2 = w1 - y
         w2T = w2.getT()
         w3 = np.matrix.dot(w2T, w2)
-        w4 = np.matrix.dot(vwT, vw)
-        ew = 1 / float(N) * w3 + lambdaa * w4
+        #w4 = np.matrix.dot(vwT, vw)
+        #ew = 1 / float(N) * w3 + lambdaa * w4
+        ew = 1 / float(N) * w3
         return math.pow(ew, 1)
 
     # return a list represent same matrix

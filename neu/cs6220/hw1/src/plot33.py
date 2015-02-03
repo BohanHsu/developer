@@ -28,3 +28,4 @@ trace1 = Scatter(
 
 data = Data([trace1])
 plot_url = py.plot(data, filename = training_set_name + '_cross_validation')
+print plot_url
