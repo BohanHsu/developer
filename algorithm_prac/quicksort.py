@@ -1,60 +1,34 @@
-# quicksort.py 
-# author: Bohan Xu
-# date: 1/6/2013
-# version 1.0
-
 import random
 
-# given: a list
-# returns: a sorted list, using randomized quick sort
-#
-def quickSort(a):
-	if len(a) <= 1:
-		return a
-	else:
-		a = randomized(a)
-		return partition(a)
+class Qs:
+    def __init__(self, array):
+        self.array = array
 
-# list -> list
-# given: a list
-# where: the list must have at least 1 element
-# returns: using the first element as pivot,
-# 	partition the given list, the left part sub list 
-#	only contain element less or equal to the pivot,
-#	the right sub list only contain element greater or
-# 	equal to the pivot.
-# 
-def partition(a):
-	pivot = a[0]
-	left_array = []
-	right_array = []
-	for element in a[1:]:
-		if element <= pivot:
-			left_array.append(element)
-		else:
-			right_array.append(element)
-	
-	
-	result_array = []
+    def quicksort(self, lo, hi):
+        if lo < hi:
+            p = self.partition(lo, hi)
+            self.quicksort(lo, p - 1)
+            self.quicksort(p + 1, hi)
 
-	left_array = quickSort(left_array)
-	right_array = quickSort(right_array)	
+    def partition(self, lo, hi):
+        pivot_index = random.randint(lo, hi)
+        pivot_value = self.array[pivot_index]
+        self.array[pivot_index] = self.array[hi]
+        self.array[hi] = pivot_value
 
-	left_array.append(pivot)
-	result_array  = result_array + left_array 
-	result_array = result_array + right_array
-	return result_array
+        j = lo
+        for i in range(lo, hi):
+            if self.array[i] < pivot_value:
+                tmp = self.array[i]
+                self.array[i] = self.array[j]
+                self.array[j] = tmp
+                j = j + 1
 
-# list -> list
-# given: a list
-# returns: a list randomly swap a element with the first 
-# element in the list
-#
-def randomized(a):
-	length = len(a)
-	random_int = random.randint(1,length-1)
-	temp = a[0]
-	a[0] = a[random_int]	
-	a[random_int] = temp
-	return a
+        self.array[hi] = self.array[j]
+        self.array[j] = pivot_value
+        return j
 
+
+    def sort(self):
+        self.quicksort(0, len(self.array) - 1)
+        return self.array

@@ -1,0 +1,447 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <hr>
+    <div>
+      <h1>Problem 1</h1>
+      <table border=1>
+        <thead>
+          <tr>
+            <td>training set name</td>
+            <td>plot</td>
+            <td>plot link</td>
+          </tr>
+        </thead>
+
+        <tr>
+          <td>
+            train-1000-100.csv
+          </td>
+          <td>
+            <img src='./plot/p1-train-1000-100.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/15'>https://plot.ly/~ilovebarce/15</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            train-100-100.csv
+          </td>
+          <td>
+            <img src='./plot/p1-train-100-100.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/18'>https://plot.ly/~ilovebarce/18</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            train-100-10.csv
+          </td>
+          <td>
+            <img src='./plot/p1-train-100-10.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/20'>https://plot.ly/~ilovebarce/20</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            50(1000)_100_train.csv
+          </td>
+          <td>
+            <img src='./plot/p1-50(1000)_1000_100_train.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/25'>https://plot.ly/~ilovebarce/25</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            100(1000)_100_train.csv
+          </td>
+          <td>
+            <img src='./plot/p1-100(1000)_1000_100_train.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/28'>https://plot.ly/~ilovebarce/28</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            150(1000)_100_train.csv
+          </td>
+          <td>
+            <img src='./plot/p1-150(1000)_1000_100_train.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/30'>https://plot.ly/~ilovebarce/30</a>
+          </td>
+        </tr>
+
+      </table>
+      <h2>
+        Discussion
+      </h2>
+      <h3>
+        How dose lambda affect MSE in general?
+      </h3>
+      <p>
+        By increasing lambda's value, training set MSE will increased.
+      </p>
+      <p>
+      By increasing lambda's value, test set MSE will decrese at first, 
+      after MSE reached the lowest value and then by increasing the lambda MSE will increased.
+      </p>
+
+      <h3>
+        How does the choice of lambda depend on the number of features vs. examples?
+      </h3>
+      <p style="color: red">
+        ??????????
+      </p>
+
+      <h3>
+        How does lambda change with number of examples when the number of features is fixed?
+      </h3>
+      <div>
+        <p>
+          The following plot compared the test set MSE of w trained on train-1000-100.csv and it's following subset.
+        </p>
+        <img src='./plot/compare-example-test.png'>
+        <table border=1>
+          <thead>
+            <tr>
+              <td>
+                training set name
+              </td>
+              <td>
+                minimun MSE
+              </td>
+              <td>
+                lambda for minimun MSE
+              </td>
+            </tr>
+
+          </thead>
+          <tr>
+            <td>
+              50(1000)_100_train.csv
+            </td>
+            <td>
+              5.4985819318
+            </td>
+            <td>
+              8
+            </td>
+          </tr>
+          <tr>
+            <td>
+              100(1000)_100_train.csv
+            </td>
+            <td>
+              5.18720770014
+            </td>
+            <td>
+              19
+            </td>
+          </tr>
+          <tr>
+            <td>
+              150(1000)_100_train.csv
+            </td>
+            <td>
+              4.83195685094
+            </td>
+            <td>
+              24
+            </td>
+          </tr>
+          <tr>
+            <td>
+              train-1000-100.csv
+            </td>
+            <td>
+              4.30408132341
+            </td>
+            <td>
+              27
+            </td>
+          </tr>
+
+        </table>
+        <p>
+          It tells that the lambda that minimize test set MSE increased by the number of examples in training set.
+        </p>
+      </div>
+      <p>
+      </p>
+    </div>
+    <div>
+      <h1>Problem 2</h1>
+      <table border=1>
+        <thead>
+          <tr>
+            <td>
+              lambda
+            </td>
+            <td>
+              plot
+            </td>
+            <td>
+              plot link
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            <img src='./plot/p2-lambda-1.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/44'>https://plot.ly/~ilovebarce/44</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            25
+          </td>
+          <td>
+            <img src='./plot/p2-lambda-25.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/47'>https://plot.ly/~ilovebarce/47</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            150
+          </td>
+          <td>
+            <img src='./plot/p2-lambda-150.png'>
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/49'>https://plot.ly/~ilovebarce/49</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h1>Problem 3</h1>
+      <table border=1>
+        <thead>
+          <tr>
+            <td>
+              training set name
+            </td>
+            <td>
+              plot
+            </td>
+            <td>
+              best lambda for cross validation
+            </td>
+            <td>
+              minimun MSE for cross validation
+            </td>
+            <td>
+              best lambda for test set (question1)
+            </td>
+            <td>
+              minimun MSE for test set (question1)
+            </td>
+            <td>
+              plot link
+            </td>
+          </tr>
+        </thead>
+
+        <tr>
+          <td>
+            train-1000-100.csv
+          </td>
+          <td>
+            <img src='./plot/p3-train-1000-100-compare.png'>
+          </td>
+          <td>
+            39
+          </td>
+          <td>
+            4.13964107453
+          </td>
+          <td>
+            27
+          </td>
+          <td>
+            4.30408132341
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/115'>https://plot.ly/~ilovebarce/115</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            train-100-100.csv
+          </td>
+          <td>
+            <img src='./plot/p3-train-100-100-compare.png'>
+            <img src='./plot/p3-train-100-100-compare-without_0.png'>
+          </td>
+          <td>
+            26
+          </td>
+          <td>
+            4.51548435145
+          </td>
+          <td>
+            22
+          </td>
+          <td>
+            5.09852603023
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/118'>https://plot.ly/~ilovebarce/118</a>
+            <a href='https://plot.ly/~ilovebarce/123'>https://plot.ly/~ilovebarce/123</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            train-100-10.csv
+          </td>
+          <td>
+            <img src='./plot/p3-train-100-10-compare.png'>
+          </td>
+          <td>
+            13
+          </td>
+          <td>
+            4.18654949545
+          </td>
+          <td>
+            9
+          </td>
+          <td>
+            4.16382375173
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/125'>https://plot.ly/~ilovebarce/125</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            50(1000)_100_train.csv
+          </td>
+          <td>
+            <img src='./plot/50(1000)_100_compare.png'>
+            <img src='./plot/50(1000)_100_compare_without_0.png'>
+          </td>
+          <td>
+            24
+          </td>
+          <td>
+            5.28522135586
+          </td>
+          <td>
+            8
+          </td>
+          <td>
+            5.4985819318
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/127'>https://plot.ly/~ilovebarce/127</a>
+            <a href='https://plot.ly/~ilovebarce/129'>https://plot.ly/~ilovebarce/129</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            100(1000)_100_train.csv
+          </td>
+          <td>
+            <img src='./plot/100(1000)_100_compare.png'>
+            <img src='./plot/100(1000)_100_compare_without_0.png'>
+          </td>
+          <td>
+            31
+          </td>
+          <td>
+            4.85220982582
+          </td>
+          <td>
+            19
+          </td>
+          <td>
+            5.18720770014
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/131'>https://plot.ly/~ilovebarce/131</a>
+            <a href='https://plot.ly/~ilovebarce/133'>https://plot.ly/~ilovebarce/133</a>
+          </td>
+
+        <tr>
+          <td>
+            150(1000)_100_train.csv
+          </td>
+          <td>
+            <img src='./plot/150(1000)_100_compare.png'>
+          </td>
+          <td>
+            47
+          </td>
+          <td>
+            4.87691289085
+          </td>
+          <td>
+            24
+          </td>
+          <td>
+            4.83195685094
+          </td>
+          <td>
+            <a href='https://plot.ly/~ilovebarce/131'>https://plot.ly/~ilovebarce/131</a>
+          </td>
+        </tr>
+        </tr>
+      </table>
+      <h2>
+        Discussion
+      </h2>
+      <h3>
+        How do the values for lambda and MSE obtained from CV compare to the ones in question 1?
+      </h3>
+      <p>
+        Compare with question1, for all 6 training sets, the best lambda for minimun MSE in cross validation is less that best lambda in question's test set.
+      </p>
+      <p>
+        For MSE, in training set train-1000-100.csv, train-100-100.csv, 50(1000)_100_train.csv and 100(1000)_100_train.csv, 
+        the minimun MSE of cross validation is less than the minimun MSE in test set in question 1. 
+        For training set train-100-10.csv and 150(1000)_100_train.csv, the cross vaildation minimun MSE is greater than the MSE in question 1's test set.
+      </p>
+      <h3>
+        What are the drawbacks of CV?
+      </h3>
+      <p>
+        It require more training times.
+      </p>
+      <h3>
+        What are the factors affecting the performance of CV?
+      </h3>
+      <p>
+        Number of examples, number of features, k's value.
+      </p>
+    </div>
+  </body>
+</html>

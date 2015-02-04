@@ -22,12 +22,19 @@ will output the result of problem3 to standard output in CSV format, the first c
 6. Discussion
 1. 
 How dose lambda affect MSE in general?
-By increasing lambda's value, trains set and test set MSE may fall at the very begining, but will keep increase as the lambda increased.
+By increasing lambda's value, trains set and test set MSE will fall at the very begining, but will keep increase as the lambda increased.
+
+How does the choice of lambda depend on the number of features vs. examples?
+??????
+
+How does lambda change with number of examples when the number of features is fixed?
+lambda will increase as the number of examples increased
 
 3.
+How do the values for lambda and MSE obtained from CV compare to the ones in question 1?
 
 What are the drawbacks of CV?
 It require more training times.
-//It don't have a specifiy test set.
 
 What are thre factors affecting the performance of CV?
+number of examples, number of features, k's value

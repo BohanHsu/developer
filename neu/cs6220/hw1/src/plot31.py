@@ -1,7 +1,7 @@
 import plotly.plotly as py
 from plotly.graph_objs import *
 
-f = open('./../results/problem1.txt')
+f = open('./../results/problem3.txt')
 lines = f.readlines()
 
 ls1 = [s[:-1].split(',') for s in lines]
