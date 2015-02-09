@@ -1,0 +1,16 @@
+['youth',          'high',   'no',  'fair'],
+['youth',          'high',   'no',  'excellent'],
+['middle aged',    'high',   'no',  'fair'],
+['senior',         'medium', 'no',  'fair'],
+['senior',         'low',    'yes', 'fair'],
+['senior',         'low',    'yes', 'excellent'],
+['middle aged',    'low',    'yes', 'excellent'], 
+['youth',          'medium', 'no',  'fair'],
+['youth',          'low',    'yes', 'fair'],
+['senior',         'medium', 'yes', 'fair'], 
+['youth',          'medium', 'yes', 'excellent'],
+['middle aged',    'medium', 'no',  'excellent'],
+['middle aged',    'high',   'yes', 'fair'],
+['senior',         'medium', 'no',  'excellent]
+Class: buys computer
+no no yes yes yes no yes no yes yes yes yes yes no
