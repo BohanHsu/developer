@@ -1,0 +1,44 @@
+==========
+ploy-kernal
+exponent = 1
+result:
+=== Confusion Matrix ===
+a   b   <-- classified as
+356  73 |   a = car
+56 361 |   b = noncar
+
+==========
+ploy-kernal
+exponent = 2
+result:
+=== Confusion Matrix ===
+a   b   <-- classified as
+408  21 |   a = car
+15 402 |   b = noncar
+
+==========
+ploy-kernal
+exponent = 4
+result:
+=== Confusion Matrix ===
+a   b   <-- classified as
+401  28 |   a = car
+27 390 |   b = noncar
+
+==========
+rbfkernal
+gamma = 0.01
+result:
+=== Confusion Matrix ===
+a   b   <-- classified as
+267 162 |   a = car
+70 347 |   b = noncar
+
+==========
+rbfkernal
+gamma = 1
+result:
+=== Confusion Matrix ===
+a   b   <-- classified as
+373  56 |   a = car
+26 391 |   b = noncar

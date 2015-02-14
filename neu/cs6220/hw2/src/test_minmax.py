@@ -13,5 +13,9 @@ class TestMinMaxClass(unittest.TestCase):
     def test_minmax2(self):
         self.assertEqual(self.m.normalized_data, [[0, 1], [0.5, 0.5], [1, 0]])
 
+    def test_normalize_data(self):
+        self.assertEqual(self.m.normalize_data(3, 0), 0.5)
+        self.assertEqual(self.m.normalize_data(4, 1), 0.5)
+
 if __name__ == '__main__':
     unittest.main()
