@@ -41,12 +41,14 @@ class TestSelectorClass(unittest.TestCase):
             ['middle aged',    'high',   'yes', 'fair'],
             ['senior',         'medium', 'no',  'excellent']
         ]
+        names = ['age', 'income', 'student', 'credit']
         yes = 'a'
         no = 'b'
         cls = [no,no,yes,yes,yes,no,yes,no,yes,yes,yes,yes,yes,no]
 
-        attr_i = information_gain(data, cls, [0,1,2,3])
-        self.assertEqual(attr_i, 0)
+        attr_i = information_gain(data, names, cls, [0,1,2,3])
+        self.assertEqual(attr_i[0], 0)
+        print attr_i[1]
 
 if __name__ == '__main__':
     unittest.main()

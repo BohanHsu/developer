@@ -50,7 +50,7 @@ for i in range(0, len(test_set.lines)):
 for result in results:
     for i in range(0, 4):
         result[i] = str(result[i])
-    print " ".join(result)
+    print "\t".join(result)
 
 
 

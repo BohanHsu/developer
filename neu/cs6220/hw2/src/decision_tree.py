@@ -1,17 +1,20 @@
 from collections import deque
 
 class DecisionTree:
+    n_id = 0
 
-    def __init__(self, training_set, attr_selector):
+    def __init__(self, training_set, attribute_names, attr_selector):
         self.training_data = [x[:-1] for x in training_set]
         self.classes = [x[-1] for x in training_set]
         self.attr_selector = attr_selector
+        self.attribute_names = attribute_names
         self.root = None
         self.queue = deque([])
         self.build_tree()
     
     def build_tree(self):
-        root = Node()
+        root = Node(DecisionTree.n_id)
+        DecisionTree.n_id = DecisionTree.n_id + 1
         root.left_data_index = range(0, len(self.training_data))
         root.attributes_left = range(0, len(self.training_data[0]))
         self.root = root
@@ -57,12 +60,16 @@ class DecisionTree:
             #print 'train_data', train_data
             #print 'cls_data', cls_data
 
-            selected_attrubte_index = self.attr_selector(train_data, cls_data, node.attributes_left)
+            selector_result = self.attr_selector(train_data, self.attribute_names, cls_data, node.attributes_left)
+            selected_attrubte_index = selector_result[0]
+            node.selection_criteria = selector_result[1]
             node.selected_attribute = selected_attrubte_index
             node.attributes_left.remove(selected_attrubte_index)
+            node.attribute_names = self.attribute_names
 
             for value in set([x[selected_attrubte_index] for x in train_data]):
-                n = Node()
+                n = Node(DecisionTree.n_id)
+                DecisionTree.n_id = DecisionTree.n_id + 1
                 n.attributes_left = list(node.attributes_left)
                 n.parent_node = node
                 node.posterities[value] = n
@@ -145,23 +152,26 @@ class DecisionTree:
 
             while s:
                 n = s.pop()
-                print '-----'
-                print 'n', n
-                print 'n.wrong', n.wrong_count
+                #print '-----'
+                #print 'n', n
+                #print 'n.wrong', n.wrong_count
                 n.wrong_count
                 sum = 0
                 for k in n.posterities:
                     v = n.posterities[k]
                     sum += v.wrong_count
-                    print 'v', v
-                    print 'v.wrong', v.wrong_count
+                    #print 'v', v
+                    #print 'v.wrong', v.wrong_count
+
+                print 'pruning process:', n.id, sum, n.wrong_count
                     
                 if n.wrong_count < sum:
                     # prune n
                     n.posterities = {}
                     n.cls = n.majority_vote
                     pruned = True
-                    print '~~~pruning n', n, n.wrong_count
+                    #print '~~~pruning n', n, n.wrong_count
+                    print '+++++pruning n', n.id, n.wrong_count, sum
                     break
                 else:
                     if not n.cls:
@@ -178,9 +188,11 @@ class DecisionTree:
         return cls
 
 class Node:
-    def __init__(self):
+    def __init__(self, id):
+        self.id = id
         self.parent_node = None
         self.selected_attribute = None
+        self.attribute_names = None
         self.attribute_type = None
         # index of lefted attributes
         self.attributes_left = None
@@ -195,3 +207,5 @@ class Node:
         # data for prune tree 
         self.right_count = 0
         self.wrong_count = 0
+
+        self.selection_criteria = None

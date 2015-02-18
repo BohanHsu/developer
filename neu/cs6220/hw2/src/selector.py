@@ -1,6 +1,7 @@
 import math
 
-def information_gain(data_set, classes, available_attributes):
+def information_gain(data_set, attribute_names, classes, available_attributes):
+    gains = {}
     n = len(data_set)
     infoD = info(classes)
     max_gain = float('-inf')
@@ -12,12 +13,12 @@ def information_gain(data_set, classes, available_attributes):
 
         infoDA = infoA(attrs, classes)
         gainA = infoD - infoDA
+        gains[attribute_names[attribute_index]] = gainA
         if gainA > max_gain:
             max_gain = gainA
             max_attribute_index = attribute_index
 
-    #return {'attribte_index':max_attribute_index, 'infornation_gain':max_gain}
-    return max_attribute_index
+    return (max_attribute_index, gains)
 
 def infoA(attr, cls):
     nD = len(cls)
@@ -52,11 +53,3 @@ def info(cls):
         sum -= pi * math.log(pi, 2)
         
     return sum
-
-    
-        
-
-            
-
-        
-

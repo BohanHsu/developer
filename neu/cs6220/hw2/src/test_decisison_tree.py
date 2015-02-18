@@ -41,24 +41,28 @@ class TestDecisisonClass(unittest.TestCase):
             ['High School','Management','More than 10'],
             ['High School','Service','More than 10']]
 
+        attribute_names = ['Education Level', 'Career', 'Years of Experience']
+
         cls = ['Low','Low','High','Low','Low','High','High','Low','High','Low']
 
         self.trains = []
         for i in range(0, len(data)):
             self.trains.append(data[i] + [cls[i]])
 
-        self.d = DecisionTree(self.trains, information_gain)
+        self.d = DecisionTree(self.trains, attribute_names, information_gain)
 
     def test_decision_tree(self):
         r = self.d.root
         q = deque([])
         q.append(r)
 
-        #while q:
-        #    n = q.popleft()
-        #    show_node(n)
-        #    for k in n.posterities:
-        #        q.append(n.posterities[k])
+        print "======= hua li de fen ge xian ======="
+
+        while q:
+            n = q.popleft()
+            show_node(n, self.trains)
+            for k in n.posterities:
+                q.append(n.posterities[k])
 
         print "======= hua li de fen ge xian ======="
 
@@ -78,19 +82,34 @@ class TestDecisisonClass(unittest.TestCase):
 
         while q:
             n = q.popleft()
-            show_node(n)
+            show_node(n, self.trains)
             for k in n.posterities:
                 q.append(n.posterities[k])
 
-def show_node(n):
+def show_node(n, trains):
     print '======================='
     print 'node', n
-    print 'parent', n.parent_node
-    print 'selected attribute', n.selected_attribute
-    print 'attributes lefted', n.attributes_left
-    print 'posterites', [x for x in n.posterities]
-    print 'posterites', n.posterities
+    print 'id', n.id
+    if n.parent_node:
+        print 'parent', n.parent_node.id
+    if n.selected_attribute:
+        print 'selected attribute', n.attribute_names[n.selected_attribute]
+    print 'selection criteria', n.selection_criteria
+    #print 'attributes lefted', n.attributes_left
+    attrs = []
+    for i in n.attributes_left:
+        attrs.append(n.attribute_names[i])
+
+    print 'attributes lefted', attrs
+    print 'posterites', [(x, n.posterities[x].id) for x in n.posterities]
+    #print 'posterites', n.posterities
     print 'data left', n.left_data_index
+
+    print '~~~~~~~~~~'
+    for i in n.left_data_index:
+        print trains[i]
+    print '~~~~~~~~~~'
+
     print 'majority vote', n.majority_vote
     print 'right count', n.right_count
     print 'wrong count', n.wrong_count
