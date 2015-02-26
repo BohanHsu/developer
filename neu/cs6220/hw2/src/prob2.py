@@ -1,22 +1,32 @@
 from arff_handler import ArffHandler
 from knn import KNN
-from minmax import MinMax
+#from minmax import MinMax
+from zscore import ZScore
 
-training_set = ArffHandler('./../hw2-data/train.arff').lines
+
+#training_set = ArffHandler('./../hw2-data/train.arff').lines
+#test_set = ArffHandler('./../hw2-data/test.arff', False)
+
+training_set = ArffHandler('./../hw2-data/train.arff')
 test_set = ArffHandler('./../hw2-data/test.arff', False)
 
-#print training_set.lines
-# do normalize
+#print test_set.lines
 
 training_set_data = []
 training_set_class = []
 
-for line in training_set:
+for line in training_set.lines:
     training_set_data.append(line[0:-1])
     training_set_class.append(line[-1])
 
-normalizer = MinMax(training_set_data)
-normalized_training_data = normalizer.normalized_data
+#normalizer = MinMax(training_set_data)
+#normalized_training_data = normalizer.normalized_data
+
+training_normalizer = ZScore(training_set_data)
+test_normalizer = ZScore(test_set.lines)
+
+normalized_training_data = training_normalizer.normalized_data
+normalized_test_data = test_normalizer.normalized_data
 
 training_set = []
 for i in range(0, len(normalized_training_data)):
@@ -37,8 +47,9 @@ for i in range(0, len(test_set.lines)):
     result = list(tuple)
     result.append(test_set.index[i])
 
-    for j in range(0, len(tuple)):
-        tuple[j] = normalizer.normalize_data(tuple[j], j)
+    #for j in range(0, len(tuple)):
+    #    tuple[j] = normalizer.normalize_data(tuple[j], j)
+    tuple = normalized_test_data[i]
 
     for k in [1,3,5,7,9]:
         knn = knns[k]
@@ -50,7 +61,11 @@ for i in range(0, len(test_set.lines)):
 for result in results:
     for i in range(0, 4):
         result[i] = str(result[i])
-    print "\t".join(result)
+    print ",".join(result)
+    #if not (result[-1] == result[-2] and result[-2] == result[-3] and result[-3] == result[-4] and result[-4] == result[-5]):
+    #    #print "!!!!!"
+    #    #print "^"
+    #    #print "|"
 
 
 

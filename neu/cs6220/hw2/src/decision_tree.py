@@ -60,27 +60,31 @@ class DecisionTree:
             #print 'train_data', train_data
             #print 'cls_data', cls_data
 
-            selector_result = self.attr_selector(train_data, self.attribute_names, cls_data, node.attributes_left)
-            selected_attrubte_index = selector_result[0]
-            node.selection_criteria = selector_result[1]
-            node.selected_attribute = selected_attrubte_index
-            node.attributes_left.remove(selected_attrubte_index)
-            node.attribute_names = self.attribute_names
+            if (len(set(cls_data)) == 1):
+                node.cls = cls_data[0]
 
-            for value in set([x[selected_attrubte_index] for x in train_data]):
-                n = Node(DecisionTree.n_id)
-                DecisionTree.n_id = DecisionTree.n_id + 1
-                n.attributes_left = list(node.attributes_left)
-                n.parent_node = node
-                node.posterities[value] = n
-                data_after_filter = []
-                for i in node.left_data_index:
-                    if self.training_data[i][node.selected_attribute] == value:
-                        data_after_filter.append(i)
+            else:
+                selector_result = self.attr_selector(train_data, self.attribute_names, cls_data, node.attributes_left)
+                selected_attrubte_index = selector_result[0]
+                node.selection_criteria = selector_result[1]
+                node.selected_attribute = selected_attrubte_index
+                node.attributes_left.remove(selected_attrubte_index)
+                node.attribute_names = self.attribute_names
 
-                n.left_data_index = data_after_filter
-                n.majority_vote = self.majority_vote_node(n)
-                self.queue.append(n)
+                for value in set([x[selected_attrubte_index] for x in train_data]):
+                    n = Node(DecisionTree.n_id)
+                    DecisionTree.n_id = DecisionTree.n_id + 1
+                    n.attributes_left = list(node.attributes_left)
+                    n.parent_node = node
+                    node.posterities[value] = n
+                    data_after_filter = []
+                    for i in node.left_data_index:
+                        if self.training_data[i][node.selected_attribute] == value:
+                            data_after_filter.append(i)
+
+                    n.left_data_index = data_after_filter
+                    n.majority_vote = self.majority_vote_node(n)
+                    self.queue.append(n)
 
     def majority_vote_node(self, node):
         # first vote the node

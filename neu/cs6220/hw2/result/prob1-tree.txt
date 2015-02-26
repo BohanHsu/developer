@@ -5,7 +5,7 @@ Top: 6,4, 0.97
 Education Level gain = 0.125
 Career gain = 0.125
 Years of Experience gain = 0.020
-Selected Attribute: Education
+elected Attribute: Education
 
   node 1
   High School: 4,1, 0.72 

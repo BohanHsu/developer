@@ -97,8 +97,9 @@ def show_node(n, trains):
     print 'selection criteria', n.selection_criteria
     #print 'attributes lefted', n.attributes_left
     attrs = []
-    for i in n.attributes_left:
-        attrs.append(n.attribute_names[i])
+    if n.attribute_names:
+        for i in n.attributes_left:
+            attrs.append(n.attribute_names[i])
 
     print 'attributes lefted', attrs
     print 'posterites', [(x, n.posterities[x].id) for x in n.posterities]

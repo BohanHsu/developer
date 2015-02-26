@@ -1,0 +1,30 @@
+import math
+from fake_random import FakeRandom
+
+class KMeams:
+    def __init__(self, training_data, k):
+        self.training_data = training_data
+        self.k = k
+        self.centroids = []
+
+
+    def _initial_centroids(self):
+        for i in range(0, k):
+            index = FakeRandom.random() - 1
+            self.centroids.append(self.training_data[index])
+
+    def _assign_cluster_by_centroids(self):
+        for i in range(0, len(self.training_data)):
+
+    def _euclidean_distance(self, t1, t2):
+        sum = 0
+        for i in range(0, len(t1)):
+            sum += math.pow((t1[i] - t2[i]), 2)
+
+
+    def _clustering(self):
+        self._initial_centroids()
+        for i in range(0, k):
+
+
+

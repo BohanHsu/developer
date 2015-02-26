@@ -1,0 +1,9 @@
+1. How to run the code:
+Please goto hw2/src directory, then run:
+python prob2.py
+This command will output the CSV format result to standard output.
+
+2. Written answer:
+Please go to hw2/result directory, for problem2, the csv format output was 
+stored in  prob2.csv file, for other written answer please refer to 
+answer.pdf file.
