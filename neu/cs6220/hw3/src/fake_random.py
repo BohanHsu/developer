@@ -14,6 +14,10 @@ class FakeRandom:
     def random():
         res = FakeRandom.sequence[FakeRandom.count]
         FakeRandom.count += 1
+        #print "fake random count:", FakeRandom.count
         return res
 
+    @staticmethod
+    def reset_index():
+        FakeRandom.count = 0
 
