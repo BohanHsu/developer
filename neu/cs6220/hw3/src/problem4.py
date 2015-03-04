@@ -21,6 +21,6 @@ def euclidean_distance(a, b):
 
 dbs = DBScan(eps, min_pts, training_set, euclidean_distance)
 
-print dbs.n_eps_p
+#print dbs.n_eps_p
 print dbs.core_points
 print dbs.clusters
