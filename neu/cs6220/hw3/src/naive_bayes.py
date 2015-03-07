@@ -57,6 +57,7 @@ class NaiveBayes:
         else:
             smoothing_length += 1
 
+        print "P(" + value + " | " + cls + ") = " + str(count - 1) + " + 1 / " + str(length) + " + " + str(smoothing_length)
 
         return float(count) / (length + smoothing_length)
 
@@ -77,6 +78,7 @@ class NaiveBayes:
         max_cls = None
         for cls in p_of_c:
             v = p_of_c[cls]
+            print "P(" + cls + " | X) = " + str(v)
             if v > max:
                 max = v
                 max_cls = cls

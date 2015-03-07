@@ -41,6 +41,6 @@ class ZScore:
 
     def normalize_data(self, data, i):
         if not self.sigmas[i] == 0:
-            return float (data - self.mues[i]) / self.sigmas[i]
+            return round(float (data - self.mues[i]) / self.sigmas[i], 6)
         else:
             return 0

@@ -33,12 +33,20 @@ def main():
     FakeRandom.set_sequence(fake_random_sequence)
     data = ArffHandler('./../segment.arff').lines
     normalized_data = ZScore(data).normalized_data
+
+    #print normalized_data[0]
+    #print normalized_data[1]
+    #print normalized_data[2]
+
+    #sdf
     
     sses = {}
     sse_mues = {}
     sse_sigmas = {}
+
+    UPPER_K = 13
     
-    for k in range(1, 13):
+    for k in range(1, UPPER_K):
         sses[k] = []
         for i in range(0, 25):
             kmeans = KMeams(normalized_data, k)
@@ -49,16 +57,22 @@ def main():
         print k
         FakeRandom.reset_index()
     
-    for k in range(1, 13):
+    x = []
+    y1 = []
+    y2 = []
+    y3 = []
+    for k in range(1, UPPER_K):
         print "k, u, sigma", k, sse_mues[k], sse_sigmas[k]
-        x = []
-        y1 = []
-        y2 = []
-        y3 = []
         x.append(k)
         y1.append(sse_mues[k] - 2 * sse_sigmas[k])
-        y1.append(sse_mues[k])
-        y1.append(sse_mues[k] + 2 * sse_sigmas[k])
+        y2.append(sse_mues[k])
+        y3.append(sse_mues[k] + 2 * sse_sigmas[k])
+        #print "x, y1, y2, y3", x[k-1], y1[k-1], y2[k-1], y3[k-1]
+
+    print x
+    print y1
+    print y2
+    print y3
 
 
     plt.plot(x,y1)
