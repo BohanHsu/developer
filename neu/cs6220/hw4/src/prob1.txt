@@ -1,4 +1,0 @@
-filter:
-  Filter methods select the attributes independent to training algorithm. Generallt filter methods applied to dataset before training, and there is no interaction between attributes selection methods and training algorithm.
-wrapper:
-  Wrapper methods select the attribtues according to each algorithm. There are iteraction between attribute selection methods and training algorithm. Wrapper select attribtues according to the performance of training algorithm.
