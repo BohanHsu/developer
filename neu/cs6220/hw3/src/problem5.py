@@ -69,10 +69,9 @@ def main():
         y3.append(sse_mues[k] + 2 * sse_sigmas[k])
         #print "x, y1, y2, y3", x[k-1], y1[k-1], y2[k-1], y3[k-1]
 
-    print x
-    print y1
-    print y2
-    print y3
+    print "k, u, u - 2*sigma, u + 2*sigma"
+    for k in range(0, UPPER_K - 1):
+        print "k, u, u - 2*sigma, u + 2*sigma", x[k], '\t', y1[k],'\t', y2[k],'\t', y3[k]
 
 
     plt.plot(x,y1)

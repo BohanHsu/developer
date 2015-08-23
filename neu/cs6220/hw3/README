@@ -1,0 +1,7 @@
+How to run the code:
+please goto src directory, run:
+python problem5.py
+This program will outoup result for problem 5 and draw the graph.
+
+For written answer, please refer to result/answer.pdf
+Solution of problem 2 in HW2 is at the bottom of answer.pdf
